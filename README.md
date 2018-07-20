@@ -18,10 +18,11 @@ This is a Surviv.io cheat loaded as a Chrome extension. It was originally develo
 
 ## 🔨 Installation
 
-Download [this repo as a ZIP file](https://github.com/Kalaborative/survivio-cheat/archive/master.zip). Extract the ZIP file you just downloaded. 
-Go to `chrome://extensions` in your browser. Make sure you have Developer Mode activated.
-Click "Load Unpacked" and select the folder that you extracted (called `survivio-cheat-master`)
-Open surviv.io.
+1. Download [this repo as a ZIP file](https://github.com/Kalaborative/survivio-cheat/archive/master.zip). 
+2. Extract the ZIP file you just downloaded. 
+3. Go to `chrome://extensions` in your browser. *Make sure you have Developer Mode activated.*
+4. Click "Load Unpacked" and select the folder that you extracted (called `survivio-cheat-master`)
+5. Open [surviv.io](http://surviv.io).
 
 ## 🤔 FAQ
 > **What do I do if the cheat stops working?**
