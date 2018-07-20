@@ -39,10 +39,18 @@ window.gameFunctions.gameRender = function(){
 
 		if(!setting.ceilingAlphaEnabled)
 			return;
-		
+		// console.log("All sprites start");
+		// for (let i = 0; i < building.sprites.length; i++) {
+		// 	console.log(building.sprites[i].sprite.texture.baseTexture);
+		// }
+		// console.log("All sprites done");
+		// console.log(building.sprites[0].sprite);
+
 		building.sprites
 			.map((s) => s.sprite)
-			.filter((s) => s.texture.baseTexture.imageUrl.includes("ceiling"))
+			// .filter((s) => s.texture.baseTexture.imageUrl.includes("ceiling"))
+			.filter((s) => (s._texture.textureCacheIds[0]) ? s._texture.textureCacheIds[0].includes("ceiling") : false)
+			// .forEach((s) => console.log(s.texture.baseTexture.imageUrl))
 			.forEach((s) => s.alpha = setting.ceilingAlphaLevel);
 	}
 	
@@ -58,9 +66,9 @@ window.gameFunctions.gameRender = function(){
 		smoke.particle.sprite.alpha *= setting.smokeAlphaLevel;
 	}
 
-	game.smokeBarn.smokePool.pool.forEach(updateSmokeAplha);
-	game.map.obstaclePool.pool.forEach(updateObstacleAlpha);
-	game.map.buildingPool.pool.forEach(updateBuildingCeilingAplha);
+	game.Ie.e.me.forEach(updateSmokeAplha);
+	game._e.H.me.forEach(updateObstacleAlpha);
+	game._e.Xe.me.forEach(updateBuildingCeilingAplha);
 
 	var updateTargetIndicator = function(player) {
 		if(!player || !player.prediction)
@@ -85,23 +93,12 @@ window.gameFunctions.gameRender = function(){
 		
 		targetIndicator.position.x = targetIndicator.width * -0.5 + player.prediction.x;
 		targetIndicator.position.y = targetIndicator.height * -0.5 + player.prediction.y;
-
-
-		// Setting to hide target indicator
-
-		// Check if the player that we are putting the target indicator on is the autoaim target
-		if(player == window.gameVars.Game.Target) {
-			var settings = window.menu.UserSetting.shoot;
-			// If this is the correct player, set the visibility of the target indicator to the target-indicator-visible setting
-			targetIndicator.visible = settings.autoAimCrosshairEnabled;
-		} else {
-			// Hide the indicator if this is the wrong target
-			targetIndicator.visible = false;
-		}
+		
+		targetIndicator.visible = player == window.gameVars.Game.Target;
 	}
 	
 	var updateLaser = function() {
-		if(!game.activePlayer || !game.activePlayer.container)
+		if(!game.$e || !game.$e.container)
 			return;
 		
 		var laser = window.gameVars.Game.Laser;
@@ -113,8 +110,8 @@ window.gameFunctions.gameRender = function(){
 			draw = new window.PIXI.Graphics();
 			
 			laser.draw = draw;
-			game.activePlayer.container.addChild(draw);
-			game.activePlayer.container.setChildIndex(draw, 0);
+			game.$e.container.addChild(draw);
+			game.$e.container.setChildIndex(draw, 0);
 		}
 		
 		if(!draw.graphicsData)
@@ -141,7 +138,7 @@ window.gameFunctions.gameRender = function(){
 	}
 	
 	var updateEnemyLines = function() {
-		if(!game.activePlayer || !game.activePlayer.container)
+		if(!game.$e || !game.$e.container)
 			return;
 		
 		var enemyLines = window.gameVars.Game.EnemyLines;
@@ -157,8 +154,8 @@ window.gameFunctions.gameRender = function(){
 			draw = new window.PIXI.Graphics();
 			
 			enemyLines.draw = draw;
-			game.activePlayer.container.addChild(draw);
-			game.activePlayer.container.setChildIndex(draw, 0);
+			game.$e.container.addChild(draw);
+			game.$e.container.setChildIndex(draw, 0);
 		}
 		
 		if(!draw.graphicsData)
@@ -181,30 +178,27 @@ window.gameFunctions.gameRender = function(){
 	}
 	
 	var updateNames = function(player) {
-		if(!player || !player.nameText)
+		if(!player || !player.nameText || player.teammate)
 			return;
 		
 		var nameText = player.nameText;
 		
-		if(player.teammate == true)
-		{	
-			nameText.style.fill = "#00ffff";
-			nameText.visible = true;
-		}
-		else if(window.gameVars.Input.Cheat.ShowNamesPressed)
+		if(window.gameVars.Input.Cheat.ShowNamesPressed)
 		{
-			nameText.style.fill = "#ff3333";
+			nameText.tint = 0x68B0E8;
 			nameText.visible = true;
 		}
 		else
 		{	
-			nameText.style.fill = "#00ffff";
+			nameText.tint = 0XFFFFFF;
 			nameText.visible = false;
 		}
 	}
 	
 	try {
-		var players = game.playerBarn.playerPool.pool.filter(p => p.__id != game.activePlayer.__id);
+		//game.playerBarn.playerPool.pool
+		//game.activePlayer
+		var players = game.ke.We.me.filter(p => p.__id != game.$e.__id); 
 		
 		players.forEach(updateTargetIndicator);
 		players.forEach(updateNames);
@@ -293,11 +287,4 @@ window.gameFunctions.gameRender = function(){
 		window.gameVars.UI.FPSText.text("FPS: " + Math.round(FPS));
 		window.gameVars.UI.FPSText.css('color', colorToString(FPSCol));
 	}
-	
-	//counters display
-	
-	if(window.gameVars && window.gameVars.UI && window.gameVars.UI.CountersWrapper) {
-		window.gameVars.UI.CountersWrapper.css("display", window.menu.UserSetting.look.countersEnabled ? "block" : "none");
-	}
-	
 }

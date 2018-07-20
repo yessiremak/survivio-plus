@@ -1,18 +1,14 @@
 {
 	"name": "SURVIV.IO Cheat",
-	"version": "0.15.2",
+	"version": "0.15.3",
 	"description": "Cheat for surviv.io game.",
 	"permissions": [
-		"tabs",
-        "webRequest",
-        "webRequestBlocking",
-		"webNavigation",
 		"*://surviv.io/*",
 		"*://surviv2.io/*",
 		"*://2dbattleroyale.com/*"
 	],
 	"browser_action": {
-		"default_title": "SURVIV.IO Cheat",
+		"default_title": "SURVIV.IO Cheat Dev",
 		"default_icon": "128.png"
 	},
 	"icons": {
@@ -38,16 +34,8 @@
 		"payload/FPSCounter.html",
 		"payload/glitchLogo.css",
 		"third_party/jquery-3.3.1.min.js",
-		"webpack_override.js",
-		"webpack_detect.js"
+		"webpack_override.js"
 	],
-	"externally_connectable": {
-		"matches": [
-			"*://surviv.io/*",
-			"*://surviv2.io/*",
-			"*://2dbattleroyale.com/*"
-		]
-	},
 	"content_scripts": [{
 		"matches": [
 			"*://surviv.io/*",
@@ -62,10 +50,6 @@
 		],
 		"run_at": "document_start"
 	}],
-	"background": {
-        "scripts": ["webpack_intercept.js"],
-        "persistent": true
-    },
 	"manifest_version": 2,
 	"content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'"
 }
