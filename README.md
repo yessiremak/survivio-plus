@@ -1,3 +1,5 @@
+![alt text](https://puu.sh/B03Pw/9a547140e8.PNG "Survivio Banner")
+
 # Getting Started
 
 This is a Surviv.io cheat loaded as a Chrome extension. It was originally developed by reuke, but since he has been away, I've decided to take ownership of the development of the code.
