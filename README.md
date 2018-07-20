@@ -19,7 +19,7 @@ Yes, it currently works.
 
 ## Installation
 
-Download this repo as a ZIP file. Extract the ZIP file you just downloaded. 
+Download [this repo as a ZIP file](https://github.com/Kalaborative/survivio-cheat/archive/master.zip). Extract the ZIP file you just downloaded. 
 Go to `chrome://extensions` in your browser. Make sure you have Developer Mode activated.
 Click "Load Unpacked" and select the folder that you extracted (called `survivio-cheat-master`)
 Open surviv.io.
