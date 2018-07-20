@@ -24,26 +24,34 @@ Click "Load Unpacked" and select the folder that you extracted (called `survivio
 Open surviv.io.
 
 ## 🤔 FAQ
-**What do I do if the cheat stops working?**
+> What do I do if the cheat stops working?
+
 This usually means the game's code was patched (meaning they updated it where variables and functionality has changed). If this happens, the most you can do is create an issue. Give it some time and the cheat will work again.
 
-**This feature isn't working for me! WTF?**
+> This feature isn't working for me! WTF?
+
 Relax. Open the console (Hit F12), and copy what the error is, and just [create an issue](https://github.com/Kalaborative/survivio-cheat/issues).
 
-**Does this hack give you infinite health?**
-No. 
+> Does this hack give you infinite health?
 
-**What about slowdown of bullets?**
+No.
+
+> What about slowdown of bullets?
+
 Nope.
 
-**Okay, what about auto trigger?**
+> Okay, what about auto trigger?
+
 It's being looked into. Could be a possibility.
 
-**What is "bump fire"?**
+> What is "bump fire"?
+
 This is a feature for specific non-automatic guns (guns that you cannot hold down the left-click to shoot). By holding down left-click for these guns, they fire at the fastest rate acting like an automatic. (Think of it like an autoclicker.)
 
-**Why isn't this on the Chrome Web Store?**
+> Why isn't this on the Chrome Web Store?
+
 This was on the store before, but it got taken down (not sure why). I could try uploading it myself, but this will be the safest route for now.
 
-**Are pull requests allowed?**
+> Are pull requests allowed?
+
 Your contributions are always welcome. If you see something that should be improved or a feature added, feel free to fork this repo and create a PR. 
