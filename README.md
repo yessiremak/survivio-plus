@@ -2,7 +2,7 @@
 
 # Surviv.io Cheat! 😃
 
-This is a Surviv.io cheat loaded as a Chrome extension. It was originally developed by reuke, but since he has been away, I've decided to take ownership of the development of the code.
+This is a Surviv.io cheat loaded as a Chrome extension. It was originally developed by [reuke](https://github.com/reuke), but since he has been away, I've decided to take ownership of the development of the code.
 
 ### 💪 Features
 
