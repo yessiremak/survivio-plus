@@ -14,7 +14,8 @@ This is a Surviv.io cheat loaded as a Chrome extension. It was originally develo
 * Transparent buildings, ceilings, obstacles, and trees
 * Lasersight (shot range)
 * Frag grenade timer
-* Custom key bindings 
+* Custom key bindings
+* **New!** Custom cursors
 
 ## 🔨 Installation
 
