@@ -322,7 +322,7 @@ window.gameFunctions.gameUpdate = function(){
 		
 		else if(loot.name.includes('backpack') && loot.name > game.et.j.backpack) return true;
 		else if(loot.name.includes('chest') && loot.name > game.et.j.chest) return true;
-		else if(loot.name.includes('helmet') && loot.name > game.et.j.felmet) return true;
+		else if(loot.name.includes('helmet') && loot.name > game.et.j.helmet) return true;
 		else if(game.et.N.inventory.hasOwnProperty(loot.name)){
 				
 			var backpackLvls = parseInt(game.et.j.backpack.match(/\d/g).join(""));
