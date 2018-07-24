@@ -194,6 +194,49 @@ window.gameFunctions.gameRender = function(){
 			nameText.visible = false;
 		}
 	}
+
+	var updateCustomCursor = function() {
+		var cursor = window.menu.UserSetting.look.customCursorLevel;
+		// if (cursor == 1) {
+		// 	$('#game-area-wrapper').css('cursor', 'url(http://cdn.ogario.ovh/static/img/cursors/cursor_06.cur), default');
+		// } else {
+		// 	$('#game-area-wrapper').css('cursor', 'crosshair');
+		// }
+		switch (cursor) {
+			case 1:
+				$("#game-area-wrapper").css('cursor', 'url(http://cdn.ogario.ovh/static/img/cursors/cursor_01.cur), default');
+				break;
+			case 2:
+				$('#game-area-wrapper').css('cursor', 'url(http://cdn.ogario.ovh/static/img/cursors/cursor_06.cur), default');
+				break;
+			case 3:
+				$("#game-area-wrapper").css('cursor', 'url(http://cur.cursors-4u.net/cursors/cur-11/cur1054.cur), default');
+				break;
+			case 4:
+				$("#game-area-wrapper").css('cursor', 'url(http://cur.cursors-4u.net/games/gam-11/gam1088.cur), default');
+				break;
+			case 5:
+				$("#game-area-wrapper").css('cursor', 'url(http://ani.cursors-4u.net/cursors/cur-12/cur1080.cur), default');
+				break;
+			case 6:
+				$("#game-area-wrapper").css('cursor', 'url(http://cur.cursors-4u.net/cursors/cur-1/cur5.cur), default');
+				break;
+			case 7:
+				$("#game-area-wrapper").css('cursor', 'url(http://cur.cursors-4u.net/games/gam-14/gam1384.cur), default');
+				break;
+			case 8:
+				$("#game-area-wrapper").css('cursor', 'url(http://cur.cursors-4u.net/cursors/cur-2/cur120.cur), default');
+				break;
+			case 9:
+				$("#game-area-wrapper").css('cursor', 'url(http://cur.cursors-4u.net/games/gam-14/gam1394.cur), default');
+				break;
+			case 10:
+				$("#game-area-wrapper").css('cursor', 'url(http://cur.cursors-4u.net/user/use-1/use153.cur), default');
+				break;
+			default:
+				$('#game-area-wrapper').css('cursor', 'crosshair');
+		}
+	}
 	
 	try {
 		//game.playerBarn.playerPool.pool
@@ -204,6 +247,7 @@ window.gameFunctions.gameRender = function(){
 		players.forEach(updateNames);
 		updateLaser();
 		updateEnemyLines();
+		updateCustomCursor();
 	}
 	catch(error)
 	{

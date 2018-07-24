@@ -52,6 +52,7 @@
 					smokeAlphaEnabled: 				true,
 					smokeAlphaLevel:				0.15,
 					enemyLinesEnabled: 				true,
+					customCursorLevel:            0,
 				},
 				binds: {
 					autoAim: {code: -3, shift: false, ctrl: false, alt: false},
@@ -162,6 +163,7 @@
 				smokeAlphaEnabled: 				btnGetState("smokeAlphaEnabled"),
 				smokeAlphaLevel:				sliderGetValue("smokeAlphaLevel"),
 				enemyLinesEnabled: 				btnGetState("enemyLinesEnabled"),
+				customCursorLevel: 				sliderGetValue("customCursorLevel"),
 			};
 		}
 			
@@ -233,6 +235,7 @@
 			btnSetState("smokeAlphaEnabled",				state.smokeAlphaEnabled);
 			sliderSetValue("smokeAlphaLevel",				state.smokeAlphaLevel);
 			btnSetState("enemyLinesEnabled",				state.enemyLinesEnabled);
+			sliderSetValue("customCursorLevel", 			state.customCursorLevel);
 			
 			//binds
 			state = window.menu.UserSetting.binds;
