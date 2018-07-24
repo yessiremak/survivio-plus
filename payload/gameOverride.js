@@ -15,11 +15,11 @@ window.gameFunctions.gameOverride = function(){
 		return baseCameraTargetZoom;
 	});
 	
-	var baseZoomFast = this.$e.zoomFast;
-	this.$e.__defineSetter__("zoomFast", function(val){
+	var baseZoomFast = this.et.zoomFast;
+	this.et.__defineSetter__("zoomFast", function(val){
 		baseZoomFast = val;
 	});
-	this.$e.__defineGetter__("zoomFast", function(){
+	this.et.__defineGetter__("zoomFast", function(){
 		if(window.menu && window.menu.UserSetting.look.zoomEnabled)
 			return true;
 		
@@ -28,7 +28,7 @@ window.gameFunctions.gameOverride = function(){
 	
 	// INPUT
 	
-	var inpt = this.ge;
+	var inpt = this.fe;
 	
 	var processInput = function(bind, down){
 		
@@ -160,16 +160,16 @@ window.gameFunctions.gameOverride = function(){
 	
 	// keyboard
 	
-	var onKeyDownBase = this.ge.onKeyDown;
-	this.ge.onKeyDown = function(e){
+	var onKeyDownBase = this.fe.onKeyDown;
+	this.fe.onKeyDown = function(e){
 		processInput({code: e.keyCode, shift: e.shiftKey, ctrl: e.ctrlKey, alt: e.altKey}, true);
 		if(e.keyCode == 16) return window.gameVars.Input.Keyboard.ShiftPressed = true;
 		if(e.keyCode == 17) return window.gameVars.Input.Keyboard.CtrlPressed = true;
 		if(e.keyCode == 18) return window.gameVars.Input.Keyboard.AltPressed = true;
 		window.gameVars.Input.Keyboard.AnythingElsePressed += 1;
 	};
-	var onKeyUpBase = this.ge.onKeyUp;
-	this.ge.onKeyUp = function(e){
+	var onKeyUpBase = this.fe.onKeyUp;
+	this.fe.onKeyUp = function(e){
 		processInput({code: e.keyCode, shift: e.shiftKey, ctrl: e.ctrlKey, alt: e.altKey}, false);
 		if(e.keyCode == 16) return window.gameVars.Input.Keyboard.ShiftPressed = false;
 		if(e.keyCode == 17) return window.gameVars.Input.Keyboard.CtrlPressed = false;
@@ -189,8 +189,8 @@ window.gameFunctions.gameOverride = function(){
 	
 	// mouse
 	
-	var onMouseMoveBase = this.ge.onMouseMove;
-	this.ge.onMouseMove = function(e){
+	var onMouseMoveBase = this.fe.onMouseMove;
+	this.fe.onMouseMove = function(e){
 		if(window.gameVars){
 			window.gameVars.Input.Mouse.Pos.x = e.clientX;
 			window.gameVars.Input.Mouse.Pos.y = e.clientY;
@@ -207,16 +207,16 @@ window.gameFunctions.gameOverride = function(){
 		
 		onMouseMoveBase.call(inpt, e);
 	};
-	var onMouseDownBase = this.ge.onMouseDown;
-	this.ge.onMouseDown = function(e){
+	var onMouseDownBase = this.fe.onMouseDown;
+	this.fe.onMouseDown = function(e){
 		processInput({code: e.button * -1 - 1, shift: e.shiftKey, ctrl: e.ctrlKey, alt: e.altKey}, true);
 	};
-	var onMouseUpBase = this.ge.onMouseUp;
-	this.ge.onMouseUp = function(e){
+	var onMouseUpBase = this.fe.onMouseUp;
+	this.fe.onMouseUp = function(e){
 		processInput({code: e.button * -1 - 1, shift: e.shiftKey, ctrl: e.ctrlKey, alt: e.altKey}, false);
 	};
-	var onMouseWheelBase = this.ge.onMouseWheel;
-	this.ge.onMouseWheel = function(e){
+	var onMouseWheelBase = this.fe.onMouseWheel;
+	this.fe.onMouseWheel = function(e){
 		e.stopPropagation();
 		if(window.gameVars && window.gameVars.Menu && !(window.gameVars.Input.GlobalHookCallback))
 			return;
@@ -228,8 +228,8 @@ window.gameFunctions.gameOverride = function(){
 		}, true);
 	};
 	
-	var inputKeyPressedBase = this.ge.K;
-	this.ge.K = function(e){
+	var inputKeyPressedBase = this.fe.K;
+	this.fe.K = function(e){
 		if(window.gameVars)
 		{
 			if(window.gameVars.Input.Cheat.RepeatInteraction && e == 70)
@@ -239,16 +239,16 @@ window.gameFunctions.gameOverride = function(){
 		return inputKeyPressedBase.call(inpt, e);
 	};
 	
-	var inputMousePressedBase = this.ge.$;
-	this.ge.$ = function(){
+	var inputMousePressedBase = this.fe.$;
+	this.fe.$ = function(){
 		if(window.gameVars && window.gameVars.Input.Cheat.RepeatFire)
 			return true;
 		
 		return inputMousePressedBase.call(inpt);
 	};
 	
-	var inputMouseDownBase = this.ge.Z;
-	this.ge.Z = function(){
+	var inputMouseDownBase = this.fe.Z;
+	this.fe.Z = function(){
 		if(window.gameVars && window.gameVars.Input.Cheat.RepeatFire)
 			return false;
 		

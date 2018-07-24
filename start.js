@@ -1,8 +1,7 @@
-var runScript = function(scriptName, callOnLoad, isAsync) {
+var runScript = function(scriptName, callOnLoad) {
 	try {
 		var e =  document.createElement('script');
 		e.src = chrome.extension.getURL(scriptName);
-		e.async = !!isAsync;
 		(document.head || document.documentElement).appendChild(e);
 		e.onload = function() {
 			e.parentNode.removeChild(e);
@@ -11,9 +10,6 @@ var runScript = function(scriptName, callOnLoad, isAsync) {
 		};
 	} catch (e) {}
 };
-
-// injection point lookup
-runScript('webpack_detect.js', false, true);
 
 var loadFile = function(fileName) {
 	try{

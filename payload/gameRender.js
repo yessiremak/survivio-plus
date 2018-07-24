@@ -66,9 +66,9 @@ window.gameFunctions.gameRender = function(){
 		smoke.particle.sprite.alpha *= setting.smokeAlphaLevel;
 	}
 
-	game.Ie.e.me.forEach(updateSmokeAplha);
-	game._e.H.me.forEach(updateObstacleAlpha);
-	game._e.Xe.me.forEach(updateBuildingCeilingAplha);
+	game.Ae.e.me.forEach(updateSmokeAplha);
+	game.ve.H.me.forEach(updateObstacleAlpha);
+	game.ve.Ye.me.forEach(updateBuildingCeilingAplha);
 
 	var updateTargetIndicator = function(player) {
 		if(!player || !player.prediction)
@@ -98,7 +98,7 @@ window.gameFunctions.gameRender = function(){
 	}
 	
 	var updateLaser = function() {
-		if(!game.$e || !game.$e.container)
+		if(!game.et || !game.et.container)
 			return;
 		
 		var laser = window.gameVars.Game.Laser;
@@ -110,8 +110,8 @@ window.gameFunctions.gameRender = function(){
 			draw = new window.PIXI.Graphics();
 			
 			laser.draw = draw;
-			game.$e.container.addChild(draw);
-			game.$e.container.setChildIndex(draw, 0);
+			game.et.container.addChild(draw);
+			game.et.container.setChildIndex(draw, 0);
 		}
 		
 		if(!draw.graphicsData)
@@ -138,7 +138,7 @@ window.gameFunctions.gameRender = function(){
 	}
 	
 	var updateEnemyLines = function() {
-		if(!game.$e || !game.$e.container)
+		if(!game.et || !game.et.container)
 			return;
 		
 		var enemyLines = window.gameVars.Game.EnemyLines;
@@ -154,8 +154,8 @@ window.gameFunctions.gameRender = function(){
 			draw = new window.PIXI.Graphics();
 			
 			enemyLines.draw = draw;
-			game.$e.container.addChild(draw);
-			game.$e.container.setChildIndex(draw, 0);
+			game.et.container.addChild(draw);
+			game.et.container.setChildIndex(draw, 0);
 		}
 		
 		if(!draw.graphicsData)
@@ -198,7 +198,7 @@ window.gameFunctions.gameRender = function(){
 	try {
 		//game.playerBarn.playerPool.pool
 		//game.activePlayer
-		var players = game.ke.We.me.filter(p => p.__id != game.$e.__id); 
+		var players = game.Se.He.me.filter(p => p.__id != game.et.__id); 
 		
 		players.forEach(updateTargetIndicator);
 		players.forEach(updateNames);

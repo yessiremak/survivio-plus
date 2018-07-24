@@ -1,14 +1,14 @@
 (function webpack_inject(){
 	
 	window.obfuscate = {
-		mainModule: 'ct', //16176
+		mainModule: 'mt', //16176
 		
 		init: 'a', //15589
 		free: 'o',
 		update: 'l', //15710
-		render: 'ot',
-		sendMessage: 'lt',
-		processGameUpdate: 'rt',
+		render: 'rt',
+		sendMessage: 'ct',
+		processGameUpdate: 'nt',
 		
 		camera: 'B', //15723
 		targetZoom: 'f',
@@ -52,6 +52,7 @@
         "webpack_inject": function (wrapper, exports, getModule) {
 
             var mainModule = getModule("9b5f96fd")[obfuscate.mainModule];
+            // console.log(mainModule);
 						
 			// init
 			var gameInitBase = mainModule.prototype[obfuscate.init];
@@ -101,8 +102,8 @@
 			var emoteModule = getModule("e5d16b4d");
 			
 			// override
-			var emoteManagerUpdateBase = emoteModule.Ge.prototype.l; //emoteModule.EmoteManager.prototype.update
-			emoteModule.Ge.prototype.l = function(){ 
+			var emoteManagerUpdateBase = emoteModule.Ue.prototype.l; //emoteModule.EmoteManager.prototype.update
+			emoteModule.Ue.prototype.l = function(){ 
 				if(!this.override)
 					window.gameFunctions.pingOverride.call(this);
 				
