@@ -4,8 +4,6 @@
 
 This is a Surviv.io cheat loaded as a Chrome extension. It was originally developed by [reuke](https://github.com/reuke), but since he has been away, I've decided to take ownership of the development of the code.
 
-### Working?
-**No. Please remain calm is the code is being updated.**
 
 ### 💪 Features
 
