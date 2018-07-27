@@ -66,9 +66,9 @@ window.gameFunctions.gameRender = function(){
 		smoke.particle.sprite.alpha *= setting.smokeAlphaLevel;
 	}
 
-	game.Ae.e.me.forEach(updateSmokeAplha);
-	game.ve.H.me.forEach(updateObstacleAlpha);
-	game.ve.Ye.me.forEach(updateBuildingCeilingAplha);
+	game.Re.e.pe.forEach(updateSmokeAplha);
+	game.ke.Y.pe.forEach(updateObstacleAlpha);
+	game.ke.at.pe.forEach(updateBuildingCeilingAplha);
 
 	var updateTargetIndicator = function(player) {
 		if(!player || !player.prediction)
@@ -98,7 +98,8 @@ window.gameFunctions.gameRender = function(){
 	}
 	
 	var updateLaser = function() {
-		if(!game.et || !game.et.container)
+		// check this function with console logs.
+		if(!game.st || !game.st.container)
 			return;
 		
 		var laser = window.gameVars.Game.Laser;
@@ -110,16 +111,15 @@ window.gameFunctions.gameRender = function(){
 			draw = new window.PIXI.Graphics();
 			
 			laser.draw = draw;
-			game.et.container.addChild(draw);
-			game.et.container.setChildIndex(draw, 0);
+			game.st.container.addChild(draw);
+			game.st.container.setChildIndex(draw, 0);
 		}
 		
 		if(!draw.graphicsData)
 			return;
-		
 		draw.clear();
 		
-		if(!laser.active || !window.menu.UserSetting.shoot.lasersightEnabled)
+		if(!laser.active || !window.menu.UserSetting.shoot.lasersightEnabled) 
 			return;
 		
 		var center = {x: 0, y: 0}
@@ -138,7 +138,7 @@ window.gameFunctions.gameRender = function(){
 	}
 	
 	var updateEnemyLines = function() {
-		if(!game.et || !game.et.container)
+		if(!game.st || !game.st.container)
 			return;
 		
 		var enemyLines = window.gameVars.Game.EnemyLines;
@@ -154,8 +154,8 @@ window.gameFunctions.gameRender = function(){
 			draw = new window.PIXI.Graphics();
 			
 			enemyLines.draw = draw;
-			game.et.container.addChild(draw);
-			game.et.container.setChildIndex(draw, 0);
+			game.st.container.addChild(draw);
+			game.st.container.setChildIndex(draw, 0);
 		}
 		
 		if(!draw.graphicsData)
@@ -241,8 +241,8 @@ window.gameFunctions.gameRender = function(){
 	try {
 		//game.playerBarn.playerPool.pool
 		//game.activePlayer
-		var players = game.Se.He.me.filter(p => p.__id != game.et.__id); 
-		
+		var players = game.Me.$e.pe.filter(p => p.__id != game.st.__id); 
+		//check the above
 		players.forEach(updateTargetIndicator);
 		players.forEach(updateNames);
 		updateLaser();
