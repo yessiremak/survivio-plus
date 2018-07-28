@@ -66,9 +66,9 @@ window.gameFunctions.gameRender = function(){
 		smoke.particle.sprite.alpha *= setting.smokeAlphaLevel;
 	}
 
-	game.Re.e.pe.forEach(updateSmokeAplha);
-	game.ke.Y.pe.forEach(updateObstacleAlpha);
-	game.ke.at.pe.forEach(updateBuildingCeilingAplha);
+	game.Fe.e.pe.forEach(updateSmokeAplha);
+	game.Se.Y.pe.forEach(updateObstacleAlpha);
+	game.Se.tt.pe.forEach(updateBuildingCeilingAplha);
 
 	var updateTargetIndicator = function(player) {
 		if(!player || !player.prediction)
@@ -99,7 +99,7 @@ window.gameFunctions.gameRender = function(){
 	
 	var updateLaser = function() {
 		// check this function with console logs.
-		if(!game.st || !game.st.container)
+		if(!game.nt || !game.nt.container)
 			return;
 		
 		var laser = window.gameVars.Game.Laser;
@@ -111,8 +111,8 @@ window.gameFunctions.gameRender = function(){
 			draw = new window.PIXI.Graphics();
 			
 			laser.draw = draw;
-			game.st.container.addChild(draw);
-			game.st.container.setChildIndex(draw, 0);
+			game.nt.container.addChild(draw);
+			game.nt.container.setChildIndex(draw, 0);
 		}
 		
 		if(!draw.graphicsData)
@@ -138,7 +138,7 @@ window.gameFunctions.gameRender = function(){
 	}
 	
 	var updateEnemyLines = function() {
-		if(!game.st || !game.st.container)
+		if(!game.nt || !game.nt.container)
 			return;
 		
 		var enemyLines = window.gameVars.Game.EnemyLines;
@@ -154,8 +154,8 @@ window.gameFunctions.gameRender = function(){
 			draw = new window.PIXI.Graphics();
 			
 			enemyLines.draw = draw;
-			game.st.container.addChild(draw);
-			game.st.container.setChildIndex(draw, 0);
+			game.nt.container.addChild(draw);
+			game.nt.container.setChildIndex(draw, 0);
 		}
 		
 		if(!draw.graphicsData)
@@ -241,7 +241,7 @@ window.gameFunctions.gameRender = function(){
 	try {
 		//game.playerBarn.playerPool.pool
 		//game.activePlayer
-		var players = game.Me.$e.pe.filter(p => p.__id != game.st.__id); 
+		var players = game.ze.Qe.pe.filter(p => p.__id != game.nt.__id); 
 		//check the above
 		players.forEach(updateTargetIndicator);
 		players.forEach(updateNames);
