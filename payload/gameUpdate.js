@@ -139,28 +139,28 @@ window.gameFunctions.gameUpdate = function(){
 		return (window.performance.now() - time);
 	};
 	var detectEnimies = function() {
-		if(!game.ze.bt[game.ce]) return [];
+		if(!game.Me._t[game.ce]) return [];
 		var selfId = game.ce;
-		var selfTeamId = game.ze.bt[game.ce].teamId;
-		var objectIds = Object.keys(game.ot.idToObj);
-		var playerIds = Object.keys(game.ze.bt);
+		var selfTeamId = game.Me._t[game.ce].teamId;
+		var objectIds = Object.keys(game.rt.idToObj);
+		var playerIds = Object.keys(game.Me._t);
 		
 		var isTeammate = function(plrId, plrObj) {
-			var isTmmt = game.ze.bt[plrId].teamId == selfTeamId;
+			var isTmmt = game.Me._t[plrId].teamId == selfTeamId;
 			plrObj.teammate = isTmmt;
 			return isTmmt;
 		}
 
 		return playerIds
 			.filter(function(id) {
-				var playerObject = game.ot.idToObj[id];
+				var playerObject = game.rt.idToObj[id];
 				return playerObject && 
 				(!isTeammate(id, playerObject)) &&
 				(!playerObject.q.dead) && 
 				(!playerObject.q.downed) &&
 				id != selfId;})
 			.map(function(id) {
-				return game.ot.idToObj[id];
+				return game.rt.idToObj[id];
 		});
 	}
 	
@@ -260,25 +260,25 @@ window.gameFunctions.gameUpdate = function(){
 	};
 	
 	var runTimer = function (timerText, timerTime) {
-		if(!game.Ve || (game.Ve.timerTimeout && getSecondsElapsed(game.Ve.timerTimeout) < 0.1))
+		if(!game.He || (game.He.timerTimeout && getSecondsElapsed(game.He.timerTimeout) < 0.1))
 			return;
 		
-		game.Ve.o();
-		game.Ve.a(() => {stopTimer()}, timerTime, timerText, false);
+		game.He.o();
+		game.He.a(() => {stopTimer()}, timerTime, timerText, false);
 	};
 
 	var stopTimer = function() {
-		if(!game.Ve)
+		if(!game.He)
 			return;
 		
-		game.Ve.o();
+		game.He.o();
 		
-		game.Ve.timerBackground._tint = 16777215;
-		game.Ve.outerCircle._tint = 16777215;
-		game.Ve.counterText._tint = 16777215;
-		game.Ve.labelText._tint = 16777215;
+		game.He.timerBackground._tint = 16777215;
+		game.He.outerCircle._tint = 16777215;
+		game.He.counterText._tint = 16777215;
+		game.He.labelText._tint = 16777215;
 		
-		game.Ve.timerTimeout = performance.now();
+		game.He.timerTimeout = performance.now();
 	};
 	
 	var getLootRange = function(loot) {	
@@ -287,7 +287,7 @@ window.gameFunctions.gameUpdate = function(){
 
 	var needToLoot = function() {
 					
-		var loot = game.Ne.xt;
+		var loot = game.qe.wt;
 		
 		var gunsSafeDistance = window.menu.UserSetting.loot.autolootSafeDistance;
 		
@@ -298,7 +298,7 @@ window.gameFunctions.gameUpdate = function(){
 		
 		var needGuns = !invWeapon1 || !invWeapon2;
 		
-		var gunsNearBy = game.Ne.$e.pe.filter((l) => l.active && getLootRange(l) < gunsSafeDistance && gunNames.includes(l.name));
+		var gunsNearBy = game.qe.et.pe.filter((l) => l.active && getLootRange(l) < gunsSafeDistance && gunNames.includes(l.name));
 		
 		var isSafeToPickup = !gunNames.includes(curPlayer.weapType);
 		
@@ -319,15 +319,15 @@ window.gameFunctions.gameUpdate = function(){
 				return true;
 		}		
 		
-		else if(loot.name.includes('backpack') && loot.name > game.nt.q.backpack) return true;
-		else if(loot.name.includes('chest') && loot.name > game.nt.q.chest) return true;
-		else if(loot.name.includes('helmet') && loot.name > game.nt.q.helmet) return true;
-		else if(game.nt.U.inventory.hasOwnProperty(loot.name)){
+		else if(loot.name.includes('backpack') && loot.name > game.st.q.backpack) return true;
+		else if(loot.name.includes('chest') && loot.name > game.st.q.chest) return true;
+		else if(loot.name.includes('helmet') && loot.name > game.st.q.helmet) return true;
+		else if(game.st.U.inventory.hasOwnProperty(loot.name)){
 				
-			var backpackLvls = parseInt(game.nt.q.backpack.match(/\d/g).join(""));
+			var backpackLvls = parseInt(game.st.q.backpack.match(/\d/g).join(""));
 				
 			var max = gameData.bagSizes[loot.name][backpackLvls];
-			var cur = game.nt.U.inventory[loot.name];
+			var cur = game.st.U.inventory[loot.name];
 				
 			if(cur < max)
 				return true;
@@ -369,7 +369,7 @@ window.gameFunctions.gameUpdate = function(){
 		}
 	}
 	
-	var curPlayer = game.nt;
+	var curPlayer = game.st;
 
 	if(!curPlayer)
 		return;
@@ -500,29 +500,29 @@ window.gameFunctions.gameUpdate = function(){
 	
 	// Grenade timer
 	
-	if(window.menu.UserSetting.shoot.fragGrenadeTimerEnabled && curPlayer.weapType == "frag" && !game.Ve.active && game.fe.mouseButton)
+	if(window.menu.UserSetting.shoot.fragGrenadeTimerEnabled && curPlayer.weapType == "frag" && !game.He.active && game.xe.mouseButton)
 		runTimer("GRENADE", 4.0);
 	
-	if(game.Ve.active  && game.Ve.clientData.label == "GRENADE")
+	if(game.He.active  && game.He.clientData.label == "GRENADE")
 	{
-		if(!game.fe.mouseButton)
+		if(!game.xe.mouseButton)
 		{
 			stopTimer();
 			return;
 		}
 		
-		if(game.Ve.clientData.duration - game.Ve.clientData.elapsed < grenadeTimerWarning)
+		if(game.He.clientData.duration - game.He.clientData.elapsed < grenadeTimerWarning)
 		{
-			game.Ve.timerBackground._tint = 0xff0000;
-			game.Ve.outerCircle._tint = 0xff0000;
-			game.Ve.counterText._tint = 0xff0000;
-			game.Ve.labelText._tint = 0xff0000;
+			game.He.timerBackground._tint = 0xff0000;
+			game.He.outerCircle._tint = 0xff0000;
+			game.He.counterText._tint = 0xff0000;
+			game.He.labelText._tint = 0xff0000;
 		}
 	}
 	
 	// Bump fire
 	// console.log(autoFireGuns.includes(curPlayer.weapType));
-	window.gameVars.Input.Cheat.RepeatFire = !window.gameVars.Menu && window.menu.UserSetting.shoot.bumpFireEnabled && game.fe.mouseButton && autoFireGuns.includes(curPlayer.weapType);
+	window.gameVars.Input.Cheat.RepeatFire = !window.gameVars.Menu && window.menu.UserSetting.shoot.bumpFireEnabled && game.xe.mouseButton && autoFireGuns.includes(curPlayer.weapType);
 	
 	// Auto loot	
 	window.gameVars.Input.Cheat.RepeatInteraction = window.menu.UserSetting.loot.autolootEnabled && (getSecondsElapsed(state.LastTimeDropItem) > window.menu.UserSetting.loot.autolootDropDelay) && needToLoot();
