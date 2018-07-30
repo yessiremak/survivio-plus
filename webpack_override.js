@@ -1,50 +1,47 @@
 (function webpack_inject(){
 	
 	window.obfuscate = {
-		mainModule: 'xt', //16176
+		mainModule: 'xt',
 		
-		init: 'a', //15589
+		init: 'a',
 		free: 'o',
-		update: 'l', //15710
+		update: 'l',
 		render: 'pt',
 		sendMessage: 'ft',
 		processGameUpdate: 'ut',
 		
-		camera: 'B', //15723
+		camera: 'N',
 		targetZoom: 'f',
-		activePlayer: 'Je', //15641
-		localData: 'j',
-		objectCreator: 'Ye', //15623
-		netData: 'B',
-		activeId: 'se', //15640
+		activePlayer: 'st',
+		localData: 'U',
+		objectCreator: 'rt', //15623
+		netData: 'q',
+		activeId: 'ce', //15640
 		
-		playerInfo: 'dt',
-		playerBarn: 've', //15597
-		playerPool: 'Ge',
-		pool: 'ce',		
+		playerInfo: '_t',
+		playerBarn: 'Me',
+		playerPool: '$e',
+		pool: 'pe',		
 		
-		smokeBarn: 'Ce', //15621
+		smokeBarn: 'Re',
 		smokePool: 'e',	
 		
-		lootBarn: 'Ae', //15614
-		lootPool: 'Ue',		
-		closestLoot: 'lt',
+		lootBarn: 'qe', //15614
+		lootPool: 'et',		
+		closestLoot: 'wt',
 		
-		map: 'we', //15613
-		obstaclePool: 'U', 
-		buildingPool: 'He',	//15617
+		map: 'ke', //15613
+		obstaclePool: 'Y', 
+		buildingPool: 'at',	//15617
 		
-		input: 'ue', //15591	
-		keyPressed: 'K', //7755
-		mousePressed: 'J', //7780
-		mouseDown: 'Z',
+		input: 'xe',	
+		keyPressed: 'Z', //7755
+		mousePressed: 'te', //7780
+		mouseDown: '$',
 		
-		pieTimer: 'Ee',	//15606
-		init: 'a',
-		free: 'o',		
+		pieTimer: 'He',	//15606		
 		
-		EmoteManager: 'Ve', //32478
-		update: 'l' //32208		
+		EmoteManager: 'Ve', //32478	
 	};
 	
 	

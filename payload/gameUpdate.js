@@ -1,5 +1,4 @@
 window.gameFunctions = window.gameFunctions || {};
-// insert some console logs to see where the code is breaking.
 window.gameFunctions.gameSendMessage = function(messageCode, messageData){
 	if(!window.gameVars)
 		return;
@@ -139,28 +138,28 @@ window.gameFunctions.gameUpdate = function(){
 		return (window.performance.now() - time);
 	};
 	var detectEnimies = function() {
-		if(!game.Me._t[game.ce]) return [];
-		var selfId = game.ce;
-		var selfTeamId = game.Me._t[game.ce].teamId;
-		var objectIds = Object.keys(game.rt.idToObj);
-		var playerIds = Object.keys(game.Me._t);
+		if(!game[obfuscate.playerBarn][obfuscate.playerInfo][game[obfuscate.activeId]]) return [];
+		var selfId = game[obfuscate.activeId];
+		var selfTeamId = game[obfuscate.playerBarn][obfuscate.playerInfo][game[obfuscate.activeId]].teamId;
+		var objectIds = Object.keys(game[obfuscate.objectCreator].idToObj);
+		var playerIds = Object.keys(game[obfuscate.playerBarn][obfuscate.playerInfo]);
 		
 		var isTeammate = function(plrId, plrObj) {
-			var isTmmt = game.Me._t[plrId].teamId == selfTeamId;
+			var isTmmt = game[obfuscate.playerBarn][obfuscate.playerInfo][plrId].teamId == selfTeamId;
 			plrObj.teammate = isTmmt;
 			return isTmmt;
 		}
 
 		return playerIds
 			.filter(function(id) {
-				var playerObject = game.rt.idToObj[id];
+				var playerObject = game[obfuscate.objectCreator].idToObj[id];
 				return playerObject && 
 				(!isTeammate(id, playerObject)) &&
-				(!playerObject.q.dead) && 
-				(!playerObject.q.downed) &&
+				(!playerObject[obfuscate.netData].dead) && 
+				(!playerObject[obfuscate.netData].downed) &&
 				id != selfId;})
 			.map(function(id) {
-				return game.rt.idToObj[id];
+				return game[obfuscate.objectCreator].idToObj[id];
 		});
 	}
 	
@@ -260,25 +259,25 @@ window.gameFunctions.gameUpdate = function(){
 	};
 	
 	var runTimer = function (timerText, timerTime) {
-		if(!game.He || (game.He.timerTimeout && getSecondsElapsed(game.He.timerTimeout) < 0.1))
+		if(!game[obfuscate.pieTimer] || (game[obfuscate.pieTimer].timerTimeout && getSecondsElapsed(game[obfuscate.pieTimer].timerTimeout) < 0.1))
 			return;
 		
-		game.He.o();
-		game.He.a(() => {stopTimer()}, timerTime, timerText, false);
+		game[obfuscate.pieTimer][obfuscate.free]();
+		game[obfuscate.pieTimer][obfuscate.init](() => {stopTimer()}, timerTime, timerText, false);
 	};
 
 	var stopTimer = function() {
-		if(!game.He)
+		if(!game[obfuscate.pieTimer])
 			return;
 		
-		game.He.o();
+		game[obfuscate.pieTimer][obfuscate.free]();
 		
-		game.He.timerBackground._tint = 16777215;
-		game.He.outerCircle._tint = 16777215;
-		game.He.counterText._tint = 16777215;
-		game.He.labelText._tint = 16777215;
+		game[obfuscate.pieTimer].timerBackground._tint = 16777215;
+		game[obfuscate.pieTimer].outerCircle._tint = 16777215;
+		game[obfuscate.pieTimer].counterText._tint = 16777215;
+		game[obfuscate.pieTimer].labelText._tint = 16777215;
 		
-		game.He.timerTimeout = performance.now();
+		game[obfuscate.pieTimer].timerTimeout = performance.now();
 	};
 	
 	var getLootRange = function(loot) {	
@@ -287,7 +286,7 @@ window.gameFunctions.gameUpdate = function(){
 
 	var needToLoot = function() {
 					
-		var loot = game.qe.wt;
+		var loot = game[obfuscate.lootBarn][obfuscate.closestLoot];
 		
 		var gunsSafeDistance = window.menu.UserSetting.loot.autolootSafeDistance;
 		
@@ -298,7 +297,7 @@ window.gameFunctions.gameUpdate = function(){
 		
 		var needGuns = !invWeapon1 || !invWeapon2;
 		
-		var gunsNearBy = game.qe.et.pe.filter((l) => l.active && getLootRange(l) < gunsSafeDistance && gunNames.includes(l.name));
+		var gunsNearBy = game[obfuscate.lootBarn][obfuscate.lootPool][obfuscate.pool].filter((l) => l.active && getLootRange(l) < gunsSafeDistance && gunNames.includes(l.name));
 		
 		var isSafeToPickup = !gunNames.includes(curPlayer.weapType);
 		
@@ -319,15 +318,15 @@ window.gameFunctions.gameUpdate = function(){
 				return true;
 		}		
 		
-		else if(loot.name.includes('backpack') && loot.name > game.st.q.backpack) return true;
-		else if(loot.name.includes('chest') && loot.name > game.st.q.chest) return true;
-		else if(loot.name.includes('helmet') && loot.name > game.st.q.helmet) return true;
-		else if(game.st.U.inventory.hasOwnProperty(loot.name)){
+		else if(loot.name.includes('backpack') && loot.name > game[obfuscate.activePlayer][obfuscate.netData].backpack) return true;
+		else if(loot.name.includes('chest') && loot.name > game[obfuscate.activePlayer][obfuscate.netData].chest) return true;
+		else if(loot.name.includes('helmet') && loot.name > game[obfuscate.activePlayer][obfuscate.netData].helmet) return true;
+		else if(game[obfuscate.activePlayer][obfuscate.localData].inventory.hasOwnProperty(loot.name)){
 				
-			var backpackLvls = parseInt(game.st.q.backpack.match(/\d/g).join(""));
+			var backpackLvls = parseInt(game[obfuscate.activePlayer][obfuscate.netData].backpack.match(/\d/g).join(""));
 				
 			var max = gameData.bagSizes[loot.name][backpackLvls];
-			var cur = game.st.U.inventory[loot.name];
+			var cur = game[obfuscate.activePlayer][obfuscate.localData].inventory[loot.name];
 				
 			if(cur < max)
 				return true;
@@ -369,7 +368,7 @@ window.gameFunctions.gameUpdate = function(){
 		}
 	}
 	
-	var curPlayer = game.st;
+	var curPlayer = game[obfuscate.activePlayer];
 
 	if(!curPlayer)
 		return;
@@ -389,8 +388,8 @@ window.gameFunctions.gameUpdate = function(){
 			}
 		}
 	
-	var invWeapon1Name = curPlayer.U.weapons["0"].name;
-	var invWeapon2Name = curPlayer.U.weapons["1"].name;
+	var invWeapon1Name = curPlayer[obfuscate.localData].weapons["0"].name;
+	var invWeapon2Name = curPlayer[obfuscate.localData].weapons["1"].name;
 	
 	var invWeapon1 = invWeapon1Name == "" ? null : guns.find((g) => g.id == invWeapon1Name);
 	var invWeapon2 = invWeapon2Name == "" ? null : guns.find((g) => g.id == invWeapon2Name);
@@ -407,7 +406,7 @@ window.gameFunctions.gameUpdate = function(){
 	{
 		laser.active = true;
 		laser.range = curBullet.distance * mapScale;
-		laser.direction = Math.atan2(curPlayer.q.dir.x, curPlayer.q.dir.y) - Math.PI / 2;
+		laser.direction = Math.atan2(curPlayer[obfuscate.netData].dir.x, curPlayer[obfuscate.netData].dir.y) - Math.PI / 2;
 		laser.angle = (curWeapon.shotSpread + (curPlayer.moving ? curWeapon.moveSpread : 0.0)) * 0.01745329252 / 2;
 	}
 	else
@@ -451,7 +450,7 @@ window.gameFunctions.gameUpdate = function(){
 	// console.log(window.gameVars.Input.Cheat.AutoAimPressed);
 	if(window.menu.UserSetting.shoot.autoAimEnabled && window.gameVars.Input.Cheat.AutoAimPressed && enimies.length != 0)
 	{
-		var mousePos = game.N.screenToPoint(window.gameVars.Input.Mouse.Pos);
+		var mousePos = game[obfuscate.camera].screenToPoint(window.gameVars.Input.Mouse.Pos);
 
 		var mouseVec =
 		{
@@ -495,34 +494,34 @@ window.gameFunctions.gameUpdate = function(){
 		var prediction = target.prediction ? target.prediction : {x:0, y:0};
 		
 		window.gameVars.Input.Mouse.AimActive = true;
-		window.gameVars.Input.Mouse.AimPos = game.N.pointToScreen({x: pos.x + prediction.x, y: pos.y + prediction.y});
+		window.gameVars.Input.Mouse.AimPos = game[obfuscate.camera].pointToScreen({x: pos.x + prediction.x, y: pos.y + prediction.y});
 	})();
 	
 	// Grenade timer
 	
-	if(window.menu.UserSetting.shoot.fragGrenadeTimerEnabled && curPlayer.weapType == "frag" && !game.He.active && game.xe.mouseButton)
+	if(window.menu.UserSetting.shoot.fragGrenadeTimerEnabled && curPlayer.weapType == "frag" && !game[obfuscate.pieTimer].active && game[obfuscate.input].mouseButton)
 		runTimer("GRENADE", 4.0);
 	
-	if(game.He.active  && game.He.clientData.label == "GRENADE")
+	if(game[obfuscate.pieTimer].active  && game[obfuscate.pieTimer].clientData.label == "GRENADE")
 	{
-		if(!game.xe.mouseButton)
+		if(!game[obfuscate.input].mouseButton)
 		{
 			stopTimer();
 			return;
 		}
 		
-		if(game.He.clientData.duration - game.He.clientData.elapsed < grenadeTimerWarning)
+		if(game[obfuscate.pieTimer].clientData.duration - game[obfuscate.pieTimer].clientData.elapsed < grenadeTimerWarning)
 		{
-			game.He.timerBackground._tint = 0xff0000;
-			game.He.outerCircle._tint = 0xff0000;
-			game.He.counterText._tint = 0xff0000;
-			game.He.labelText._tint = 0xff0000;
+			game[obfuscate.pieTimer].timerBackground._tint = 0xff0000;
+			game[obfuscate.pieTimer].outerCircle._tint = 0xff0000;
+			game[obfuscate.pieTimer].counterText._tint = 0xff0000;
+			game[obfuscate.pieTimer].labelText._tint = 0xff0000;
 		}
 	}
 	
 	// Bump fire
 	// console.log(autoFireGuns.includes(curPlayer.weapType));
-	window.gameVars.Input.Cheat.RepeatFire = !window.gameVars.Menu && window.menu.UserSetting.shoot.bumpFireEnabled && game.xe.mouseButton && autoFireGuns.includes(curPlayer.weapType);
+	window.gameVars.Input.Cheat.RepeatFire = !window.gameVars.Menu && window.menu.UserSetting.shoot.bumpFireEnabled && game[obfuscate.input].mouseButton && autoFireGuns.includes(curPlayer.weapType);
 	
 	// Auto loot	
 	window.gameVars.Input.Cheat.RepeatInteraction = window.menu.UserSetting.loot.autolootEnabled && (getSecondsElapsed(state.LastTimeDropItem) > window.menu.UserSetting.loot.autolootDropDelay) && needToLoot();

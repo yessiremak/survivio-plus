@@ -4,22 +4,22 @@ window.gameFunctions.gameOverride = function(){
 	
 	// ZOOM
 	
-	var baseCameraTargetZoom = this.N.f;
-	this.N.__defineSetter__("f", function(val){
+	var baseCameraTargetZoom = this[obfuscate.camera][obfuscate.targetZoom];
+	this[obfuscate.camera].__defineSetter__(obfuscate.targetZoom, function(val){
 		baseCameraTargetZoom = val;
 	});
-	this.N.__defineGetter__("f", function(){
+	this[obfuscate.camera].__defineGetter__(obfuscate.targetZoom, function(){
 		if(window.gameVars && window.menu && window.menu.UserSetting.look.zoomEnabled)
 			return window.gameVars.ZoomLevel;
 		
 		return baseCameraTargetZoom;
 	});
 	
-	var baseZoomFast = this.st.zoomFast;
-	this.st.__defineSetter__("zoomFast", function(val){
+	var baseZoomFast = this[obfuscate.activePlayer].zoomFast;
+	this[obfuscate.activePlayer].__defineSetter__("zoomFast", function(val){
 		baseZoomFast = val;
 	});
-	this.st.__defineGetter__("zoomFast", function(){
+	this[obfuscate.activePlayer].__defineGetter__("zoomFast", function(){
 		if(window.menu && window.menu.UserSetting.look.zoomEnabled)
 			return true;
 		
@@ -28,7 +28,7 @@ window.gameFunctions.gameOverride = function(){
 	
 	// INPUT
 	
-	var inpt = this.xe;
+	var inpt = this[obfuscate.input];
 	
 	var processInput = function(bind, down){
 		
@@ -160,16 +160,16 @@ window.gameFunctions.gameOverride = function(){
 	
 	// keyboard
 	
-	var onKeyDownBase = this.xe.onKeyDown;
-	this.xe.onKeyDown = function(e){
+	var onKeyDownBase = this[obfuscate.input].onKeyDown;
+	this[obfuscate.input].onKeyDown = function(e){
 		processInput({code: e.keyCode, shift: e.shiftKey, ctrl: e.ctrlKey, alt: e.altKey}, true);
 		if(e.keyCode == 16) return window.gameVars.Input.Keyboard.ShiftPressed = true;
 		if(e.keyCode == 17) return window.gameVars.Input.Keyboard.CtrlPressed = true;
 		if(e.keyCode == 18) return window.gameVars.Input.Keyboard.AltPressed = true;
 		window.gameVars.Input.Keyboard.AnythingElsePressed += 1;
 	};
-	var onKeyUpBase = this.xe.onKeyUp;
-	this.xe.onKeyUp = function(e){
+	var onKeyUpBase = this[obfuscate.input].onKeyUp;
+	this[obfuscate.input].onKeyUp = function(e){
 		processInput({code: e.keyCode, shift: e.shiftKey, ctrl: e.ctrlKey, alt: e.altKey}, false);
 		if(e.keyCode == 16) return window.gameVars.Input.Keyboard.ShiftPressed = false;
 		if(e.keyCode == 17) return window.gameVars.Input.Keyboard.CtrlPressed = false;
@@ -189,8 +189,8 @@ window.gameFunctions.gameOverride = function(){
 	
 	// mouse
 	
-	var onMouseMoveBase = this.xe.onMouseMove;
-	this.xe.onMouseMove = function(e){
+	var onMouseMoveBase = this[obfuscate.input].onMouseMove;
+	this[obfuscate.input].onMouseMove = function(e){
 		if(window.gameVars){
 			window.gameVars.Input.Mouse.Pos.x = e.clientX;
 			window.gameVars.Input.Mouse.Pos.y = e.clientY;
@@ -207,16 +207,16 @@ window.gameFunctions.gameOverride = function(){
 		
 		onMouseMoveBase.call(inpt, e);
 	};
-	var onMouseDownBase = this.xe.onMouseDown;
-	this.xe.onMouseDown = function(e){
+	var onMouseDownBase = this[obfuscate.input].onMouseDown;
+	this[obfuscate.input].onMouseDown = function(e){
 		processInput({code: e.button * -1 - 1, shift: e.shiftKey, ctrl: e.ctrlKey, alt: e.altKey}, true);
 	};
-	var onMouseUpBase = this.xe.onMouseUp;
-	this.xe.onMouseUp = function(e){
+	var onMouseUpBase = this[obfuscate.input].onMouseUp;
+	this[obfuscate.input].onMouseUp = function(e){
 		processInput({code: e.button * -1 - 1, shift: e.shiftKey, ctrl: e.ctrlKey, alt: e.altKey}, false);
 	};
-	var onMouseWheelBase = this.xe.onMouseWheel;
-	this.xe.onMouseWheel = function(e){
+	var onMouseWheelBase = this[obfuscate.input].onMouseWheel;
+	this[obfuscate.input].onMouseWheel = function(e){
 		e.stopPropagation();
 		if(window.gameVars && window.gameVars.Menu && !(window.gameVars.Input.GlobalHookCallback))
 			return;
@@ -228,8 +228,8 @@ window.gameFunctions.gameOverride = function(){
 		}, true);
 	};
 	
-	var inputKeyPressedBase = this.xe.Z;
-	this.xe.Z = function(e){
+	var inputKeyPressedBase = this[obfuscate.input][obfuscate.keyPressed];
+	this[obfuscate.input][obfuscate.keyPressed] = function(e){
 		if(window.gameVars)
 		{
 			if(window.gameVars.Input.Cheat.RepeatInteraction && e == 70)
@@ -239,17 +239,17 @@ window.gameFunctions.gameOverride = function(){
 		return inputKeyPressedBase.call(inpt, e);
 	};
 	
-	var inputMousePressedBase = this.xe.te;
+	var inputMousePressedBase = this[obfuscate.input][obfuscate.mousePressed];
 	// console.log(inputMousePressedBase);
-	this.xe.te = function(){
+	this[obfuscate.input][obfuscate.mousePressed] = function(){
 		if(window.gameVars && window.gameVars.Input.Cheat.RepeatFire)
 			return true;
 		
 		return inputMousePressedBase.call(inpt);
 	};
 	
-	var inputMouseDownBase = this.xe.$;
-	this.xe.$ = function(){
+	var inputMouseDownBase = this[obfuscate.input][obfuscate.mouseDown];
+	this[obfuscate.input][obfuscate.mouseDown] = function(){
 		if(window.gameVars && window.gameVars.Input.Cheat.RepeatFire)
 			return false;
 		
