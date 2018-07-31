@@ -1,45 +1,45 @@
 (function webpack_inject(){
 	
 	window.obfuscate = {
-		mainModule: 'xt',
+		mainModule: 'wt',
 		
 		init: 'a',
 		free: 'o',
 		update: 'l',
-		render: 'pt',
-		sendMessage: 'ft',
-		processGameUpdate: 'ut',
+		render: 'ut',
+		sendMessage: 'xt',
+		processGameUpdate: 'ht',
 		
 		camera: 'N',
 		targetZoom: 'f',
-		activePlayer: 'st',
+		activePlayer: 'lt',
 		localData: 'U',
-		objectCreator: 'rt', //15623
+		objectCreator: 'nt', //15623
 		netData: 'q',
 		activeId: 'ce', //15640
 		
-		playerInfo: '_t',
-		playerBarn: 'Me',
-		playerPool: '$e',
+		playerInfo: 'vt',
+		playerBarn: 'Te',
+		playerPool: 'et',
 		pool: 'pe',		
 		
-		smokeBarn: 'Re',
+		smokeBarn: 'je',
 		smokePool: 'e',	
 		
-		lootBarn: 'qe', //15614
-		lootPool: 'et',		
-		closestLoot: 'wt',
+		lootBarn: 'Ge', //15614
+		lootPool: 'tt',		
+		closestLoot: 'bt',
 		
-		map: 'ke', //15613
+		map: 'ze', //15613
 		obstaclePool: 'Y', 
-		buildingPool: 'at',	//15617
+		buildingPool: 'it',	//15617
 		
-		input: 'xe',	
+		input: 'we',	
 		keyPressed: 'Z', //7755
 		mousePressed: 'te', //7780
 		mouseDown: '$',
 		
-		pieTimer: 'He',	//15606		
+		pieTimer: 'We',	//15606		
 		
 		EmoteManager: 'Ve', //32478	
 	};
@@ -99,8 +99,8 @@
 			var emoteModule = getModule("e5d16b4d");
 			
 			// override
-			var emoteManagerUpdateBase = emoteModule.Je.prototype.l; //emoteModule.EmoteManager.prototype.update
-			emoteModule.Je.prototype.l = function(){ 
+			var emoteManagerUpdateBase = emoteModule.Qe.prototype.l; //emoteModule.EmoteManager.prototype.update
+			emoteModule.Qe.prototype.l = function(){ 
 				if(!this.override)
 					window.gameFunctions.pingOverride.call(this);
 				
