@@ -1,6 +1,6 @@
 ![alt text](https://puu.sh/B03Pw/9a547140e8.PNG "Survivio Banner")
 
-# Surviv.io Cheat! 😃
+# Welcome to Surviv+! 😃
 
 This is a Surviv.io cheat loaded as a Chrome extension. It was originally developed by [reuke](https://github.com/reuke), but since he has been away, I've decided to take ownership of the development of the code.
 
@@ -19,6 +19,7 @@ This is a Surviv.io cheat loaded as a Chrome extension. It was originally develo
 * Frag grenade timer
 * Custom key bindings
 * **New!** Custom cursors
+* **New!** In-game radio!
 
 ## 🔨 Installation
 
