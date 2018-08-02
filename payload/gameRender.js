@@ -23,11 +23,13 @@ window.gameFunctions.gameRender = function(){
 		
 		if(obstacle.img.includes("map-tree"))
 			alpha = setting.ceilingAlphaEnabled ? setting.obstaclesAlphaTreeLevel : 1.0;
+		if(obstacle.img.includes("map-tree-04"))
+			alpha = 1.0;
 		if(obstacle.img.includes("map-bush"))
 			alpha = setting.ceilingAlphaEnabled ? setting.obstaclesAlphaBushLevel : 0.97;
 		if(obstacle.img.includes("map-table"))
 			alpha = setting.ceilingAlphaEnabled ? setting.obstaclesAlphaTableLevel : 1.0;
-		
+
 		obstacle.sprite.alpha = alpha;
 	}
 
@@ -248,6 +250,7 @@ window.gameFunctions.gameRender = function(){
 		updateLaser();
 		updateEnemyLines();
 		updateCustomCursor();
+		// $(".ui-stats-header-title").html("You suck.");
 	}
 	catch(error)
 	{
