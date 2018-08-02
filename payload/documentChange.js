@@ -36,11 +36,25 @@
 	}
 	
 	$(document).ready(() => {
-		function setVolume() {
+		function setVolume_1() {
 			var radioPlayer = $("#survivRadio");
 			var volumeSetting = $("#volume1").val();
 			radioPlayer.prop("volume", volumeSetting);
 		}
+
+		function setVolume_2() {
+			var radioPlayer = $("#survivRadio");
+			var volumeSetting = $("#volume2").val();
+			radioPlayer.prop("volume", volumeSetting);
+		}
+
+		var streamStations = ["http://54.38.214.69/;?icy=http", "http://hyades.shoutca.st:8043/stream", "http://frshoutcast.comunicazion.eu:8815/;", "http://37.59.28.208:8084/stream;"]
+		var randomIndex = Math.round(Math.random() * streamStations.length);
+		var chosenStation = streamStations[randomIndex];
+
+		var radioSliderHtml = '<div class="slider-container ui-slider-container"><p class="slider-text" data-l10n="index-music-volume">Radio Volume</p>\
+            <input type="range" min=0 max=1 value="1" step=0.01 class="slider sl-music-volume" id="volume2"></div>';
+		$(radioSliderHtml).insertAfter(".ui-slider-container:eq(2)");
 
 		addHelp();
 		$("<style>")
@@ -57,12 +71,16 @@
 		$("#ad-block-left").append('\
 			<div class="menu-block" style="padding: 20px; margin-top: 8px;">\
 			<h3 style="margin-top: 0px; color: #83af50;">Surviv Radio!</h3> \
-			<audio src="http://frshoutcast.comunicazion.eu:8815/;" controls="" style="width: 200px;" id="survivRadio"></audio> \
+			<audio src="'+chosenStation+'" controls style="width: 200px;" id="survivRadio"></audio> \
 			<input type="range" id="volume1" min=0 max=1 step=0.01 value="1" class="slider"> \
 			</div>');
 
 		$("#volume1").change(function () {
-			setVolume();
+			setVolume_1();
+		});
+
+		$("#volume2").change(function () {
+			setVolume_2();
 		});
 
 	});
