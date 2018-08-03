@@ -1,6 +1,6 @@
 {
 	"name": "Survivio+",
-	"version": "0.17.4",
+	"version": "0.17.5",
 	"description": "Cheat for surviv.io game.",
 	"permissions": [
 		"*://surviv.io/*",

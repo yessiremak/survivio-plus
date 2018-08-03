@@ -1,47 +1,38 @@
 (function webpack_inject(){
 	
 	window.obfuscate = {
-		mainModule: 'wt',
-		
-		init: 'a',
-		free: 'o',
-		update: 'l',
-		render: 'ut',
-		sendMessage: 'xt',
-		processGameUpdate: 'ht',
-		
-		camera: 'N',
-		targetZoom: 'f',
-		activePlayer: 'lt',
-		localData: 'U',
-		objectCreator: 'nt', //15623
-		netData: 'q',
-		activeId: 'ce', //15640
-		
-		playerInfo: 'vt',
-		playerBarn: 'Te',
-		playerPool: 'et',
-		pool: 'pe',		
-		
-		smokeBarn: 'je',
-		smokePool: 'e',	
-		
-		lootBarn: 'Ge', //15614
-		lootPool: 'tt',		
-		closestLoot: 'bt',
-		
-		map: 'ze', //15613
-		obstaclePool: 'Y', 
-		buildingPool: 'it',	//15617
-		
-		input: 'we',	
-		keyPressed: 'Z', //7755
-		mousePressed: 'te', //7780
-		mouseDown: '$',
-		
-		pieTimer: 'We',	//15606		
-		
-		EmoteManager: 'Ve', //32478	
+	    "mainModule": "xt",
+	    "init": "a",
+	    "free": "o",
+	    "update": "l",
+	    "render": "pt",
+	    "sendMessage": "ft",
+	    "processGame": "ut",
+	    "EmoteManager": "Je",
+	    "camera": "N",
+	    "targetZoom": "f",
+	    "activePlayer": "st",
+	    "input": "xe",
+	    "keyPressed": "Z",
+	    "mousePressed": "te",
+	    "mouseDown": "$",
+	    "smokeBarn": "Re",
+	    "smokePool": "e",
+	    "map": "ke",
+	    "obstaclePool": "Y",
+	    "buildingPool": "at",
+	    "pool": "pe",
+	    "playerBarn": "Me",
+	    "playerPool": "$e",
+	    "playerInfo": "_t",
+	    "activeId": "ce",
+	    "objectCreator": "rt",
+	    "netData": "q",
+	    "pieTimer": "He",
+	    "lootBarn": "qe",
+	    "closestLoot": "wt",
+	    "lootPool": "et",
+	    "localData": "U"
 	};
 	
 	
@@ -97,10 +88,14 @@
 			
 			// PING
 			var emoteModule = getModule("e5d16b4d");
+
+			// var someModule = getModule("3160ea28");
+			// console.log(someModule);
 			
 			// override
-			var emoteManagerUpdateBase = emoteModule.Qe.prototype.l; //emoteModule.EmoteManager.prototype.update
-			emoteModule.Qe.prototype.l = function(){ 
+			var emoteManagerUpdateBase = emoteModule[obfuscate.EmoteManager].prototype[obfuscate.update]; //emoteModule.EmoteManager.prototype.update
+			// console.log(emoteManagerUpdateBase);
+			emoteModule[obfuscate.EmoteManager].prototype[obfuscate.update] = function(){ 
 				if(!this.override)
 					window.gameFunctions.pingOverride.call(this);
 				

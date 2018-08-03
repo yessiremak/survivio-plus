@@ -429,7 +429,6 @@ window.gameFunctions.gameUpdate = function(){
 	var enimies = detectEnimies();
 	
 	enimies.forEach(processEnemy);
-	
 	window.gameVars.Game.Enimies = enimies;
 	
 	// Update enemy lines
