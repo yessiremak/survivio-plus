@@ -7,7 +7,7 @@
 	    "update": "l",
 	    "render": "pt",
 	    "sendMessage": "ft",
-	    "processGame": "ut",
+	    "processGameUpdate": "ut",
 	    "EmoteManager": "Je",
 	    "camera": "N",
 	    "targetZoom": "f",
@@ -34,6 +34,14 @@
 	    "lootPool": "et",
 	    "localData": "U"
 	};
+
+	// window.freestar.newAdSlots = function(slots) {
+	// 	return slots;
+	// }
+
+	// window.freestar.deleteAdSlots = function(slots) {
+	// 	return slots;
+	// }
 	
 	
 	window.webpackJsonp([0], {
