@@ -240,7 +240,7 @@
 			//binds
 			state = window.menu.UserSetting.binds;
 			
-			btnSetBind("autoAim",							state.autoAim);
+			// btnSetBind("autoAim",							state.autoAim);
 			// btnSetBind("switchMainWeapon",					state.switchMainWeapon);
 			btnSetBind("zoomIn",							state.zoomIn);
 			btnSetBind("zoomOut",							state.zoomOut);
