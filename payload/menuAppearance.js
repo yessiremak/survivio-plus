@@ -55,7 +55,7 @@
 					customCursorLevel:            0,
 				},
 				binds: {
-					autoAim: {code: -3, shift: false, ctrl: false, alt: false},
+					// autoAim: {code: -3, shift: false, ctrl: false, alt: false},
 					// switchMainWeapon: {code: 0, shift: false, ctrl: false, alt: false},
 					zoomIn: {code: -5, shift: false, ctrl: false, alt: false},
 					zoomOut: {code: -4, shift: false, ctrl: false, alt: false},
@@ -70,7 +70,7 @@
 					interact: {code: 70, shift: false, ctrl: false, alt: false},
 					cancelAction: {code: 88, shift: false, ctrl: false, alt: false},
 					teamPing: {code: 67, shift: false, ctrl: false, alt: false},
-					emotes: {code: 66, shift: false, ctrl: false, alt: false},
+					emotes: {code: -3, shift: false, ctrl: false, alt: false},
 					toggleMap: {code: 77, shift: false, ctrl: false, alt: false},
 					toggleMiniMap: {code: 86, shift: false, ctrl: false, alt: false},
 					equipLast: {code: 81, shift: false, ctrl: false, alt: false},
