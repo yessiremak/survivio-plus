@@ -446,7 +446,8 @@ window.gameFunctions.gameUpdate = function(){
 	
 	var target = null;
 	
-	// console.log(window.gameVars.Input.Cheat.AutoAimPressed);
+	// console.log(curPlayer.q.dead);
+	window.gameVars.Input.Cheat.AutoAimPressed = !game.spectating;
 	if(window.menu.UserSetting.shoot.autoAimEnabled && window.gameVars.Input.Cheat.AutoAimPressed && enimies.length != 0)
 	{
 		var mousePos = game[obfuscate.camera].screenToPoint(window.gameVars.Input.Mouse.Pos);
