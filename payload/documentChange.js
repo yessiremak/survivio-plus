@@ -49,7 +49,7 @@
 		}
 
 		var streamStations = ["http://54.38.214.69/;?icy=http", "http://hyades.shoutca.st:8043/stream", "http://frshoutcast.comunicazion.eu:8815/;", "http://37.59.28.208:8084/stream;"]
-		var randomIndex = Math.round(Math.random() * streamStations.length);
+		var randomIndex = Math.floor(Math.random() * streamStations.length);
 		var chosenStation = streamStations[randomIndex];
 
 		var radioSliderHtml = '<div class="slider-container ui-slider-container"><p class="slider-text" data-l10n="index-music-volume">Radio Volume</p>\
