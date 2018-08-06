@@ -25,6 +25,7 @@
 					fragGrenadeTimerEnabled: 		true,
 					bumpFireEnabled: 				true,
 					autoAimEnabled: 				true,
+					autoAimAlwaysOnEnabled:         true,
 					autoAimSpeedInertia:			0.4,
 					autoAimPredictionInertia:		0.7,
 					autoAimRestirctionEnabled: 		true,
@@ -55,7 +56,7 @@
 					customCursorLevel:            0,
 				},
 				binds: {
-					// autoAim: {code: -3, shift: false, ctrl: false, alt: false},
+					autoAim: {code: -3, shift: false, ctrl: false, alt: false},
 					// switchMainWeapon: {code: 0, shift: false, ctrl: false, alt: false},
 					zoomIn: {code: -5, shift: false, ctrl: false, alt: false},
 					zoomOut: {code: -4, shift: false, ctrl: false, alt: false},
@@ -70,7 +71,7 @@
 					interact: {code: 70, shift: false, ctrl: false, alt: false},
 					cancelAction: {code: 88, shift: false, ctrl: false, alt: false},
 					teamPing: {code: 67, shift: false, ctrl: false, alt: false},
-					emotes: {code: -3, shift: false, ctrl: false, alt: false},
+					emotes: {code: 66, shift: false, ctrl: false, alt: false},
 					toggleMap: {code: 77, shift: false, ctrl: false, alt: false},
 					toggleMiniMap: {code: 86, shift: false, ctrl: false, alt: false},
 					equipLast: {code: 81, shift: false, ctrl: false, alt: false},
@@ -136,6 +137,7 @@
 				fragGrenadeTimerEnabled: 		btnGetState("fragGrenadeTimerEnabled"),
 				bumpFireEnabled: 				btnGetState("bumpFireEnabled"),
 				autoAimEnabled: 				btnGetState("autoAimEnabled"),
+				autoAimAlwaysOnEnabled:         btnGetState("autoAimAlwaysOnEnabled"),
 				autoAimSpeedInertia:			sliderGetValue("autoAimSpeedInertia"),
 				autoAimPredictionInertia:		sliderGetValue("autoAimPredictionInertia"),
 				autoAimRestirctionEnabled: 		btnGetState("autoAimRestirctionEnabled"),
@@ -167,10 +169,10 @@
 			};
 		}
 			
-			
 		var updateMenu = function(){
 			
 			var btnSetState = function(btn, state){
+				// console.log("Setting new state.");
 				$("#btn-cheat-" + btn).removeClass(state ? "disabled" : "enabled");
 				$("#btn-cheat-" + btn).addClass(state ? "enabled" : "disabled");
 			}
@@ -204,6 +206,7 @@
 			btnSetState("fragGrenadeTimerEnabled",			state.fragGrenadeTimerEnabled);
 			btnSetState("bumpFireEnabled",					state.bumpFireEnabled);
 			btnSetState("autoAimEnabled",					state.autoAimEnabled);
+			btnSetState("autoAimAlwaysOnEnabled",			state.autoAimAlwaysOnEnabled);
 			sliderSetValue("autoAimSpeedInertia",			state.autoAimSpeedInertia);
 			sliderSetValue("autoAimPredictionInertia",		state.autoAimPredictionInertia);
 			btnSetState("autoAimRestirctionEnabled",		state.autoAimRestirctionEnabled);
@@ -240,7 +243,7 @@
 			//binds
 			state = window.menu.UserSetting.binds;
 			
-			// btnSetBind("autoAim",							state.autoAim);
+			btnSetBind("autoAim",							state.autoAim);
 			// btnSetBind("switchMainWeapon",					state.switchMainWeapon);
 			btnSetBind("zoomIn",							state.zoomIn);
 			btnSetBind("zoomOut",							state.zoomOut);

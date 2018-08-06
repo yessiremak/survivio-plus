@@ -338,7 +338,7 @@ window.gameFunctions.gameUpdate = function(){
 	// Local variables
 	
 	var game = this;
-	
+	// console.log(game);
 	if(!window.gameVars)
 		return;
 	
@@ -446,8 +446,12 @@ window.gameFunctions.gameUpdate = function(){
 	
 	var target = null;
 	
-	// console.log(curPlayer.q.dead);
-	window.gameVars.Input.Cheat.AutoAimPressed = !game.spectating;
+	// console.log(curPlayer.q.dead); \
+	var alwaysOn = window.menu.UserSetting.shoot.autoAimAlwaysOnEnabled;
+	if(alwaysOn) {
+		window.gameVars.Input.Cheat.AutoAimPressed = !game.spectating;
+	}
+	// console.log("Update: Auto aim pressed " + window.gameVars.Input.Cheat.AutoAimPressed);
 	if(window.menu.UserSetting.shoot.autoAimEnabled && window.gameVars.Input.Cheat.AutoAimPressed && enimies.length != 0)
 	{
 		var mousePos = game[obfuscate.camera].screenToPoint(window.gameVars.Input.Mouse.Pos);

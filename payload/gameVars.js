@@ -38,9 +38,10 @@ window.gameVars.Perfomance = {
 	lastLAG: 0,
 }
 
+
 window.gameVars.Input = {
 	Cheat: {
-		AutoAimPressed: true,
+		AutoAimPressed: false,
 		StreamerMode: false,
 		FirePressed: false,
 		ShowNamesPressed: false,
