@@ -29,8 +29,6 @@ window.gameFunctions.gameOverride = function(){
 	// INPUT
 	
 	var inpt = this[obfuscate.input];
-
-	console.log('Override: Autoaimpressed' + window.gameVars.Input.Cheat.AutoAimPressed);
 	
 	var processInput = function(bind, down){
 		
