@@ -314,6 +314,8 @@ window.gameFunctions.gameUpdate = function(){
 		if(!isSafeToPickup && !needGuns && gunsNearBy.length > 0 && !dualOnlyInRange)
 			return;
 		
+		if(loot.name.includes('woodaxe')) return true;
+
 		if(gunNames.includes(loot.name)) {
 			if(needGuns || lootIsDual)
 				return true;
