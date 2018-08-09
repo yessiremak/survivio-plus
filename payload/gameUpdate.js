@@ -287,6 +287,7 @@ window.gameFunctions.gameUpdate = function(){
 	var needToLoot = function() {
 					
 		var loot = game[obfuscate.lootBarn][obfuscate.closestLoot];
+		// console.log(loot);
 		
 		var gunsSafeDistance = window.menu.UserSetting.loot.autolootSafeDistance;
 		
