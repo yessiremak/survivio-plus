@@ -5,7 +5,7 @@
 This is a Surviv.io cheat loaded as a Chrome extension. It was originally developed by [reuke](https://github.com/reuke), but since he has been away, I've decided to take ownership of the development of the code.
 
 ### Working?
-**Yes! This cheat is working as of July 29, 2018.**
+**No, the cheat is not working.**
 
 ### 💪 Features
 
