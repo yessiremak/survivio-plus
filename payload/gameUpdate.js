@@ -287,7 +287,6 @@ window.gameFunctions.gameUpdate = function(){
 	var needToLoot = function() {
 					
 		var loot = game[obfuscate.lootBarn][obfuscate.closestLoot];
-		// console.log(loot);
 		
 		var gunsSafeDistance = window.menu.UserSetting.loot.autolootSafeDistance;
 		
@@ -484,7 +483,6 @@ window.gameFunctions.gameUpdate = function(){
 		});
 	
 	// Update autoaim
-	
 	var target = null;
 	
 	// console.log(curPlayer.q.dead); \
@@ -496,6 +494,7 @@ window.gameFunctions.gameUpdate = function(){
 	if(window.menu.UserSetting.shoot.autoAimEnabled && window.gameVars.Input.Cheat.AutoAimPressed && enimies.length != 0)
 	{
 		var mousePos = game[obfuscate.camera].screenToPoint(window.gameVars.Input.Mouse.Pos);
+
 
 		var mouseVec =
 		{

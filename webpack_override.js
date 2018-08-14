@@ -1,38 +1,38 @@
 (function webpack_inject(){
 	
 	window.obfuscate = {
-	    "mainModule": "bt",
+	    "mainModule": "wt",
 	    "init": "a",
 	    "free": "o",
 	    "update": "l",
-	    "render": "ht",
-	    "sendMessage": "wt",
-	    "processGameUpdate": "gt",
-	    "EmoteManager": "$e",
-	    "camera": "q",
+	    "render": "ut",
+	    "sendMessage": "xt",
+	    "processGameUpdate": "ht",
+	    "EmoteManager": "Qe",
+	    "camera": "j",
 	    "targetZoom": "f",
-	    "activePlayer": "mt",
-	    "input": "be",
-	    "keyPressed": "Z",
-	    "mousePressed": "te",
+	    "activePlayer": "lt",
+	    "input": "ue",
+	    "keyPressed": "te",
+	    "mousePressed": "ed",
 	    "mouseDown": "$",
-	    "smokeBarn": "qe",
+	    "smokeBarn": "je",
 	    "smokePool": "e",
-	    "map": "Me",
-	    "obstaclePool": "Y",
-	    "buildingPool": "rt",
-	    "pool": "pe",
-	    "playerBarn": "Pe",
-	    "playerPool": "tt",
-	    "playerInfo": "St",
-	    "activeId": "ce",
-	    "objectCreator": "st",
+	    "map": "ze",
+	    "obstaclePool": "K",
+	    "buildingPool": "it",
+	    "pool": "ce",
+	    "playerBarn": "Te",
+	    "playerPool": "et",
+	    "playerInfo": "vt",
+	    "activeId": "le",
+	    "objectCreator": "nt",
 	    "netData": "N",
-	    "pieTimer": "Ke",
+	    "pieTimer": "He",
 	    "lootBarn": "Ue",
-	    "closestLoot": "_t",
-	    "lootPool": "at",
-	    "localData": "U"
+	    "closestLoot": "bt",
+	    "lootPool": "tt",
+	    "localData": "q"
 	};
 
 	// window.freestar.newAdSlots = function(slots) {
@@ -68,7 +68,7 @@
 			var gameUpdateBase = mainModule.prototype[obfuscate.update];
 			mainModule.prototype[obfuscate.update] = function(){
 				if(!this.override)
-					window.gameFunctions.gameOverride.call(this);
+					// window.gameFunctions.gameOverride.call(this);
 				gameUpdateBase.apply(this, arguments);
 				window.gameFunctions.gameUpdate.call(this);
 			};
@@ -101,14 +101,14 @@
 			// console.log(someModule);
 			
 			// override
-			var emoteManagerUpdateBase = emoteModule[obfuscate.EmoteManager].prototype[obfuscate.update]; //emoteModule.EmoteManager.prototype.update
-			// console.log(emoteManagerUpdateBase);
-			emoteModule[obfuscate.EmoteManager].prototype[obfuscate.update] = function(){ 
-				if(!this.override)
-					window.gameFunctions.pingOverride.call(this);
+			// var emoteManagerUpdateBase = emoteModule[obfuscate.EmoteManager].prototype[obfuscate.update]; //emoteModule.EmoteManager.prototype.update
+			// // console.log(emoteManagerUpdateBase);
+			// emoteModule[obfuscate.EmoteManager].prototype[obfuscate.update] = function(){ 
+			// 	if(!this.override)
+			// 		window.gameFunctions.pingOverride.call(this);
 				
-				emoteManagerUpdateBase.apply(this, arguments);
-			};
+			// 	emoteManagerUpdateBase.apply(this, arguments);
+			// };
 			
 			// DATA
 			window.gameVars.Game.GameData = getModule("989ad62a");
