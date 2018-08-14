@@ -42,6 +42,7 @@ window.gameVars.Perfomance = {
 window.gameVars.Input = {
 	Cheat: {
 		AutoAimPressed: false,
+        SwitchWeaponFirst: false,
 		StreamerMode: false,
 		FirePressed: false,
 		ShowNamesPressed: false,

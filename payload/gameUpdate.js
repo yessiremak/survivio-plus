@@ -400,7 +400,45 @@ window.gameFunctions.gameUpdate = function(){
 	processPlayerSpeed(curPlayer, 0.1);
 	
 	curPlayer.moving = curPlayer.speed > 0.01;
-	
+
+	// Switch weapons
+	var pressOne = function() {
+		if(!game[obfuscate.input].keys["49"]) {
+			setTimeout(function() {
+				game[obfuscate.input].keys["49"] = true;
+				setTimeout(function() {
+					delete game[obfuscate.input].keys["49"]
+				}, 100);
+			}, 50);
+		}
+	}
+
+	var pressTwo = function() {
+		if(!game[obfuscate.input].keys["50"]) {
+			setTimeout(function() {
+				game[obfuscate.input].keys["50"] = true;
+				setTimeout(function() {
+					delete game[obfuscate.input].keys["50"]
+				}, 100);
+			}, 50);
+		}
+	}
+
+	var weaponSwitcher = function() {
+		if (curPlayer.curWeapIdx) {
+			pressOne();
+			return;
+		}
+
+		if (!curPlayer.curWeapIdx) {
+			pressTwo();
+			return;
+		}		
+	}
+
+	if(window.gameVars.Input.Cheat.SwitchWeaponFirst) {
+		weaponSwitcher();
+	}
 	// Laser
 	
 	var laser = state.Laser;

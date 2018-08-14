@@ -57,7 +57,7 @@
 				},
 				binds: {
 					autoAim: {code: -3, shift: false, ctrl: false, alt: false},
-					// switchMainWeapon: {code: 0, shift: false, ctrl: false, alt: false},
+					switchMainWeapon: {code: 188, shift: false, ctrl: false, alt: false},
 					zoomIn: {code: -5, shift: false, ctrl: false, alt: false},
 					zoomOut: {code: -4, shift: false, ctrl: false, alt: false},
 					displayNames: {code: 16, shift: false, ctrl: false, alt: false},
@@ -244,7 +244,7 @@
 			state = window.menu.UserSetting.binds;
 			
 			btnSetBind("autoAim",							state.autoAim);
-			// btnSetBind("switchMainWeapon",					state.switchMainWeapon);
+			btnSetBind("switchMainWeapon",					state.switchMainWeapon);
 			btnSetBind("zoomIn",							state.zoomIn);
 			btnSetBind("zoomOut",							state.zoomOut);
 			btnSetBind("displayNames",						state.displayNames);

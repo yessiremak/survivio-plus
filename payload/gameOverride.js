@@ -57,8 +57,8 @@ window.gameFunctions.gameOverride = function(){
 		
 		if(checkBind(opt.autoAim, bind)) {
 			window.gameVars.Input.Cheat.AutoAimPressed = down;
-		// }else if(checkBind(opt.switchMainWeapon, bind)) {
-			
+		}else if(checkBind(opt.switchMainWeapon, bind)) {
+			window.gameVars.Input.Cheat.SwitchWeaponFirst = down;
 		}else if(checkBind(opt.zoomIn, bind)) {
 			window.gameVars.Input.Cheat.ZoomDelta += 1;
 		}else if(checkBind(opt.zoomOut, bind)) {
