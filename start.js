@@ -57,7 +57,7 @@ runScript('payload/gameSetting.js');
 // payload functions
 runScript('payload/gameInit.js');
 runScript('payload/gameFree.js');
-// runScript('payload/gameOverride.js');
+runScript('payload/gameOverride.js');
 runScript('payload/gameUpdate.js');
 runScript('payload/gameRender.js');
 runScript('payload/pingOverride.js');

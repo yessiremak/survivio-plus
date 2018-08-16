@@ -25,10 +25,12 @@ window.gameFunctions.gameOverride = function(){
 		
 		return baseZoomFast;
 	});
+
 	
 	// INPUT
 	
 	var inpt = this[obfuscate.input];
+	// console.log(inpt);
 	
 	var processInput = function(bind, down){
 		
@@ -129,8 +131,19 @@ window.gameFunctions.gameOverride = function(){
 	}
 	
 	document.addEventListener('mousedown', function(e) {
-		if((e.button == 2) || (window.gameVars.Input.GlobalHookCallback && (e.button == 0)))
+		// console.log(e);
+		if((e.button == 2) || (window.gameVars.Input.GlobalHookCallback && (e.button == 0))) {
 			processInput({code: e.button * -1 - 1, shift: e.shiftKey, ctrl: e.ctrlKey, alt: e.altKey}, true);
+		}
+		if(window.gameVars && window.gameVars.Menu)
+			e.stopPropagation();
+	});
+
+	document.addEventListener('mouseup', function(e) {
+		if(e.button == 2) {
+			processInput({code: e.button * -1 - 1, shift: e.shiftKey, ctrl: e.ctrlKey, alt: e.altKey}, false);
+		}
+
 		if(window.gameVars && window.gameVars.Menu)
 			e.stopPropagation();
 	});
@@ -160,16 +173,17 @@ window.gameFunctions.gameOverride = function(){
 	
 	// keyboard
 	
-	var onKeyDownBase = this[obfuscate.input].onKeyDown;
-	this[obfuscate.input].onKeyDown = function(e){
+	var onKeyDownBase = this[obfuscate.input].input.bOnKeyDown;
+	// console.log(this[obfuscate.input]);
+	this[obfuscate.input].input.bOnKeyDown = function(e){
 		processInput({code: e.keyCode, shift: e.shiftKey, ctrl: e.ctrlKey, alt: e.altKey}, true);
 		if(e.keyCode == 16) return window.gameVars.Input.Keyboard.ShiftPressed = true;
 		if(e.keyCode == 17) return window.gameVars.Input.Keyboard.CtrlPressed = true;
 		if(e.keyCode == 18) return window.gameVars.Input.Keyboard.AltPressed = true;
 		window.gameVars.Input.Keyboard.AnythingElsePressed += 1;
 	};
-	var onKeyUpBase = this[obfuscate.input].onKeyUp;
-	this[obfuscate.input].onKeyUp = function(e){
+	var onKeyUpBase = this[obfuscate.input].input.bOnKeyUp;
+	this[obfuscate.input].input.bOnKeyUp = function(e){
 		processInput({code: e.keyCode, shift: e.shiftKey, ctrl: e.ctrlKey, alt: e.altKey}, false);
 		if(e.keyCode == 16) return window.gameVars.Input.Keyboard.ShiftPressed = false;
 		if(e.keyCode == 17) return window.gameVars.Input.Keyboard.CtrlPressed = false;
@@ -189,8 +203,8 @@ window.gameFunctions.gameOverride = function(){
 	
 	// mouse
 	
-	var onMouseMoveBase = this[obfuscate.input].onMouseMove;
-	this[obfuscate.input].onMouseMove = function(e){
+	var onMouseMoveBase = this[obfuscate.input].input.bOnMouseMove;
+	this[obfuscate.input].input.bOnMouseMove = function(e){
 		if(window.gameVars){
 			window.gameVars.Input.Mouse.Pos.x = e.clientX;
 			window.gameVars.Input.Mouse.Pos.y = e.clientY;
@@ -207,12 +221,13 @@ window.gameFunctions.gameOverride = function(){
 		
 		onMouseMoveBase.call(inpt, e);
 	};
-	var onMouseDownBase = this[obfuscate.input].onMouseDown;
-	this[obfuscate.input].onMouseDown = function(e){
+	var onMouseDownBase = this[obfuscate.input].input.bOnMouseDown;
+	// console.log(this[obfuscate.input]);
+	this[obfuscate.input].input.bOnMouseDown = function(e){
 		processInput({code: e.button * -1 - 1, shift: e.shiftKey, ctrl: e.ctrlKey, alt: e.altKey}, true);
 	};
-	var onMouseUpBase = this[obfuscate.input].onMouseUp;
-	this[obfuscate.input].onMouseUp = function(e){
+	var onMouseUpBase = this[obfuscate.input].input.bOnMouseUp;
+	this[obfuscate.input].input.bOnMouseUp = function(e){
 		processInput({code: e.button * -1 - 1, shift: e.shiftKey, ctrl: e.ctrlKey, alt: e.altKey}, false);
 	};
 	var onMouseWheelBase = this[obfuscate.input].onMouseWheel;
@@ -228,21 +243,24 @@ window.gameFunctions.gameOverride = function(){
 		}, true);
 	};
 	
-	var inputKeyPressedBase = this[obfuscate.input][obfuscate.keyPressed];
-	this[obfuscate.input][obfuscate.keyPressed] = function(e){
-		if(window.gameVars)
-		{
-			if(window.gameVars.Input.Cheat.RepeatInteraction && e == 70)
-				return true;
-		}
+	// var inputKeyPressedBase = this[obfuscate.input]//[obfuscate.keyPressed];
+	// this[obfuscate.input][obfuscate.keyPressed] = function(e){
+	// 	if(window.gameVars)
+	// 	{
+	// 		if(window.gameVars.Input.Cheat.RepeatInteraction && e == 70)
+	// 			return true;
+	// 	}
 		
-		return inputKeyPressedBase.call(inpt, e);
-	};
+	// 	return inputKeyPressedBase.call(inpt, e);
+	// };
+
+	// console.log(inputKeyPressedBase);
 
 	var inputMousePressedBase = this[obfuscate.input][obfuscate.mousePressed];
 	this[obfuscate.input][obfuscate.mousePressed] = function(){
-		if(window.gameVars && window.gameVars.Input.Cheat.RepeatFire)
+		if(window.gameVars && window.gameVars.Input.Cheat.RepeatFire){
 			return true;
+		}
 		
 		return inputMousePressedBase.call(inpt);
 	};

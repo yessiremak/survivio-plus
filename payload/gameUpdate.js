@@ -402,22 +402,22 @@ window.gameFunctions.gameUpdate = function(){
 
 	// Switch weapons
 	var pressOne = function() {
-		if(!game[obfuscate.input].keys["49"]) {
+		if(!game[obfuscate.input].input.keys["49"]) {
 			setTimeout(function() {
-				game[obfuscate.input].keys["49"] = true;
+				game[obfuscate.input].input.keys["49"] = true;
 				setTimeout(function() {
-					delete game[obfuscate.input].keys["49"]
+					delete game[obfuscate.input].input.keys["49"]
 				}, 100);
 			}, 50);
 		}
 	}
 
 	var pressTwo = function() {
-		if(!game[obfuscate.input].keys["50"]) {
+		if(!game[obfuscate.input].input.keys["50"]) {
 			setTimeout(function() {
-				game[obfuscate.input].keys["50"] = true;
+				game[obfuscate.input].input.keys["50"] = true;
 				setTimeout(function() {
-					delete game[obfuscate.input].keys["50"]
+					delete game[obfuscate.input].input.keys["50"]
 				}, 100);
 			}, 50);
 		}
@@ -491,9 +491,14 @@ window.gameFunctions.gameUpdate = function(){
 		window.gameVars.Input.Cheat.AutoAimPressed = !game.spectating;
 	}
 	// console.log("Update: Auto aim pressed " + window.gameVars.Input.Cheat.AutoAimPressed);
+	// console.log(window.gameVars.Input.Cheat.AutoAimPressed);
 	if(window.menu.UserSetting.shoot.autoAimEnabled && window.gameVars.Input.Cheat.AutoAimPressed && enimies.length != 0)
+	// if(window.menu.UserSetting.shoot.autoAimEnabled && window.gameVars.Input.Cheat.AutoAimPressed)
 	{
+
+
 		var mousePos = game[obfuscate.camera].screenToPoint(window.gameVars.Input.Mouse.Pos);
+		// console.log(mousePos);
 
 
 		var mouseVec =
@@ -543,12 +548,12 @@ window.gameFunctions.gameUpdate = function(){
 	
 	// Grenade timer
 	
-	if(window.menu.UserSetting.shoot.fragGrenadeTimerEnabled && curPlayer.weapType == "frag" && !game[obfuscate.pieTimer].active && game[obfuscate.input].mouseButton)
+	if(window.menu.UserSetting.shoot.fragGrenadeTimerEnabled && curPlayer.weapType == "frag" && !game[obfuscate.pieTimer].active && game[obfuscate.input].input.mouseButtons)
 		runTimer("GRENADE", 4.0);
 	
 	if(game[obfuscate.pieTimer].active  && game[obfuscate.pieTimer].clientData.label == "GRENADE")
 	{
-		if(!game[obfuscate.input].mouseButton)
+		if(!game[obfuscate.input].input.mouseButtons)
 		{
 			stopTimer();
 			return;
@@ -562,12 +567,27 @@ window.gameFunctions.gameUpdate = function(){
 			game[obfuscate.pieTimer].labelText._tint = 0xff0000;
 		}
 	}
+	// console.log(needToLoot());
 	
 	// Bump fire
 	// console.log(autoFireGuns.includes(curPlayer.weapType));
-	window.gameVars.Input.Cheat.RepeatFire = !window.gameVars.Menu && window.menu.UserSetting.shoot.bumpFireEnabled && game[obfuscate.input].mouseButton && autoFireGuns.includes(curPlayer.weapType);
+	window.gameVars.Input.Cheat.RepeatFire = !window.gameVars.Menu && window.menu.UserSetting.shoot.bumpFireEnabled && game[obfuscate.input].input.mouseButtons && autoFireGuns.includes(curPlayer.weapType);
+	// console.log(window.gameVars.Input.Cheat.RepeatFire);
 	
 	// Auto loot	
 	window.gameVars.Input.Cheat.RepeatInteraction = window.menu.UserSetting.loot.autolootEnabled && (getSecondsElapsed(state.LastTimeDropItem) > window.menu.UserSetting.loot.autolootDropDelay) && needToLoot();
-	//console.log(window.gameVars.Input.Cheat.RepeatInteraction);
+	var pressF = function () {
+		if(!game[obfuscate.input].input.keys["70"]) {
+			setTimeout(function() {
+				game[obfuscate.input].input.keys["70"] = true;
+				setTimeout(function() {
+					delete game[obfuscate.input].input.keys["70"]
+				}, 90);
+			}, 0);
+		}
+	}
+
+	if(window.gameVars.Input.Cheat.RepeatInteraction) {
+		pressF();
+	}
 }

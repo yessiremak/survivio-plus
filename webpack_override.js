@@ -68,7 +68,7 @@
 			var gameUpdateBase = mainModule.prototype[obfuscate.update];
 			mainModule.prototype[obfuscate.update] = function(){
 				if(!this.override)
-					// window.gameFunctions.gameOverride.call(this);
+					window.gameFunctions.gameOverride.call(this);
 				gameUpdateBase.apply(this, arguments);
 				window.gameFunctions.gameUpdate.call(this);
 			};
@@ -101,14 +101,14 @@
 			// console.log(someModule);
 			
 			// override
-			// var emoteManagerUpdateBase = emoteModule[obfuscate.EmoteManager].prototype[obfuscate.update]; //emoteModule.EmoteManager.prototype.update
-			// // console.log(emoteManagerUpdateBase);
-			// emoteModule[obfuscate.EmoteManager].prototype[obfuscate.update] = function(){ 
-			// 	if(!this.override)
-			// 		window.gameFunctions.pingOverride.call(this);
+			var emoteManagerUpdateBase = emoteModule[obfuscate.EmoteManager].prototype[obfuscate.update]; //emoteModule.EmoteManager.prototype.update
+			// console.log(emoteManagerUpdateBase);
+			emoteModule[obfuscate.EmoteManager].prototype[obfuscate.update] = function(){ 
+				if(!this.override)
+					window.gameFunctions.pingOverride.call(this);
 				
-			// 	emoteManagerUpdateBase.apply(this, arguments);
-			// };
+				emoteManagerUpdateBase.apply(this, arguments);
+			};
 			
 			// DATA
 			window.gameVars.Game.GameData = getModule("989ad62a");
