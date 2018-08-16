@@ -18,11 +18,11 @@
 			return;
 		}
 		
-		$("#ad-block-main-med-rect").css("width","auto");
-		$("#ad-block-main-med-rect").css("overflow-y","auto");
+		$(".ad-block-med-rect").css("width","auto");
+		$(".ad-block-med-rect").css("overflow-y","auto");
 		
-		$("#ad-block-main-med-rect").append(window.tempVars.helpEnHtml);
-		$("#ad-block-main-med-rect").append(window.tempVars.helpRuHtml);
+		$(".ad-block-med-rect").append(window.tempVars.helpEnHtml);
+		$(".ad-block-med-rect").append(window.tempVars.helpRuHtml);
 		
 		var updateHelp = function() {
 			setTimeout(updateHelp, 50);
@@ -65,8 +65,8 @@
 			}")
 			.appendTo("head");
 		$("#ad-block-left").css("background-color", "transparent");
-		$("#ad-block-main-med-rect").css("background-color", "rgba(0,0,0,.5)");
-		$("#ad-block-main-med-rect").css("border-radius", "5px");
+		$(".ad-block-med-rect").css("background-color", "rgba(0,0,0,.5)");
+		$(".ad-block-med-rect").css("border-radius", "5px");
 		$(".ad-block-leaderboard-bottom").hide();
 		$("#ad-block-left").append('\
 			<div class="menu-block" style="padding: 20px; margin-top: 8px;">\

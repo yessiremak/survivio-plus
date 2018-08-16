@@ -238,8 +238,9 @@ window.gameFunctions.gameOverride = function(){
 		
 		return inputKeyPressedBase.call(inpt, e);
 	};
-
+	
 	var inputMousePressedBase = this[obfuscate.input][obfuscate.mousePressed];
+	// console.log(inputMousePressedBase);
 	this[obfuscate.input][obfuscate.mousePressed] = function(){
 		if(window.gameVars && window.gameVars.Input.Cheat.RepeatFire)
 			return true;
