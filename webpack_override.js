@@ -12,7 +12,7 @@
 	    "camera": "j",
 	    "targetZoom": "f",
 	    "activePlayer": "lt",
-	    "input": "ue",
+	    "input": "pe",
 	    "keyPressed": "te",
 	    "mousePressed": "ed",
 	    "mouseDown": "$",
