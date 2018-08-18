@@ -353,7 +353,7 @@ window.gameFunctions.gameUpdate = function(){
 	var items = gameData.items;
 	var mapScale = 16.25;
 	
-	var autoFireGuns =  ["frag", "fists", "mk12", "mp220", "m870", "sv98", "awc", "m39", "mosin", "smoke", "saiga", "m9", "m9_dual", "ot38", "ot38_dual", "deagle", "deagle_dual", "spas12", "garand", "karambit_rugged", "karambit_prismatic",
+	var autoFireGuns =  ["frag", "fists", "flare_gun", "mk12", "mp220", "m870", "sv98", "awc", "m39", "mosin", "smoke", "saiga", "m9", "m9_dual", "ot38", "ot38_dual", "deagle", "deagle_dual", "spas12", "garand", "karambit_rugged", "karambit_prismatic",
 		"bayonet_rugged", "bayonet_woodland", "huntsman_rugged", "huntsman_burnished", "woodaxe", "hook", "pan"
 	];
 	var grenadeTimerWarning = 1.05;
