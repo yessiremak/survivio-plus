@@ -547,13 +547,14 @@ window.gameFunctions.gameUpdate = function(){
 	})();
 	
 	// Grenade timer
-	
-	if(window.menu.UserSetting.shoot.fragGrenadeTimerEnabled && curPlayer.weapType == "frag" && !game[obfuscate.pieTimer].active && game[obfuscate.input].mouseButtons)
+	// console.log(game[obfuscate.input]);
+	// console.log(game[obfuscate.input].mouseButton);
+	if(window.menu.UserSetting.shoot.fragGrenadeTimerEnabled && curPlayer.weapType == "frag" && !game[obfuscate.pieTimer].active && game[obfuscate.input].mouseButton)
 		runTimer("GRENADE", 4.0);
 	
 	if(game[obfuscate.pieTimer].active  && game[obfuscate.pieTimer].clientData.label == "GRENADE")
 	{
-		if(!game[obfuscate.input].mouseButtons)
+		if(!game[obfuscate.input].mouseButton)
 		{
 			stopTimer();
 			return;
@@ -571,8 +572,8 @@ window.gameFunctions.gameUpdate = function(){
 	
 	// Bump fire
 	// console.log(autoFireGuns.includes(curPlayer.weapType));
-	console.log(game[obfuscate.input]);
-	window.gameVars.Input.Cheat.RepeatFire = !window.gameVars.Menu && window.menu.UserSetting.shoot.bumpFireEnabled && game[obfuscate.input].mouseButtons && autoFireGuns.includes(curPlayer.weapType);
+	// console.log(game[obfuscate.input]);
+	window.gameVars.Input.Cheat.RepeatFire = !window.gameVars.Menu && window.menu.UserSetting.shoot.bumpFireEnabled && game[obfuscate.input].mouseButton && autoFireGuns.includes(curPlayer.weapType);
 	// console.log(window.gameVars.Input.Cheat.RepeatFire);
 	
 	// Auto loot	
@@ -583,17 +584,6 @@ window.gameFunctions.gameUpdate = function(){
 				game[obfuscate.input].keys["70"] = true;
 				setTimeout(function() {
 					delete game[obfuscate.input].keys["70"]
-				}, 90);
-			}, 0);
-		}
-	}
-
-	var mousePress = function () {
-		if(!game[obfuscate.input].keys["-1"]) {
-			setTimeout(function() {
-				game[obfuscate.input].keys["-1"] = true;
-				setTimeout(function() {
-					delete game[obfuscate.input].keys["-1"]
 				}, 90);
 			}, 0);
 		}

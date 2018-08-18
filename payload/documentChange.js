@@ -21,8 +21,8 @@
 		$(".ad-block-med-rect").css("width","auto");
 		$(".ad-block-med-rect").css("overflow-y","auto");
 		
-		$(".ad-block-med-rect").append(window.tempVars.helpEnHtml);
-		$(".ad-block-med-rect").append(window.tempVars.helpRuHtml);
+		$(".ad-block-med-rect").html(window.tempVars.helpEnHtml);
+		// $(".ad-block-med-rect").html(window.tempVars.helpRuHtml);
 		
 		var updateHelp = function() {
 			setTimeout(updateHelp, 50);

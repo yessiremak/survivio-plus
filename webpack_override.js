@@ -14,7 +14,7 @@
 	    "activePlayer": "lt",
 	    "input": "pe",
 	    "keyPressed": "te",
-	    "mousePressed": "ed",
+	    "mousePressed": "Z",
 	    "mouseDown": "$",
 	    "smokeBarn": "je",
 	    "smokePool": "e",
