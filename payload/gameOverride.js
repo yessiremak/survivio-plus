@@ -134,18 +134,19 @@ window.gameFunctions.gameOverride = function(){
 		}
 	}
 
-	var defaultMouseDown = function (event) {};
 	
 	document.addEventListener('mousedown', function(e) {
+		// console.log(e.button);
 		if((e.button == 2) || (window.gameVars.Input.GlobalHookCallback && (e.button == 0))){
 			processInput({code: e.button * -1 - 1, shift: e.shiftKey, ctrl: e.ctrlKey, alt: e.altKey}, true);
 		}
 		if(window.gameVars && window.gameVars.Menu)
 			e.stopPropagation();
 		if(e.button == 0) {
-			console.log(altInpt);
-			defaultMouseDown = altInpt.input.bOnMouseDown;
 			inpt.mouseButton = true;
+		}
+		if(e.button == 1) {
+			e.preventDefault();
 		}
 	});
 
@@ -279,19 +280,28 @@ window.gameFunctions.gameOverride = function(){
 		
 		return inputKeyPressedBase.call(inpt, e);
 	};
+
+	var mousePressedFunc = function () {
+		return !this.mouseButtonOld && this.mouseButton
+	}
 	
-	var inputMousePressedBase = this.ue.input[obfuscate.mousePressed];
-	// console.log(inputMousePressedBase);
-	this.ue.input[obfuscate.mousePressed] = function(){
+	var inputMousePressedBase = this[obfuscate.input][obfuscate.mousePressed];
+	this[obfuscate.input][obfuscate.mousePressed] = function(){
 		if(window.gameVars && window.gameVars.Input.Cheat.RepeatFire)
 			return true;
 		
 		return inputMousePressedBase.call(inpt);
 	};
+	var zHelper = function (e) {
+		return void 0 !== this.keys[e]
+	}
+	var mouseDownFunc = function (e) {
+		return this.keysOld[e] && !this.zHelper(e)
+	}
 	
-	var inputMouseDownBase = this[obfuscate.input][obfuscate.mouseDown];
-	// console.log(inputMouseDownBase);
-	this[obfuscate.input][obfuscate.mouseDown] = function(){
+	var inputMouseDownBase = mouseDownFunc;
+	console.log(inputMouseDownBase);
+	mouseDownFunc = function(){
 		if(window.gameVars && window.gameVars.Input.Cheat.RepeatFire)
 			return true;
 		
