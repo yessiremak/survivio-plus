@@ -257,17 +257,21 @@ window.gameFunctions.gameOverride = function(){
 		processInput({code: e.button * -1 - 1, shift: e.shiftKey, ctrl: e.ctrlKey, alt: e.altKey}, false);
 	};
 	var onMouseWheelBase = this[obfuscate.input].onMouseWheel;
-	this[obfuscate.input].onMouseWheel = function(e){
-		e.stopPropagation();
-		if(window.gameVars && window.gameVars.Menu && !(window.gameVars.Input.GlobalHookCallback))
-			return;
-		processInput({
-			code: e.deltaY < 0 ? -4 : -5, 
-			shift: window.gameVars.Input.Keyboard.ShiftPressed,
-			ctrl: window.gameVars.Input.Keyboard.CtrlPressed,
-			alt: window.gameVars.Input.Keyboard.AltPressed
-		}, true);
-	};
+	if (window.menu.UserSetting.look.zoomEnabled) {
+		this[obfuscate.input].onMouseWheel = function(e){
+			e.stopPropagation();
+			if(window.gameVars && window.gameVars.Menu && !(window.gameVars.Input.GlobalHookCallback))
+				return;
+			processInput({
+				code: e.deltaY < 0 ? -4 : -5, 
+				shift: window.gameVars.Input.Keyboard.ShiftPressed,
+				ctrl: window.gameVars.Input.Keyboard.CtrlPressed,
+				alt: window.gameVars.Input.Keyboard.AltPressed
+			}, true);
+		}
+	} else {
+		this[obfuscate.input].onMouseWheel = onMouseWheelBase;
+	}
 	
 	var inputKeyPressedBase = this[obfuscate.input][obfuscate.keyPressed];
 	// console.log(inputKeyPressedBase);
@@ -285,10 +289,11 @@ window.gameFunctions.gameOverride = function(){
 		return !this.mouseButtonOld && this.mouseButton
 	}
 	
-	var inputMousePressedBase = this[obfuscate.input][obfuscate.mousePressed];
-	this[obfuscate.input][obfuscate.mousePressed] = function(){
+	var inputMousePressedBase = this[obfuscate.input][obfuscate.mouseDown];
+	console.log(inputMousePressedBase);
+	this[obfuscate.input][obfuscate.mouseDown] = function(){
 		if(window.gameVars && window.gameVars.Input.Cheat.RepeatFire)
-			return true;
+			return false;
 		
 		return inputMousePressedBase.call(inpt);
 	};
@@ -299,9 +304,9 @@ window.gameFunctions.gameOverride = function(){
 		return this.keysOld[e] && !this.zHelper(e)
 	}
 	
-	var inputMouseDownBase = mouseDownFunc;
+	var inputMouseDownBase = this[obfuscate.input][obfuscate.mousePressed];
 	console.log(inputMouseDownBase);
-	mouseDownFunc = function(){
+	this[obfuscate.input][obfuscate.mousePressed] = function(){
 		if(window.gameVars && window.gameVars.Input.Cheat.RepeatFire)
 			return true;
 		
