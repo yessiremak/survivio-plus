@@ -180,20 +180,19 @@ window.gameFunctions.gameRender = function(){
 	}
 	
 	var updateNames = function(player) {
-		if(!player || !player.nameText || player.teammate)
-			return;
+		// if(!player || !player.nameText || player.teammate)
+		// 	return;
 		
 		var nameText = player.nameText;
 		
 		if(window.gameVars.Input.Cheat.ShowNamesPressed)
 		{
-			nameText.tint = 0x68B0E8;
 			nameText.visible = true;
-		}
-		else
-		{	
-			nameText.tint = 0XFFFFFF;
-			nameText.visible = false;
+			if(player.teammate) {
+				nameText.tint = 0x00b2ff;
+			} else {
+				nameText.tint = 0xffd700;
+			}
 		}
 	}
 
