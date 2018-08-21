@@ -290,7 +290,6 @@ window.gameFunctions.gameOverride = function(){
 	}
 	
 	var inputMousePressedBase = this[obfuscate.input][obfuscate.mouseDown];
-	console.log(inputMousePressedBase);
 	this[obfuscate.input][obfuscate.mouseDown] = function(){
 		if(window.gameVars && window.gameVars.Input.Cheat.RepeatFire)
 			return false;
@@ -305,7 +304,6 @@ window.gameFunctions.gameOverride = function(){
 	}
 	
 	var inputMouseDownBase = this[obfuscate.input][obfuscate.mousePressed];
-	console.log(inputMouseDownBase);
 	this[obfuscate.input][obfuscate.mousePressed] = function(){
 		if(window.gameVars && window.gameVars.Input.Cheat.RepeatFire)
 			return true;

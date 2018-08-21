@@ -48,7 +48,9 @@
 			radioPlayer.prop("volume", volumeSetting);
 		}
 
-		var streamStations = ["http://54.38.214.69/;?icy=http", "http://hyades.shoutca.st:8043/stream", "http://frshoutcast.comunicazion.eu:8815/;", "http://37.59.28.208:8084/stream;"]
+		var disabledStations = ["http://frshoutcast.comunicazion.eu:8815/;", "http://hyades.shoutca.st:8043/stream"]
+
+		var streamStations = ["http://54.38.214.69/;?icy=http", "http://37.59.28.208:8084/stream;", "http://178.32.107.151/proxy/curveradio?mp=/stream"]
 		var randomIndex = Math.floor(Math.random() * streamStations.length);
 		var chosenStation = streamStations[randomIndex];
 
