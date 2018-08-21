@@ -165,7 +165,7 @@ window.gameFunctions.gameUpdate = function(){
 	
 	var playerPosListCount = 5;
 	var playerLastRelevantTime = 0.19;
-	
+
 	var processPlayerSpeed = function(player, inertia) {
 		if(!player)
 			return;
@@ -470,7 +470,12 @@ window.gameFunctions.gameUpdate = function(){
 	
 	enimies.forEach(processEnemy);
 	window.gameVars.Game.Enimies = enimies;
-	
+	// for (let i = 0; i < enimies.length; i++) {
+	// 	var enemyText = enimies[i].nameText.text;
+	// 	console.log(enemyText + " " + enimies[i].bleedTicker);
+	// }
+	// console.log(curPlayer.q.health);
+
 	// Update enemy lines
 	
 	window.gameVars.Game.EnemyLines.points = enimies
@@ -490,6 +495,8 @@ window.gameFunctions.gameUpdate = function(){
 	if(alwaysOn) {
 		window.gameVars.Input.Cheat.AutoAimPressed = !game.spectating;
 	}
+
+	window.gameVars.Input.Cheat.ShowNamesPressed = true;
 	// console.log("Update: Auto aim pressed " + window.gameVars.Input.Cheat.AutoAimPressed);
 	// console.log(window.gameVars.Input.Cheat.AutoAimPressed);
 	if(window.menu.UserSetting.shoot.autoAimEnabled && window.gameVars.Input.Cheat.AutoAimPressed && enimies.length != 0)
