@@ -1,37 +1,37 @@
 (function webpack_inject(){
 	
 	window.obfuscate = {
-	    "mainModule": "_t",
+	    "mainModule": "vt",
 	    "init": "t",
 	    "free": "a",
 	    "update": "n",
-	    "render": "dt",
-	    "sendMessage": "bt",
-	    "processGameUpdate": "yt",
-	    "EmoteManager": "Je",
+	    "render": "ut",
+	    "sendMessage": "_t",
+	    "processGameUpdate": "xt",
+	    "EmoteManager": "Qe",
 	    "camera": "j",
 	    "targetZoom": "u",
-	    "activePlayer": "nt",
+	    "activePlayer": "st",
 	    "input": "pe",
 	    "keyPressed": "te",
 	    "mousePressed": "Y",
 	    "mouseDown": "$",
-	    "smokeBarn": "Re",
+	    "smokeBarn": "je",
 	    "smokePool": "e",
-	    "map": "ke",
+	    "map": "ze",
 	    "obstaclePool": "K",
-	    "buildingPool": "tt",
+	    "buildingPool": "at",
 	    "pool": "ce",
-	    "playerBarn": "Me",
-	    "playerPool": "$e",
-	    "playerInfo": "kt",
+	    "playerBarn": "Pe",
+	    "playerPool": "et",
+	    "playerInfo": "zt",
 	    "activeId": "le",
-	    "objectCreator": "rt",
+	    "objectCreator": "ot",
 	    "netData": "N",
-	    "pieTimer": "Ve",
-	    "lootBarn": "qe",
-	    "closestLoot": "vt",
-	    "lootPool": "et",
+	    "pieTimer": "He",
+	    "lootBarn": "Ue",
+	    "closestLoot": "St",
+	    "lootPool": "tt",
 	    "localData": "q"
 	};
 
@@ -97,7 +97,7 @@
 			// PING
 			var emoteModule = getModule("e5d16b4d");
 
-			// var someModule = getModule("3160ea28");
+			// var someModule = getModule("c99e6613");
 			// console.log(someModule);
 			
 			// override
