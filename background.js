@@ -81,30 +81,10 @@ var wrapAppCode = function(appCode) {
 	// Exporting modules from extension files
 	var modules = stringifyModules(moduleNames);
 
-	wrapCode = '(function(';
-
-	wrapCode = wrapCode + variableNames.game + ',';
-	wrapCode = wrapCode + variableNames.exports + ',';
-	wrapCode = wrapCode + variableNames.interactionEmitter + ',';
-	wrapCode = wrapCode + variableNames.emitActionCb + ',';
-	wrapCode = wrapCode + variableNames.smokeAlpha + '){';
+	wrapCode = '';
 
 	// Wrapping game client code
 	appCode = wrapCode + appCode;
-
-	// init from init.js
-	wrapCode = '\n(' + init + ')(';
-	wrapCode = wrapCode + variableNames.game + ',';
-	wrapCode = wrapCode + variableNames.exports + ',';
-	wrapCode = wrapCode + variableNames.interactionEmitter + ',';
-	wrapCode = wrapCode + variableNames.emitActionCb + ',';
-	wrapCode = wrapCode + variableNames.smokeAlpha + ',';
-	wrapCode = wrapCode + modules + ',';
-	wrapCode = wrapCode + JSON.stringify(options) + ',';
-	wrapCode = wrapCode + "\"" + chrome.runtime.id + "\"" + ');';
-	wrapCode = wrapCode + '})({}, window["' + variableNames.exports + '"], {}, {}, {}, {});'; 
-
-	appCode = appCode + wrapCode;
 
 	return appCode;
 }
@@ -113,39 +93,6 @@ function patchAppCode(appCode) {
 
 	var patchRules = [
 		{
-			name: "Export game scope",
-			from: /this.canvasMode=this.pixi.renderer/,
-			to: variableNames.game + ".scope=this;this.canvasMode=this.pixi.renderer"
-		},
-		{
-			name: "Action emitter export",
-			from: /([a-z])\.interaction\.text\=this\.getInteractionText\(([A-Za-z])\,([A-Za-z])\),/g,
-			to: '$1.interaction.text=this.getInteractionText($2,$3),' + variableNames.interactionEmitter + '.scope=$3,'
-		},
-		{
-			name: "Action emittion export",
-			from: /([a-z]).interaction.text&&\(([a-z]).interaction.text.innerHTML=([a-z]).interaction.text\)/g,
-			to: 'e.interaction.text&&(a.interaction.text.innerHTML=t.interaction.text,' + variableNames.emitActionCb + '.scope())'
-		},
-		{
-			name: "Change removeAds function",
-			from: /removeAds:function\(\)/g,
-			to: 'removeAds:function(){},_removeAds:function()'
-		},
-		{
-			name: "Smoke grenade alpha",
-			from: /sprite.tint=([a-z]).tint,([a-z]).sprite.alpha=[a-z],([a-z]).sprite.visible=([a-z]).active/g,
-			to: 'sprite.tint=$1.tint,$2.sprite.alpha=' + variableNames.smokeAlpha + '.scope,$3.sprite.visible=$4.active'
-		},
-		{
-			name: "Wheeldown emotes",
-			from: /([a-z])\(document\).on\(\"mousedown\",function\(([a-z])\){var ([a-z])=\"which\"in e\?3==e.which/g,
-			to: '$1(document).on("mousedown",function($2){var $3="which"in e?2==e.which'
-		}, {
-			name: "Wheelup emotes",
-			from: /([a-z])\(document\).on\("mouseup",function\(([a-z])\){3==e.which&&([a-z]).pingKeyTriggered&&([a-z]).pingMouseTriggered&&([a-z]).triggerPing\(\),3==e.which/g,
-			to: '$1(document).on("mouseup",function($2){2==e.which&&$3.pingKeyTriggered&&$4.pingMouseTriggered&&$5.triggerPing(),2==e.which'
-		}, {
 			name: "Window.appk fix",
 			from: /if\(a.ws&&a.ws.close\(\),l\){for\(;l.firstChild;\)l.removeChild\(l.firstChild\);g.I\(l\)}p.storeGeneric\("error","err"\),p.enabled=!1,window.appk=0/g,
 			to: ""
@@ -165,6 +112,7 @@ function patchAppCode(appCode) {
 	});
 
 	appCode = wrapAppCode(appCode);
+	console.log(appCode);
 
 	return appCode;
 }

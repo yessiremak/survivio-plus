@@ -1,12 +1,8 @@
 ![alt text](https://puu.sh/B03Pw/9a547140e8.PNG "Survivio Banner")
 
-# Welcome to Surviv++ (formerly known as Surviv+) ! 😃
+# Welcome to Surviv+! 😃
 
-This is a Surviv.io cheat loaded as a Chrome extension. It was originally developed by [reuke](https://github.com/reuke), but since he has been away, I've decided to take ownership of the development of the code. 
-
-Since the retirement of the repos by [w3x](https://github.com/w3x731) and [PowerOfUniverse](https://github.com/PowerOfUniverse) (aka Najlepszy56), it's been decided that's in the best interest to merge our extensions into one. I give huge credit to PowerOfUniverse for the incredible amount of contributions he has made, and hope that one day I will pass the torch for someone else to carry.
-
-Unfortunately, this also means a couple of the recent features on the other extension was rolled back including the notification style and the Triggerbot. Hopefully we will eventually have them back!
+This is a Surviv.io cheat loaded as a Chrome extension. It was originally developed by [reuke](https://github.com/reuke), but since he has been away, I've decided to take ownership of the development of the code.
 
 
 ### 💪 Features
@@ -20,12 +16,8 @@ Unfortunately, this also means a couple of the recent features on the other exte
 * Lasersight (shot range)
 * Frag grenade timer
 * Custom key bindings
-* Custom cursors
-* Now supports in-game radio!
-* **NEW!!** Player analysis!
-* **NEW!!** In game team info!
-* **NEW!!** Reload/Heal Indicators!
-
+* **New!** Custom cursors
+* **New!** Now supports in-game radio!
 
 ## 🔨 Installation
 
@@ -38,12 +30,11 @@ Unfortunately, this also means a couple of the recent features on the other exte
 ## 🤔 FAQ
 > **What do I do if the cheat stops working?**
 
-This usually means the game's code was patched (meaning they updated it where variables and functionality has changed). If this happens, the most you can do is create an issue. Give it some time and the cheat will work again. 
+This usually means the game's code was patched (meaning they updated it where variables and functionality has changed). If this happens, the most you can do is create an issue. Give it some time and the cheat will work again.
+
 > **This feature isn't working for me! WTF?**
 
-
-Relax. Open the console (Hit F12), and copy what the error is, and just [create an issue](https://github.com/Kalaborative/survivio-cheat/issues). Additionally, the extension has been setup to automatically report any errors to my server!
-
+Relax. Open the console (Hit F12), and copy what the error is, and just [create an issue](https://github.com/Kalaborative/survivio-cheat/issues).
 
 > **Does this hack give you infinite health?**
 
