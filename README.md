@@ -4,6 +4,10 @@
 
 This is a Surviv.io cheat loaded as a Chrome extension. It was originally developed by [reuke](https://github.com/reuke), but since he has been away, I've decided to take ownership of the development of the code.
 
+Since the retirement of the repos by [w3x](https://github.com/w3x731) and [PowerOfUniverse](https://github.com/PowerOfUniverse) (aka Najlepszy56), it's been decided that's in the best interest to merge our extensions into one. I give huge credit to PowerOfUniverse for the incredible amount of contributions he has made, and hope that one day I will pass the torch for someone else to carry.
+
+Unfortunately, this also means a couple of the recent features on the other extension was rolled back including the notification style and the Triggerbot. Hopefully we will eventually have them back!
+
 ### Working?
 **Yes, the cheat is working as of August 18, 2018!**
 
@@ -18,8 +22,11 @@ This is a Surviv.io cheat loaded as a Chrome extension. It was originally develo
 * Lasersight (shot range)
 * Frag grenade timer
 * Custom key bindings
-* **New!** Custom cursors
-* **New!** In-game radio!
+* Custom cursors
+* Now supports in-game radio!
+* **NEW!!** Player analysis!
+* **NEW!!** In game team info!
+* **NEW!!** Reload/Heal Indicators!
 
 ## 🔨 Installation
 
