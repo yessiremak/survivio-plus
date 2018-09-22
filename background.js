@@ -100,12 +100,12 @@ function patchAppCode(appCode) {
 			name: "Window onerror",
 			from: /window.onerror/g,
 			to: "window.onrandomvariable"
-		},
-		{
-			name: "OT-38 10CLIP represent",
-			from: /dualWieldType:"ot38_dual",pistol:!0,maxClip:5,maxReload:5/g,
-			to: 'dualWieldType:"ot38_dual",pistol:!0,maxClip:10,maxReload:10'
 		}
+		// {
+		// 	name: "OT-38 10CLIP represent",
+		// 	from: /dualWieldType:"ot38_dual",pistol:!0,maxClip:5,maxReload:5/g,
+		// 	to: 'dualWieldType:"ot38_dual",pistol:!0,maxClip:10,maxReload:10'
+		// }
 	];
 
 	patchRules.forEach(function(item) {

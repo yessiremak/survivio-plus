@@ -169,7 +169,7 @@ window.gameFunctions.gameRender = function(){
 			return;
 		
 		draw.beginFill();
-		draw.lineStyle((2), 0x68B0E8);
+		draw.lineStyle(2, 0x68B0E8);
 		
 		points.forEach(function(pnt) {
 			draw.moveTo(0, 0);
