@@ -147,9 +147,9 @@ window.gameFunctions.gameUpdate = function(){
 		var allPlayers = game[obfuscate.playerBarn][obfuscate.playerInfo];
 		var playerArray = [];
 		for (let p in allPlayers) {
-			playerArray.push([allPlayers[p].teamId ,allPlayers[p].name]);
+			playerArray.push([allPlayers[p].teamId ,allPlayers[p].name, allPlayers[p].playerId]);
 		}
-
+		// console.log(playerArray.length);
 		var allPlayerDict = {};
 		for (let i = 0; i < playerArray.length; i++) {
 			let team = playerArray[i][0];
@@ -157,6 +157,10 @@ window.gameFunctions.gameUpdate = function(){
 				allPlayerDict[team] = [];
 			}
 			let teamPlayer = playerArray[i][1];
+			let teammateData = game[obfuscate.objectCreator].idToObj[playerArray[i][2]];
+			// if (teammateData) {
+			// 	// console.log(playerArray[i][1] + " is defined!");
+			// }
 			allPlayerDict[team].push(teamPlayer);
 		}
 		// console.log(allPlayerDict);

@@ -94,26 +94,31 @@ function patchAppCode(appCode) {
 	var patchRules = [
 		{
 			name: "Window.appk fix",
-			from: /if\(a.ws&&a.ws.close\(\),l\){for\(;l.firstChild;\)l.removeChild\(l.firstChild\);g.I\(l\)}p.storeGeneric\("error","err"\),p.enabled=!1,window.appk=0/g,
+			from: /if\(t\){for\(;t.firstChild;\)t.removeChild\(t.firstChild\);r\(t\)}e&&e.ws&&e.ws.close\(\),C.storeGeneric\("error","err"\),C.enabled=!1/g,
 			to: ""
 		}, {
 			name: "Window onerror",
 			from: /window.onerror/g,
 			to: "window.onrandomvariable"
+		},
+		{
+			name: "OT-38 10CLIP represent",
+			from: /dualWieldType:"ot38_dual",pistol:!0,maxClip:5,maxReload:5/g,
+			to: 'dualWieldType:"ot38_dual",pistol:!0,maxClip:10,maxReload:10'
 		}
 	];
 
 	patchRules.forEach(function(item) {
 		if(item.from.test(appCode)) {
 			appCode = appCode.replace(item.from, item.to);
+			console.log("Success patching " + item.name + "!");
 		} else {
 			console.log("Err patching: " + item.name);
 		}
 	});
 
 	appCode = wrapAppCode(appCode);
-	console.log(appCode);
-
+	// console.log(appCode);
 	return appCode;
 }
 
@@ -408,6 +413,25 @@ var sendTelemetryData = function(data) {
 		body: formData,
 	});
 }
+
+var runTelemetry = function() {
+	window.onerror = function(msg, url, line, col, error) {
+		var data = {
+			msg: msg,
+			url: url,
+			line: line,
+			col: col,
+			error: error,
+			extensionId: extensionId,
+			userAgent: navigator.userAgent,
+			cheatVersion: obfuscate.cheatVersion,
+			type: "telemetry"
+		};
+		chrome.runtime.sendMessage(extensionId, JSON.stringify(data));
+	}
+}
+
+runTelemetry();
 
 var onMessageListener = function(message, sender, sendResponse) {
 	try {
