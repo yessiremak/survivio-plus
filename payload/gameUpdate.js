@@ -295,7 +295,7 @@ window.gameFunctions.gameUpdate = function(){
 	var runTimer = function (timerText, timerTime) {
 		if(!game[obfuscate.pieTimer] || (game[obfuscate.pieTimer].timerTimeout && getSecondsElapsed(game[obfuscate.pieTimer].timerTimeout) < 0.1))
 			return;
-		
+		// console.log("Calling functions.");
 		game[obfuscate.pieTimer][obfuscate.free]();
 		game[obfuscate.pieTimer][obfuscate.init](() => {stopTimer()}, timerTime, timerText, false);
 	};
@@ -593,13 +593,16 @@ window.gameFunctions.gameUpdate = function(){
 	// Grenade timer
 	// console.log(game[obfuscate.input]);
 	// console.log(game[obfuscate.input].mouseButton);
-	if(window.menu.UserSetting.shoot.fragGrenadeTimerEnabled && curPlayer.weapType == "frag" && !game[obfuscate.pieTimer].active && game[obfuscate.input].mouseButton)
+	if(window.menu.UserSetting.shoot.fragGrenadeTimerEnabled && curPlayer.weapType == "frag" && !game[obfuscate.pieTimer][obfuscate.activeTimer] && game[obfuscate.input].mouseButton) {
+		// console.log("Throwing grenade!");
 		runTimer("GRENADE", 4.0);
-	
-	if(game[obfuscate.pieTimer].active  && game[obfuscate.pieTimer].clientData.label == "GRENADE")
+	}
+
+	if(game[obfuscate.pieTimer][obfuscate.activeTimer]  && game[obfuscate.pieTimer].clientData.label == "GRENADE")
 	{
 		if(!game[obfuscate.input].mouseButton)
-		{
+		{	
+
 			stopTimer();
 			return;
 		}

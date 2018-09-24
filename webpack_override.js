@@ -32,7 +32,8 @@
 	    "lootBarn": "Ge",
 	    "closestLoot": "St",
 	    "lootPool": "tt",
-	    "localData": "q"
+	    "localData": "q",
+	    "activeTimer": "Bt"
 	};
 
 	// window.freestar.newAdSlots = function(slots) {
