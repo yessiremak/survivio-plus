@@ -26,6 +26,9 @@
 		});
 	}
 
+	window.isset = function(v) {
+		return typeof v !== "undefined" && v !== null && v !== "" ? true : false;
+	}
 	
 	window.obfuscate = {
 	    "mainModule": "vt",
@@ -60,9 +63,21 @@
 	    "closestLoot": "St",
 	    "lootPool": "tt",
 	    "localData": "q",
-	    "activeTimer": "Bt"
+	    "activeTimer": "Bt",
+	    "cheatVersion": "0.21.2"
 	};
 
+	var checkVersion = function () {
+		var link = "https://raw.githubusercontent.com/Kalaborative/survivio-plus/master/manifest.json";
+		fetch(link)
+			.then( response => response.json())
+			.then( (jsonData) => {
+				if( isset(jsonData.version) && jsonData.version !== obfuscate.cheatVersion) {
+					alert("Please update your extension for the best results!");
+				}
+			});
+	}
+	checkVersion();
 	// window.freestar.newAdSlots = function(slots) {
 	// 	return slots;
 	// }
