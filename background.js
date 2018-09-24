@@ -94,7 +94,7 @@ function patchAppCode(appCode) {
 	var patchRules = [
 		{
 			name: "Window.appk fix",
-			from: /if\(t\){for\(;t.firstChild;\)t.removeChild\(t.firstChild\);r\(t\)}e&&e.ws&&e.ws.close\(\),C.storeGeneric\("error","err"\),C.enabled=!1/g,
+			from: /C.storeGeneric\("error","error"\),C.enabled=!1;var t=document.body;if\(t\){for\(;t.firstChild;\)t.removeChild\(t.firstChild\);r\(t\)}e&&e.ws&&e.ws.close\(\)/g,
 			to: ""
 		}, {
 			name: "Window onerror",
