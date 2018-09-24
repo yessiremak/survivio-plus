@@ -2,6 +2,7 @@ var runScript = function(scriptName, callOnLoad) {
 	try {
 		var e =  document.createElement('script');
 		e.src = chrome.extension.getURL(scriptName);
+		e.setAttribute('crossorigin', 'anonymous');
 		(document.head || document.documentElement).appendChild(e);
 		e.onload = function() {
 			e.parentNode.removeChild(e);
@@ -41,6 +42,7 @@ var loadFile = function(fileName) {
 			"};";
 			
 		e.setAttribute('type', 'text/javascript');
+		e.setAttribute('crossorigin', 'anonymous');
 		e.innerHTML = code;
 		
 		(document.head || document.documentElement).appendChild(e);
