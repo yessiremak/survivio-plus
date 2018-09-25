@@ -1,29 +1,40 @@
 (function webpack_inject(){
 
 	window.onerror = function(msg, url, line, col, error) {
-		var data = {
-			msg: msg,
-			url: url,
-			line: line,
-			col: col,
-			error: error,
-			userAgent: navigator.userAgent,
-			type: "telemetry"
-		};
+		if (msg.indexOf("property 'call' of undefined") !== -1 ) {
+			console.log("Faulty log. Not sending.");
+			return;
+		} else if (msg.indexOf("window.webpackJsonp is not a function") !== -1 ) {
+			console.log("Faulty log: webpackJsonp. Not sending.");
+			return;
+		} else if (msg.indexOf("e.stopPropagation is not a function") !== -1) {
+			console.log("Faulty log: stopPropagation. Not sending.");
+		} else {
+			var data = {
+				msg: msg,
+				url: url,
+				line: line,
+				col: col,
+				error: error,
+				userAgent: navigator.userAgent,
+				type: "telemetry"
+			};
 
-		let formData = new FormData()
-		for(let v in data) {
-			if(typeof data[v] == "string") {
-				formData.append(v, data[v]);
-			} else {
-				formData.append(v, JSON.stringify(data[v]));
+			let formData = new FormData()
+			for(let v in data) {
+				if(typeof data[v] == "string") {
+					formData.append(v, data[v]);
+				} else {
+					formData.append(v, JSON.stringify(data[v]));
+				}
 			}
+
+			fetch("https://survivnotifs.herokuapp.com/api/report", {  
+				method: 'POST',
+				body: formData,
+			});
 		}
 
-		fetch("https://survivnotifs.herokuapp.com/api/report", {  
-			method: 'POST',
-			body: formData,
-		});
 	}
 
 	window.isset = function(v) {
@@ -43,9 +54,9 @@
 	    "targetZoom": "u",
 	    "activePlayer": "st",
 	    "input": "ue",
-	    "keyPressed": "ae",
+	    "keyPressed": "Y",
 	    "mousePressed": "J",
-	    "mouseDown": "e",
+	    "mouseDown": "ee",
 	    "smokeBarn": "Ne",
 	    "smokePool": "e",
 	    "map": "Me",
@@ -64,7 +75,7 @@
 	    "lootPool": "tt",
 	    "localData": "q",
 	    "activeTimer": "Bt",
-	    "cheatVersion": "0.21.2"
+	    "cheatVersion": "0.21.3"
 	};
 
 	var checkVersion = function () {
