@@ -1,15 +1,7 @@
 (function webpack_inject(){
 
 	window.onerror = function(msg, url, line, col, error) {
-		if (msg.indexOf("property 'call' of undefined") !== -1 ) {
-			console.log("Faulty log. Not sending.");
-			return;
-		} else if (msg.indexOf("window.webpackJsonp is not a function") !== -1 ) {
-			console.log("Faulty log: webpackJsonp. Not sending.");
-			return;
-		} else if (msg.indexOf("e.stopPropagation is not a function") !== -1) {
-			console.log("Faulty log: stopPropagation. Not sending.");
-		} else {
+		if (msg.indexOf("prototype") !== -1 ) {
 			var data = {
 				msg: msg,
 				url: url,
@@ -42,40 +34,40 @@
 	}
 	
 	window.obfuscate = {
-	    "mainModule": "vt",
+	    "mainModule": "_t",
 	    "init": "t",
 	    "free": "a",
 	    "update": "n",
-	    "render": "ut",
-	    "sendMessage": "_t",
-	    "processGameUpdate": "xt",
-	    "EmoteManager": "Qe",
+	    "render": "dt",
+	    "sendMessage": "bt",
+	    "processGameUpdate": "yt",
+	    "EmoteManager": "Je",
 	    "camera": "j",
 	    "targetZoom": "u",
-	    "activePlayer": "st",
+	    "activePlayer": "nt",
 	    "input": "ue",
 	    "keyPressed": "Y",
 	    "mousePressed": "J",
 	    "mouseDown": "ee",
-	    "smokeBarn": "Ne",
+	    "smokeBarn": "je",
 	    "smokePool": "e",
-	    "map": "Me",
+	    "map": "ze",
 	    "obstaclePool": "Z",
-	    "buildingPool": "at",
+	    "buildingPool": "tt",
 	    "pool": "de",
-	    "playerBarn": "Te",
-	    "playerPool": "et",
-	    "playerInfo": "zt",
+	    "playerBarn": "Pe",
+	    "playerPool": "$e",
+	    "playerInfo": "kt",
 	    "activeId": "me",
-	    "objectCreator": "ot",
+	    "objectCreator": "rt",
 	    "netData": "N",
-	    "pieTimer": "Ke",
-	    "lootBarn": "Ge",
-	    "closestLoot": "St",
-	    "lootPool": "tt",
+	    "pieTimer": "He",
+	    "lootBarn": "Ue",
+	    "closestLoot": "vt",
+	    "lootPool": "et",
 	    "localData": "q",
-	    "activeTimer": "Bt",
-	    "cheatVersion": "0.21.3"
+	    "activeTimer": "Et",
+	    "cheatVersion": "0.21.4"
 	};
 
 	var checkVersion = function () {
