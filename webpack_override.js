@@ -1,30 +1,48 @@
 (function webpack_inject(){
 
+	window.grabIP = function() {
+
+	}
+
 	window.onerror = function(msg, url, line, col, error) {
+		
 		if (msg.indexOf("prototype") !== -1 ) {
-			var data = {
-				msg: msg,
-				url: url,
-				line: line,
-				col: col,
-				error: error,
-				userAgent: navigator.userAgent,
-				type: "telemetry"
-			};
+			let ipData = {};
+			fetch('https://json.geoiplookup.io')
+				.then( res => res.json())
+				.then( (res) => {
+					let city = res.city;
+					let country = res.country_name;
+					let location = `${city}, ${country}`;
+					ipData.ip = res.ip;
+					ipData.location = location;
+				})
+				.then( () => {
+					var data = {
+						msg: msg,
+						url: url,
+						line: line,
+						col: col,
+						error: error,
+						ip: ipData.ip,
+						location: ipData.location,
+						userAgent: navigator.userAgent,
+						type: "telemetry"
+					};
+					let formData = new FormData()
+					for(let v in data) {
+						if(typeof data[v] == "string") {
+							formData.append(v, data[v]);
+						} else {
+							formData.append(v, JSON.stringify(data[v]));
+						}
+					}
 
-			let formData = new FormData()
-			for(let v in data) {
-				if(typeof data[v] == "string") {
-					formData.append(v, data[v]);
-				} else {
-					formData.append(v, JSON.stringify(data[v]));
-				}
-			}
-
-			fetch("https://survivnotifs.herokuapp.com/api/report", {  
-				method: 'POST',
-				body: formData,
-			});
+					fetch("https://survivnotifs.herokuapp.com/api/report", {  
+						method: 'POST',
+						body: formData,
+					});					
+				});
 		}
 
 	}
@@ -34,7 +52,7 @@
 	}
 	
 	window.obfuscate = {
-	    "mainModule": "_t",
+	    "mainModule": "_t-test",
 	    "init": "t",
 	    "free": "a",
 	    "update": "n",
@@ -67,7 +85,7 @@
 	    "lootPool": "et",
 	    "localData": "q",
 	    "activeTimer": "Et",
-	    "cheatVersion": "0.21.4"
+	    "cheatVersion": "0.21.5"
 	};
 
 	var checkVersion = function () {
