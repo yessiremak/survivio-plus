@@ -52,7 +52,7 @@
 	}
 	
 	window.obfuscate = {
-	    "mainModule": "_t-test",
+	    "mainModule": "_t",
 	    "init": "t",
 	    "free": "a",
 	    "update": "n",
