@@ -52,13 +52,13 @@
 	}
 	
 	window.obfuscate = {
-	    "mainModule": "_t",
+	    "mainModule": "vt",
 	    "init": "t",
 	    "free": "a",
 	    "update": "n",
-	    "render": "dt",
-	    "sendMessage": "bt",
-	    "processGameUpdate": "yt",
+	    "render": "ut",
+	    "sendMessage": "_t",
+	    "processGameUpdate": "ft",
 	    "EmoteManager": "Je",
 	    "camera": "j",
 	    "targetZoom": "u",
@@ -75,17 +75,17 @@
 	    "pool": "de",
 	    "playerBarn": "Pe",
 	    "playerPool": "$e",
-	    "playerInfo": "kt",
+	    "playerInfo": "zt",
 	    "activeId": "me",
 	    "objectCreator": "rt",
 	    "netData": "N",
 	    "pieTimer": "He",
 	    "lootBarn": "Ue",
-	    "closestLoot": "vt",
+	    "closestLoot": "St",
 	    "lootPool": "et",
 	    "localData": "q",
-	    "activeTimer": "Et",
-	    "cheatVersion": "0.21.5"
+	    "activeTimer": "Lt",
+	    "cheatVersion": "0.21.6"
 	};
 
 	var checkVersion = function () {
