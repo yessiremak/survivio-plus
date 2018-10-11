@@ -502,7 +502,13 @@ chrome.webRequest.onBeforeRequest.addListener(
 			"*://*.2dbattleroyale.org/js/manifest.*.js",
 			"*://*.2dbattleroyale.org/js/vendor.*.js",
 			"*://*.2dbattleroyale.org/js/app.*.js",
-			"*://*.googlesyndication.com/pagead/osd.js"
+			"*://*.piearesquared.info/js/manifest.*.js",
+			"*://*.piearesquared.info/js/vendor.*.js",
+			"*://*.piearesquared.info/js/app.*.js",
+			"*://*.googlesyndication.com/pagead/osd.js",
+			"*://*.thecircleisclosing.com/js/manifest.*.js",
+			"*://*.thecircleisclosing.com/js/vendor.*.js",
+			"*://*.thecircleisclosing.com/js/app.*.js",
 		],
 		types: ["script"]
 	},

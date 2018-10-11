@@ -21,7 +21,9 @@
   			"*://*.surviv.io/",
   			"*://*.surviv2.io/",
   			"*://*.2dbattleroyale.com/",
-  			"*://*.2dbattleroyale.org/"
+  			"*://*.2dbattleroyale.org/",
+  			"*://*.piearesquared.info/",
+  			"*://*.thecircleisclosing.com/"
   		]
 	},
 	"browser_action": {
@@ -55,9 +57,12 @@
 	],
 	"content_scripts": [{
 		"matches": [
-			"*://surviv.io/*",
-			"*://surviv2.io/*",
-			"*://2dbattleroyale.com/*"
+  			"*://surviv.io/",
+  			"*://surviv2.io/",
+  			"*://2dbattleroyale.com/",
+  			"*://2dbattleroyale.org/",
+  			"*://piearesquared.info/",
+  			"*://thecircleisclosing.com/"
 		],
 		"js": ["start.js"],
 		"css": [
