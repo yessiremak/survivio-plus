@@ -18,7 +18,7 @@
 	},
 	"externally_connectable": {
   		"matches": [
-  			"*://*.surviv.io/",
+  			"*://*.surviv.io/*",
   			"*://*.surviv2.io/",
   			"*://*.2dbattleroyale.com/",
   			"*://*.2dbattleroyale.org/",
@@ -57,7 +57,7 @@
 	],
 	"content_scripts": [{
 		"matches": [
-  			"*://surviv.io/",
+  			"*://surviv.io/*",
   			"*://surviv2.io/",
   			"*://2dbattleroyale.com/",
   			"*://2dbattleroyale.org/",
