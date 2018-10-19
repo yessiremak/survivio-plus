@@ -238,6 +238,19 @@ window.gameFunctions.gameRender = function(){
 				$('#game-area-wrapper').css('cursor', 'crosshair');
 		}
 	}
+
+	var pressButton = function(keyCode) {
+		var keys = game.he.input.keys;
+
+		if(!keys[keyCode]) {
+			setTimeout(function() {
+				keys[keyCode] = true;
+				setTimeout(function() {
+					delete keys[keyCode];
+				}, 50);
+			}, 50);
+		}
+	};
 	
 	try {
 		//game.playerBarn.playerPool.pool
@@ -249,6 +262,7 @@ window.gameFunctions.gameRender = function(){
 		updateLaser();
 		updateEnemyLines();
 		updateCustomCursor();
+		// console.log(game[obfuscate.map][obfuscate.obstaclePool].creator.__type);
 		// $(".ui-stats-header-title").html("You suck.");
 	}
 	catch(error)

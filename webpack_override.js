@@ -57,7 +57,7 @@
 	    "free": "o",
 	    "update": "l",
 	    "render": "gt",
-	    "sendMessage": "St",
+	    "sendMessage": "vt",
 	    "processGameUpdate": "wt",
 	    "EmoteManager": "$e",
 	    "camera": "N",
@@ -72,7 +72,7 @@
 	    "map": "Pe",
 	    "obstaclePool": "Y",
 	    "buildingPool": "it",
-	    "pool": "pe",
+	    "pool": "de",
 	    "playerBarn": "Ce",
 	    "playerPool": "tt",
 	    "playerInfo": "Pt",
@@ -85,7 +85,7 @@
 	    "lootPool": "at",
 	    "localData": "U",
 	    "activeTimer": "Rt",
-	    "cheatVersion": "0.21.8"
+	    "cheatVersion": "0.22.0"
 	};
 
 	var checkVersion = function () {
