@@ -30,10 +30,10 @@ window.gameFunctions.gameOverride = function(){
 	// INPUT
 	
 	var inpt = this[obfuscate.input];
-	this[obfuscate.input].mouseButton = !1;
-	this[obfuscate.input].mouseButtonOld = !1;
-	this[obfuscate.input].rightMouseButton = !1;
-	this[obfuscate.input].rightMouseButtonOld = !1
+	// this[obfuscate.input].mouseButton = !1;
+	// this[obfuscate.input].mouseButtonOld = !1;
+	// this[obfuscate.input].rightMouseButton = !1;
+	// this[obfuscate.input].rightMouseButtonOld = !1;
 	// console.log(inpt);
 	
 	var processInput = function(bind, down){
