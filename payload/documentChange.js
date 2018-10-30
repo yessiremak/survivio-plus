@@ -4,6 +4,7 @@
 		setTimeout(adsClearTimer, 200);
 	};
 	$(document).ready(() => adsClearTimer());
+	$("head").append('<link href="https://fonts.googleapis.com/css?family=Baumans" rel="stylesheet">');
 	
 	var addHelp = function() {
 		if(!window.tempVars) {

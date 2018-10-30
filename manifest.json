@@ -1,6 +1,6 @@
 {
 	"name": "Survivio+",
-	"version": "0.22.0",
+	"version": "0.23.0",
 	"description": "Cheat for surviv.io game.",
 	"permissions": [
 		"tabs",
@@ -43,6 +43,7 @@
 		"payload/gameOverride.js",
 		"payload/gameUpdate.js",
 		"payload/gameRender.js",
+		"payload/ghostAnim.js",
 		"payload/pingOverride.js",
 		"payload/menuAppearance.js",
 		"payload/documentChange.js",
