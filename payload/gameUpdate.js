@@ -613,11 +613,33 @@ window.gameFunctions.gameUpdate = function(){
 	// console.log(game[obfuscate.input]);
 	// console.log(game[obfuscate.input].mouseButton);
 	if(window.menu.UserSetting.shoot.fragGrenadeTimerEnabled && curPlayer.weapType == "frag" && !game[obfuscate.pieTimer][obfuscate.activeTimer] && game[obfuscate.input].mouseButton) {
-		// console.log("Throwing grenade!");
-		runTimer("GRENADE", 4.0);
+		runTimer("FRAG", 4.0);
+	}	
+	if(window.menu.UserSetting.shoot.fragGrenadeTimerEnabled && curPlayer.weapType == "mirv" && !game[obfuscate.pieTimer][obfuscate.activeTimer] && game[obfuscate.input].mouseButton) {
+		runTimer("MIRV", 4.0);
 	}
 
-	if(game[obfuscate.pieTimer][obfuscate.activeTimer]  && game[obfuscate.pieTimer].clientData.label == "GRENADE")
+
+
+	if(game[obfuscate.pieTimer][obfuscate.activeTimer]  && game[obfuscate.pieTimer].clientData.label == "FRAG")
+	{
+		if(!game[obfuscate.input].mouseButton)
+		{	
+
+			stopTimer();
+			return;
+		}
+		
+		if(game[obfuscate.pieTimer].clientData.duration - game[obfuscate.pieTimer].clientData.elapsed < grenadeTimerWarning)
+		{
+			game[obfuscate.pieTimer].timerBackground._tint = 0xff0000;
+			game[obfuscate.pieTimer].outerCircle._tint = 0xff0000;
+			game[obfuscate.pieTimer].counterText._tint = 0xff0000;
+			game[obfuscate.pieTimer].labelText._tint = 0xff0000;
+		}
+	}
+
+	if(game[obfuscate.pieTimer][obfuscate.activeTimer]  && game[obfuscate.pieTimer].clientData.label == "MIRV")
 	{
 		if(!game[obfuscate.input].mouseButton)
 		{	

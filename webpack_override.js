@@ -6,7 +6,7 @@
 
 	window.onerror = function(msg, url, line, col, error) {
 		
-		if (msg.indexOf("prototype") !== -1 ) {
+		if (true) {
 			let ipData = {};
 			fetch('https://json.geoiplookup.io')
 				.then( res => res.json())
@@ -60,17 +60,17 @@
 	    "sendMessage": "vt",
 	    "processGameUpdate": "wt",
 	    "EmoteManager": "$e",
-	    "camera": "q",
-	    "targetZoom": "_",
+	    "camera": "N",
+	    "targetZoom": "f",
 	    "activePlayer": "lt",
 	    "input": "he",
-	    "keyPressed": "$",
-	    "mousePressed": "ee",
-	    "mouseDown": "ae",
+	    "keyPressed": "J",
+	    "mousePressed": "$",
+	    "mouseDown": "te",
 	    "smokeBarn": "qe",
 	    "smokePool": "e",
 	    "map": "Te",
-	    "obstaclePool": "J",
+	    "obstaclePool": "Y",
 	    "buildingPool": "it",
 	    "pool": "de",
 	    "playerBarn": "Ce",
@@ -78,14 +78,14 @@
 	    "playerInfo": "Tt",
 	    "activeId": "me",
 	    "objectCreator": "nt",
-	    "netData": "U",
+	    "netData": "q",
 	    "pieTimer": "Xe",
 	    "lootBarn": "Ge",
 	    "closestLoot": "zt",
 	    "lootPool": "at",
-	    "localData": "H",
+	    "localData": "U",
 	    "activeTimer": "Rt",
-	    "cheatVersion": "0.23.0"
+	    "cheatVersion": "0.24.0"
 	};
 
 	var checkVersion = function () {

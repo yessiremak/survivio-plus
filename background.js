@@ -100,14 +100,6 @@ function patchAppCode(appCode) {
 			name: "Window onerror",
 			from: /window.onerror/g,
 			to: "window.onrandomvariable"
-		}, {
-			name: "Spooky music part1",
-			from: /menu_music_spooky:{name:"audio\/ambient\/menu_music_02.mp3",volume:1}/g,
-			to: 'menu_music_spooky:{name:"audio/ambient/menu_music_02.mp3",volume:1}, menu_music_spooky2: {name:"https://survivnotifs.herokuapp.com/static/mp3/halloween.mp3", volume: 1}'
-		}, {
-			name: "Spooky music part2",
-			from: /this.menuMusicIdx=t.queueSound\("menu_music_spooky"/g,
-			to: 'this.menuMusicIdx=t.queueSound("menu_music_spooky2"'
 		}
 		// {
 		// 	name: "OT-38 10CLIP represent",
