@@ -34,7 +34,7 @@ This usually means the game's code was patched (meaning they updated it where va
 
 > **This feature isn't working for me! WTF?**
 
-Relax. Open the console (Hit F12), and copy what the error is, and just [create an issue](https://github.com/Kalaborative/survivio-cheat/issues).
+Relax. Open the console (Hit F12), and copy what the error is, and just [create an issue](https://github.com/Kalaborative/survivio-cheat/issues). Do not open an issue if you already see the same one. If you do, you will be banned from using the cheat.
 
 > **Does this hack give you infinite health?**
 
