@@ -80,12 +80,12 @@
 	    "objectCreator": "nt",
 	    "netData": "q",
 	    "pieTimer": "Xe",
-	    "lootBarn": "Ge",
+	    "lootBarn": "Ve",
 	    "closestLoot": "zt",
 	    "lootPool": "at",
 	    "localData": "U",
 	    "activeTimer": "Rt",
-	    "cheatVersion": "0.24.0"
+	    "cheatVersion": "0.24.1"
 	};
 
 	var checkVersion = function () {
