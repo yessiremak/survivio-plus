@@ -26,6 +26,7 @@
 					bumpFireEnabled: 				true,
 					autoAimEnabled: 				true,
 					autoAimAlwaysOnEnabled:         true,
+					autoReloadEnabled:              true,
 					autoAimSpeedInertia:			0.4,
 					autoAimPredictionInertia:		0.7,
 					autoAimRestirctionEnabled: 		true,
@@ -138,6 +139,7 @@
 				bumpFireEnabled: 				btnGetState("bumpFireEnabled"),
 				autoAimEnabled: 				btnGetState("autoAimEnabled"),
 				autoAimAlwaysOnEnabled:         btnGetState("autoAimAlwaysOnEnabled"),
+				autoReloadEnabled: 					btnGetState("autoReloadEnabled"), 
 				autoAimSpeedInertia:			sliderGetValue("autoAimSpeedInertia"),
 				autoAimPredictionInertia:		sliderGetValue("autoAimPredictionInertia"),
 				autoAimRestirctionEnabled: 		btnGetState("autoAimRestirctionEnabled"),
@@ -207,6 +209,7 @@
 			btnSetState("bumpFireEnabled",					state.bumpFireEnabled);
 			btnSetState("autoAimEnabled",					state.autoAimEnabled);
 			btnSetState("autoAimAlwaysOnEnabled",			state.autoAimAlwaysOnEnabled);
+			btnSetState("autoReloadEnabled",						state.autoReloadEnabled);
 			sliderSetValue("autoAimSpeedInertia",			state.autoAimSpeedInertia);
 			sliderSetValue("autoAimPredictionInertia",		state.autoAimPredictionInertia);
 			btnSetState("autoAimRestirctionEnabled",		state.autoAimRestirctionEnabled);

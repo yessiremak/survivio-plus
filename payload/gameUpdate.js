@@ -448,6 +448,14 @@ window.gameFunctions.gameUpdate = function(){
 	
 	var invWeapon1Name = curPlayer[obfuscate.localData].weapons["0"].name;
 	var invWeapon2Name = curPlayer[obfuscate.localData].weapons["1"].name;
+
+	console.log(curPlayer[obfuscate.localData].weapons["0"]);
+	console.log(curWeapon);
+
+	var fullAmmoGuns = {"mp5": 30, "mac10": 32, "ump9": 30, "vector": 33, "famas": 25, "hk416": 30, "m4a1": 30, "mk12": 20, "m249": 100, "qbb97": 75, "ak47": 30, "scar": 20, 
+		"dp28": 60, "bar": 20, "mosin": 5, "sv98": 10, "awc": 5, "m39": 20, "garand": 8, "m870": 5, "mp220": 2, "saiga": 5, "spas12": 9, "m9": 15, "m9_dual": 30, "m93r": 20,
+		"m93r_dual": 40, "glock": 17, "glock_dual": 34, "ot38": 5, "ot38_dual": 10, "deagle": 7, "deagle_dual": 14
+	}
 	
 	var invWeapon1 = invWeapon1Name == "" ? null : guns.find((g) => g.id == invWeapon1Name);
 	var invWeapon2 = invWeapon2Name == "" ? null : guns.find((g) => g.id == invWeapon2Name);
@@ -479,6 +487,27 @@ window.gameFunctions.gameUpdate = function(){
 		}
 	}
 
+	var pressReload = function () {
+		if(!game[obfuscate.input].keys["82"]) {
+			setTimeout(function () {
+				game[obfuscate.input].keys["82"] = true;
+				setTimeout(function () {
+					delete game[obfuscate.input].keys["82"]
+				}, 100);
+			}, 50);
+		}
+	}
+
+	var autoReloadGuns = function () {
+		for (let gunName in fullAmmoGuns) {
+			if (curWeapon.id == gunName && (curWeapon.id == invWeapon1Name && curPlayer[obfuscate.localData].weapons["0"].ammo < fullAmmoGuns[gunName])) {
+				pressReload();
+			} else if (curWeapon.id == gunName && (curWeapon.id == invWeapon2Name && curPlayer[obfuscate.localData].weapons["1"].ammo < fullAmmoGuns[gunName])) {
+				pressReload();
+			}
+		}	
+	}
+
 	var weaponSwitcher = function() {
 		if (curPlayer.curWeapIdx) {
 			pressOne();
@@ -493,6 +522,10 @@ window.gameFunctions.gameUpdate = function(){
 
 	if(window.gameVars.Input.Cheat.SwitchWeaponFirst) {
 		weaponSwitcher();
+	}
+
+	if(window.menu.UserSetting.shoot.autoReloadEnabled) {
+		autoReloadGuns();
 	}
 	// Laser
 	
