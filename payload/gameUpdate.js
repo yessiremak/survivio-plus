@@ -453,7 +453,7 @@ window.gameFunctions.gameUpdate = function(){
 	console.log(curWeapon);
 
 	var fullAmmoGuns = {"mp5": 30, "mac10": 32, "ump9": 30, "vector": 33, "famas": 25, "hk416": 30, "m4a1": 30, "mk12": 20, "m249": 100, "qbb97": 75, "ak47": 30, "scar": 20, 
-		"dp28": 60, "bar": 20, "mosin": 5, "sv98": 10, "awc": 5, "m39": 20, "garand": 8, "m870": 5, "mp220": 2, "saiga": 5, "spas12": 9, "m9": 15, "m9_dual": 30, "m93r": 20,
+		"dp28": 60, "bar": 20, "mosin": 5, "sv98": 10, "awc": 5, "m39": 20, "garand": 8, "m870": 5, "saiga": 5, "spas12": 9, "m9": 15, "m9_dual": 30, "m93r": 20,
 		"m93r_dual": 40, "glock": 17, "glock_dual": 34, "ot38": 5, "ot38_dual": 10, "deagle": 7, "deagle_dual": 14
 	}
 	
