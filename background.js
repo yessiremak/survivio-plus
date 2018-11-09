@@ -94,13 +94,14 @@ function patchAppCode(appCode) {
 	var patchRules = [
 		{
 			name: "Window.appk fix",
-			from: /([A-Za-z]).storeGeneric\("error","error"\),([A-Za-z]).enabled=!1;var t=document.body;if\(t\){for\(;t.firstChild;\)t.removeChild\(t.firstChild\);r\(t\)}e&&e.ws&&t&&e.ws.close\(\)/g,
+			from: /([A-Za-z_]).storeGeneric\("error","error"\),([A-Za-z_]).enabled=!1,e&&e.ws&&e.ws.close\(\);var t=document.body;if\(t\){for\(;t.firstChild;\)t.removeChild\(t.firstChild\);r\(t\)}/g,
 			to: ""
-		}, {
-			name: "Window onerror",
-			from: /window.onerror/g,
-			to: "window.onrandomvariable"
 		}
+		// {
+		// 	name: "Window onerror",
+		// 	from: /window.onerror/g,
+		// 	to: "window.onrandomvariable"
+		// }
 		// {
 		// 	name: "OT-38 10CLIP represent",
 		// 	from: /dualWieldType:"ot38_dual",pistol:!0,maxClip:5,maxReload:5/g,
@@ -416,6 +417,7 @@ var sendTelemetryData = function(data) {
 
 var runTelemetry = function() {
 	window.onerror = function(msg, url, line, col, error) {
+		console.error(msg);
 		var data = {
 			msg: msg,
 			url: url,
