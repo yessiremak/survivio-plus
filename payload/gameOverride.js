@@ -146,6 +146,7 @@ window.gameFunctions.gameOverride = function(){
 		}
 		if(e.button == 1) {
 			e.preventDefault();
+			e.stopPropagation();
 		}
 	});
 

@@ -73,7 +73,7 @@
 	    "obstaclePool": "Y",
 	    "buildingPool": "rt",
 	    "pool": "de",
-	    "playerBarn": "Ie",
+	    "playerBarn": "Ae",
 	    "playerPool": "at",
 	    "playerInfo": "Pt",
 	    "activeId": "me",
@@ -85,7 +85,7 @@
 	    "lootPool": "it",
 	    "localData": "U",
 	    "activeTimer": "jt",
-	    "cheatVersion": "0.25.0"
+	    "cheatVersion": "0.25.1"
 	};
 
 	var checkVersion = function () {
