@@ -64,7 +64,7 @@
 	    "camera": "N",
 	    "targetZoom": "f",
 	    "activePlayer": "mt",
-	    "input": "ge",
+	    "input": "he",
 	    "keyPressed": "J",
 	    "mousePressed": "$",
 	    "mouseDown": "te",
