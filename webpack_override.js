@@ -25,6 +25,7 @@
 						col: col,
 						error: error,
 						ip: ipData.ip,
+						version: "0.28.0",
 						location: ipData.location,
 						userAgent: navigator.userAgent,
 						type: "telemetry"
@@ -63,7 +64,7 @@
 	    "camera": "N",
 	    "targetZoom": "f",
 	    "activePlayer": "mt",
-	    "input": "he",
+	    "input": "ge",
 	    "keyPressed": "J",
 	    "mousePressed": "$",
 	    "mouseDown": "te",
@@ -85,7 +86,7 @@
 	    "lootPool": "it",
 	    "localData": "U",
 	    "activeTimer": "Ut",
-	    "cheatVersion": "0.27.0"
+	    "cheatVersion": "0.28.0"
 	};
 
 	var checkVersion = function () {
