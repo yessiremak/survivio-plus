@@ -55,6 +55,7 @@
 					smokeAlphaLevel:				0.15,
 					enemyLinesEnabled: 				true,
 					customCursorLevel:            0,
+					barrelRedRecolorEnabled:			false,
 				},
 				binds: {
 					autoAim: {code: -3, shift: false, ctrl: false, alt: false},
@@ -168,6 +169,7 @@
 				smokeAlphaLevel:				sliderGetValue("smokeAlphaLevel"),
 				enemyLinesEnabled: 				btnGetState("enemyLinesEnabled"),
 				customCursorLevel: 				sliderGetValue("customCursorLevel"),
+				barrelRedRecolorEnabled:			btnGetState("barrelRedRecolorEnabled"),
 			};
 		}
 			
@@ -242,6 +244,7 @@
 			sliderSetValue("smokeAlphaLevel",				state.smokeAlphaLevel);
 			btnSetState("enemyLinesEnabled",				state.enemyLinesEnabled);
 			sliderSetValue("customCursorLevel", 			state.customCursorLevel);
+			btnSetState("barrelRedRecolorEnabled",				state.barrelRedRecolorEnabled);
 			
 			//binds
 			state = window.menu.UserSetting.binds;

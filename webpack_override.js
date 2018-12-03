@@ -183,6 +183,8 @@
 			
 			// DATA
 			window.gameVars.Game.GameData = getModule("989ad62a");
+
+			window.gameVars.Game.ceee80d9 = getModule("ceee80d9");		
         }
     }, ["webpack_inject"]);
 
