@@ -246,9 +246,9 @@ window.gameFunctions.gameRender = function(){
 		if(barrelRedColor != window.menu.UserSetting.look.barrelRedRecolorEnabled){
 			barrelRedColor = window.menu.UserSetting.look.barrelRedRecolorEnabled;
 			if(barrelRedColor){
-				window.gameVars.Game.ceee80d9["Defs"].barrel_01.img.sprite = red_barrel;
+				window.gameVars.Game.model["Defs"].barrel_01.img.sprite = red_barrel;
 			} else {
-				window.gameVars.Game.ceee80d9["Defs"].barrel_01.img.sprite = "map-barrel-01.img";
+				window.gameVars.Game.model["Defs"].barrel_01.img.sprite = "map-barrel-01.img";
 			}
 		}
 	}

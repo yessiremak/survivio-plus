@@ -18,7 +18,7 @@ window.gameVars.Game = {
 		draw: null,
 		points: null,
 	},
-	ceee80d9: null,
+	model: null,
 };
 
 window.gameVars.ZoomLevel = 0.5;
