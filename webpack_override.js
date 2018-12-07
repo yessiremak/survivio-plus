@@ -53,7 +53,7 @@
 	}
 	
 	window.obfuscate = {
-	    "mainModule": "Tt",
+	    "mainModule": "Pt",
 	    "init": "a",
 	    "free": "o",
 	    "update": "l",
@@ -70,7 +70,7 @@
 	    "mouseDown": "te",
 	    "smokeBarn": "Ue",
 	    "smokePool": "e",
-	    "map": "Pe",
+	    "map": "Te",
 	    "obstaclePool": "Y",
 	    "buildingPool": "rt",
 	    "pool": "pe",
@@ -82,7 +82,7 @@
 	    "netData": "q",
 	    "pieTimer": "Ze",
 	    "lootBarn": "We",
-	    "closestLoot": "Pt",
+	    "closestLoot": "Tt",
 	    "lootPool": "it",
 	    "localData": "U",
 	    "activeTimer": "Ut",
@@ -184,7 +184,7 @@
 			// DATA
 			window.gameVars.Game.GameData = getModule("989ad62a");
 
-			window.gameVars.Game.ceee80d9 = getModule("ceee80d9");		
+			window.gameVars.Game.model = getModule("ceee80d9");
         }
     }, ["webpack_inject"]);
 
