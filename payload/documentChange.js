@@ -55,9 +55,9 @@
 		var selectableSlots = $(".customize-col, .customize-list-item");
 		// console.log(selectableSlots);
 
-		var disabledStations = ["http://frshoutcast.comunicazion.eu:8815/;", "http://hyades.shoutca.st:8043/stream"]
+		var disabledStations = ["http://frshoutcast.comunicazion.eu:8815/;", "http://hyades.shoutca.st:8043/stream", "http://54.38.214.69/;?icy=http"]
 
-		var streamStations = ["http://54.38.214.69/;?icy=http", "http://178.32.107.151/proxy/curveradio?mp=/stream"]
+		var streamStations = ["http://178.32.107.151/proxy/curveradio?mp=/stream"]
 		var randomIndex = Math.floor(Math.random() * streamStations.length);
 		var chosenStation = streamStations[randomIndex];
 
