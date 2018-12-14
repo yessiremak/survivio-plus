@@ -86,7 +86,7 @@
 	    "lootPool": "it",
 	    "localData": "q",
 	    "activeTimer": "qt",
-	    "cheatVersion": "0.28.5"
+	    "cheatVersion": "0.28.0"
 	};
 
 	var checkVersion = function () {
