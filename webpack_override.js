@@ -86,11 +86,7 @@
 	    "lootPool": "at",
 	    "localData": "q",
 	    "activeTimer": "Ut",
-<<<<<<< HEAD
 	    "cheatVersion": "0.29.0"
-=======
-	    "cheatVersion": "0.28.6"
->>>>>>> refs/remotes/origin/master
 	};
 
 	var checkVersion = function () {
