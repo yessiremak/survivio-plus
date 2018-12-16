@@ -56,6 +56,7 @@
 					enemyLinesEnabled: 				true,
 					customCursorLevel:            0,
 					barrelRedRecolorEnabled:			false,
+					targetIndicatorEnabled:         true, 
 				},
 				binds: {
 					autoAim: {code: -3, shift: false, ctrl: false, alt: false},
@@ -170,6 +171,7 @@
 				enemyLinesEnabled: 				btnGetState("enemyLinesEnabled"),
 				customCursorLevel: 				sliderGetValue("customCursorLevel"),
 				barrelRedRecolorEnabled:			btnGetState("barrelRedRecolorEnabled"),
+				targetIndicatorEnabled:         btnGetState("targetIndicatorEnabled")
 			};
 		}
 			
@@ -245,6 +247,7 @@
 			btnSetState("enemyLinesEnabled",				state.enemyLinesEnabled);
 			sliderSetValue("customCursorLevel", 			state.customCursorLevel);
 			btnSetState("barrelRedRecolorEnabled",				state.barrelRedRecolorEnabled);
+			btnSetState("targetIndicatorEnabled",           state.targetIndicatorEnabled);
 			
 			//binds
 			state = window.menu.UserSetting.binds;

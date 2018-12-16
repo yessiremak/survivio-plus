@@ -88,7 +88,7 @@ window.gameFunctions.gameRender = function(){
 			targetIndicator.scale.x = 0.7;
 			targetIndicator.scale.y = 0.7;
 			targetIndicator.tint = 16711680;
-			targetIndicator.alpha = 0.4;
+			targetIndicator.alpha = window.menu.UserSetting.look.targetIndicatorEnabled ? 0.4 : 0.0;
 			player.container.addChild(targetIndicator);
 			player.targetIndicator = targetIndicator;
 		}
