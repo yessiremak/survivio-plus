@@ -19,6 +19,7 @@ window.gameVars.Game = {
 		points: null,
 	},
 	model: null,
+	updateTeamTab: false,
 };
 
 window.gameVars.ZoomLevel = 0.5;

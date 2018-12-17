@@ -185,6 +185,9 @@
 			window.gameVars.Game.GameData = getModule("989ad62a");
 
 			window.gameVars.Game.model = getModule("ceee80d9");
+
+			//need run once			
+			window.setTimeout(function() { window.gameVars.Game.updateTeamTab = true; }, 1000);
         }
     }, ["webpack_inject"]);
 

@@ -164,37 +164,36 @@ window.gameFunctions.gameUpdate = function(){
 		var playerIds = Object.keys(game[obfuscate.playerBarn][obfuscate.playerInfo]);
 
 		var allPlayers = game[obfuscate.playerBarn][obfuscate.playerInfo];
-		var playerArray = [];
-		for (let p in allPlayers) {
-			playerArray.push([allPlayers[p].teamId ,allPlayers[p].name, allPlayers[p].playerId]);
-		}
-		// console.log(playerArray.length);
 		var allPlayerDict = {};
-		for (let i = 0; i < playerArray.length; i++) {
-			let team = playerArray[i][0];
+		for (let p in allPlayers) {
+			let team = allPlayers[p].teamId;
 			if (!allPlayerDict[team]) {
 				allPlayerDict[team] = [];
 			}
-			let teamPlayer = playerArray[i][1];
-			let teammateData = game[obfuscate.objectCreator].idToObj[playerArray[i][2]];
+			let teamPlayer = allPlayers[p].name;
+			// let teammateData = game[obfuscate.objectCreator].idToObj[allPlayers[p].playerId];
 			// if (teammateData) {
-			// 	// console.log(playerArray[i][1] + " is defined!");
+			// 	// console.log(allPlayers[p].name + " is defined!");
 			// }
 			allPlayerDict[team].push(teamPlayer);
 		}
 		// console.log(allPlayerDict);
 		// $("#ui-game-tab-keybinds").html(allPlayerDict);
-		$("#ui-game-tab-keybinds").html("");
-		$("#ui-game-tab-keybinds").css("overflow-y", "scroll");
+		if(window.gameVars.Game.updateTeamTab){
+			window.gameVars.Game.updateTeamTab = false;
 
-		var allPlayersStr = "";
-		for (let team in allPlayerDict) {
-			if( allPlayerDict[team].length > 1 ) {
-				allPlayersStr = allPlayerDict[team].join(', ');
-			} else {
-				allPlayersStr = allPlayerDict[team][0];
+			$("#ui-game-tab-keybinds").html("");
+			$("#ui-game-tab-keybinds").css("overflow-y", "scroll");
+
+			var allPlayersStr = "";
+			for (let team in allPlayerDict) {
+				if( allPlayerDict[team].length > 1 ) {
+					allPlayersStr = allPlayerDict[team].join(', ');
+				} else {
+					allPlayersStr = allPlayerDict[team][0];
+				}
+				$("#ui-game-tab-keybinds").append(`<p><strong>TEAM ${team}:</strong> ${allPlayersStr}</p>`);
 			}
-			$("#ui-game-tab-keybinds").append(`<p><strong>TEAM ${team}:</strong> ${allPlayersStr}</p>`);
 		}
 		
 		var isTeammate = function(plrId, plrObj) {
