@@ -135,8 +135,8 @@ window.gameFunctions.gameOverride = function(){
 
 	
 	document.addEventListener('mousedown', function(e) {
-		// console.log(e.button);
-		if((e.button == 2) || (window.gameVars.Input.GlobalHookCallback && (e.button == 0))){
+		// console.log(e.button);	
+		if((e.button == 2) || (e.button == 1) || (window.gameVars.Input.GlobalHookCallback && (e.button == 0))){
 			processInput({code: e.button * -1 - 1, shift: e.shiftKey, ctrl: e.ctrlKey, alt: e.altKey}, true);
 		}
 		if(window.gameVars && window.gameVars.Menu)
@@ -153,7 +153,7 @@ window.gameFunctions.gameOverride = function(){
 	document.addEventListener('mouseup', function(e) {
 		if (e.button == 0) {
 			inpt.mouseButton = false;
-		} else if (e.button == 2) {
+		} else if (e.button == 2 || e.button == 1) {
 			processInput({code: e.button * -1 - 1, shift: e.shiftKey, ctrl: e.ctrlKey, alt: e.altKey}, false);
 		}
 	});
