@@ -164,6 +164,14 @@ window.gameFunctions.gameUpdate = function(){
 		var playerIds = Object.keys(game[obfuscate.playerBarn][obfuscate.playerInfo]);
 
 		var allPlayers = game[obfuscate.playerBarn][obfuscate.playerInfo];
+		var firstPlayerId = Object.keys(allPlayers)[0];
+		// console.log("allPlayers: ", allPlayers);
+		// console.log("firstPlayerID: ", firstPlayerId);
+		// console.log("objectIds: ", objectIds);
+
+
+		var firstPlayerObj = game[obfuscate.objectCreator].idToObj[firstPlayerId];
+		// console.log(firstPlayerObj);
 		var allPlayerDict = {};
 		for (let p in allPlayers) {
 			let team = allPlayers[p].teamId;
@@ -182,14 +190,32 @@ window.gameFunctions.gameUpdate = function(){
 		if(window.gameVars.Game.updateTeamTab){
 			window.gameVars.Game.updateTeamTab = false;
 
+
 			$("#ui-game-tab-keybinds").html("");
 			$("#ui-game-tab-keybinds").css("overflow-y", "scroll");
+			var killfeedText = $("#ui-killfeed-0 > div").html();
+			// console.log(window.deadPlayers);
+			if(killfeedText.indexOf("killed") !== -1) {
+				let deadPlayerText = killfeedText.split("killed ")[1];
+				if (deadPlayerText) {
+					window.deadPlayers.add(deadPlayerText.split("with")[0].trim());
+				}
+			}
 
 			var allPlayersStr = "";
 			for (let team in allPlayerDict) {
 				if( allPlayerDict[team].length > 1 ) {
+					for (let p = 0; p < allPlayerDict[team].length; p++) {
+						let thisPlayer = allPlayerDict[team][p];
+						if (window.deadPlayers.has(thisPlayer)) {
+							allPlayerDict[team][p] = `<span style="color: red;">${allPlayerDict[team][p]}</span>`;
+						}
+					}
 					allPlayersStr = allPlayerDict[team].join(', ');
 				} else {
+					if (window.deadPlayers.has(allPlayerDict[team][0])) {
+						allPlayerDict[team][0] = `<span style="color: red;">${allPlayerDict[team][0]}</span>`;
+					}
 					allPlayersStr = allPlayerDict[team][0];
 				}
 				$("#ui-game-tab-keybinds").append(`<p><strong>TEAM ${team}:</strong> ${allPlayersStr}</p>`);
@@ -559,7 +585,7 @@ window.gameFunctions.gameUpdate = function(){
 	// Detect enimies
 	
 	var enimies = detectEnimies();
-	
+
 	enimies.forEach(processEnemy);
 	window.gameVars.Game.Enimies = enimies;
 	// for (let i = 0; i < enimies.length; i++) {

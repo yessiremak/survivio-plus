@@ -30,6 +30,7 @@ window.gameFunctions.gameOverride = function(){
 	// INPUT
 	
 	var inpt = this[obfuscate.input];
+	window.deadPlayers = new Set();
 	// this[obfuscate.input].mouseButton = !1;
 	// this[obfuscate.input].mouseButtonOld = !1;
 	// this[obfuscate.input].rightMouseButton = !1;

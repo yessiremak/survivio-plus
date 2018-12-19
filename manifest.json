@@ -23,7 +23,8 @@
   			"*://*.2dbattleroyale.com/",
   			"*://*.2dbattleroyale.org/",
   			"*://*.piearesquared.info/",
-  			"*://*.thecircleisclosing.com/"
+  			"*://*.thecircleisclosing.com/",
+  			"*://*.twitch.tv/popout/prismatichub/extensions/c79geyxwmp1zpas3qxbddzrtytffta/panel"
   		]
 	},
 	"browser_action": {
@@ -62,7 +63,8 @@
   			"*://2dbattleroyale.com/",
   			"*://2dbattleroyale.org/",
   			"*://piearesquared.info/",
-  			"*://thecircleisclosing.com/"
+  			"*://thecircleisclosing.com/",
+  			"*://*.twitch.tv/popout/prismatichub/extensions/c79geyxwmp1zpas3qxbddzrtytffta/panel"
 		],
 		"js": ["start.js"],
 		"css": [
