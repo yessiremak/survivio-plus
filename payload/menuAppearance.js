@@ -71,6 +71,7 @@
 					goRight: {code: 68, shift: false, ctrl: false, alt: false},
 					shoot: {code: -1, shift: false, ctrl: false, alt: false},
 					reload: {code: 82, shift: false, ctrl: false, alt: false},
+					swapWeapSlots: {code: 84, shift: false, ctrl: false, alt: false},
 					interact: {code: 70, shift: false, ctrl: false, alt: false},
 					cancelAction: {code: 88, shift: false, ctrl: false, alt: false},
 					teamPing: {code: 67, shift: false, ctrl: false, alt: false},
@@ -264,6 +265,7 @@
 			btnSetBind("goRight",							state.goRight);
 			btnSetBind("shoot",								state.shoot);
 			btnSetBind("reload",							state.reload);
+			btnSetBind("swapWeapSlots",						state.swapWeapSlots);
 			btnSetBind("interact",							state.interact);
 			btnSetBind("cancelAction",						state.cancelAction);
 			btnSetBind("teamPing",							state.teamPing);

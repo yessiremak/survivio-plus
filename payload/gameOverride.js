@@ -86,6 +86,8 @@ window.gameFunctions.gameOverride = function(){
 			mouseButtonEvent(0, down);
 		}else if(checkBind(opt.reload, bind)) {
 			keyboardEvent(82, down);
+		}else if(checkBind(opt.swapWeapSlots, bind)) {
+			keyboardEvent(84, down);
 		}else if(checkBind(opt.interact, bind)) {
 			keyboardEvent(70, down);
 		}else if(checkBind(opt.cancelAction, bind)) {
