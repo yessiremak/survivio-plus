@@ -28,6 +28,9 @@ This is a Surviv.io cheat loaded as a Chrome extension. It was originally develo
 5. Open [surviv.io](http://surviv.io).
 
 ## 🤔 FAQ
+> **"Please update extension for best results!" What does this mean??!!! WTF**
+
+Calm down jeez. The hack was updated and therefore you need to update. Go to chrome://extensions/ and click remove on the survivio+ extension. Download the new version and load that one as the hack. There you go. No issues about this please.
 > **What do I do if the cheat stops working?**
 
 This usually means the game's code was patched (meaning they updated it where variables and functionality has changed). If this happens, the most you can do is create an issue. Give it some time and the cheat will work again.
@@ -35,18 +38,6 @@ This usually means the game's code was patched (meaning they updated it where va
 > **This feature isn't working for me! WTF?**
 
 Relax. Open the console (Hit F12), and copy what the error is, and just [create an issue](https://github.com/Kalaborative/survivio-cheat/issues). Do not open an issue if you already see the same one. If you do, you will be banned from using the cheat.
-
-> **Does this hack give you infinite health?**
-
-No.
-
-> **What about slowdown of bullets?**
-
-Nope.
-
-> **Okay, what about auto trigger?**
-
-It's being looked into. Could be a possibility.
 
 > **What is "bump fire"?**
 
