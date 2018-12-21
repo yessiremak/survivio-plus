@@ -196,6 +196,7 @@ window.gameFunctions.gameRender = function(){
 			} else {
 				nameText.tint = 0xffd700;
 			}
+			nameText.scale.set(1, 1);
 		}
 	}
 
