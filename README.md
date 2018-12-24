@@ -7,17 +7,18 @@ This is a Surviv.io cheat loaded as a Chrome extension. It was originally develo
 
 ### 💪 Features
 
-* Displays enemy lines
 * Aimbot with customizable prediction and speed settings
 * Custom zooming control with scroll wheel
-* FPS Counter
+* Auto Clicker for semi automatic weapons
 * Autoloot
+* Displays enemy lines
 * Transparent buildings, ceilings, obstacles, and trees
 * Lasersight (shot range)
 * Frag grenade timer
 * Custom key bindings
-* **New!** Custom cursors
-* **New!** Now supports in-game radio!
+* Custom cursors
+* FPS Counter
+* Now supports in-game radio!
 
 ## 🔨 Installation
 
