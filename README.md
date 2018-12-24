@@ -1,4 +1,4 @@
-![alt text](https://puu.sh/B03Pw/9a547140e8.PNG "Survivio Banner")
+![alt text](https://i.ibb.co/RT1sSZ4/Screenshot-96.png "Survivio Banner")
 
 # Welcome to Surviv+! 😃
 
