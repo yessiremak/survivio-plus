@@ -407,7 +407,6 @@ window.gameFunctions.gameUpdate = function(){
 		else if(loot.name.includes('chest') && loot.name > game[obfuscate.activePlayer][obfuscate.netData].chest) return true;
 		else if(loot.name.includes('helmet') && loot.name > game[obfuscate.activePlayer][obfuscate.netData].helmet) return true;
 		else if(game[obfuscate.activePlayer][obfuscate.localData].inventory.hasOwnProperty(loot.name)){
-				
 			var backpackLvls = parseInt(game[obfuscate.activePlayer][obfuscate.netData].backpack.match(/\d/g).join(""));
 				
 			var max = gameData.bagSizes[loot.name][backpackLvls];
@@ -474,7 +473,7 @@ window.gameFunctions.gameUpdate = function(){
 				curBullet = gameData.bullets[k];
 			}
 		}
-	
+  
 	var invWeapon1Name = curPlayer[obfuscate.localData].weapons["0"].name;
 	var invWeapon2Name = curPlayer[obfuscate.localData].weapons["1"].name;
 
@@ -622,7 +621,7 @@ window.gameFunctions.gameUpdate = function(){
 	{
 
 
-		var mousePos = game[obfuscate.camera].screenToPoint(window.gameVars.Input.Mouse.Pos);
+		var mousePos = game[obfuscate.camera].k(window.gameVars.Input.Mouse.Pos);
 		// console.log(mousePos);
 
 
