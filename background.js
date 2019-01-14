@@ -94,7 +94,7 @@ function patchAppCode(appCode) {
 	var patchRules = [
 		{
 			name: "Window.appk fix",
-			from: /e&&e.ws&&e.ws.close\(\),([A-Za-z_]).storeGeneric\("error","error"\),([A-Za-z_]).enabled=!1;var t=document.body;if\(t\){for\(;t.firstChild;\)t.removeChild\(t.firstChild\);r\(t\)}/g,
+			from: /([A-Za-z_]).storeGeneric\("error","error"\),([A-Za-z_]).enabled=!1,e&&e.ws&&e.ws.close\(\);var t=document.body;if\(t\){for\(;t.firstChild;\)t.removeChild\(t.firstChild\);r\(t\)}/g,
 			to: ""
 		},
 		{
