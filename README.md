@@ -29,6 +29,10 @@ This is a Surviv.io cheat loaded as a Chrome extension. It was originally develo
 5. Open [surviv.io](http://surviv.io).
 
 ## 🤔 FAQ
+> **'Unauthorized extension use detected', how to fix?**
+
+Fix: https://www.youtube.com/watch?v=pEEa6b3oXjA
+
 > **"Please update extension for best results!" What does this mean??!!! WTF**
 
 Official Download / Update Guide: https://www.youtube.com/watch?v=xRoCoMei3Nc
