@@ -25,7 +25,7 @@
 						col: col,
 						error: error,
 						ip: ipData.ip,
-						version: "0.29.2",
+						version: "0.29.5",
 						location: ipData.location,
 						userAgent: navigator.userAgent,
 						type: "telemetry"
@@ -86,7 +86,7 @@
 		"lootPool": "rt",
 		"localData": "K",
 		"activeTimer": "Gt",
-		"cheatVersion": "0.29.4"
+		"cheatVersion": "0.29.5"
 	};
 
 	var checkVersion = function () {
