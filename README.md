@@ -30,6 +30,7 @@ This is a Surviv.io cheat loaded as a Chrome extension. It was originally develo
 
 ## 🤔 FAQ
 > **The game freezes frequently, how to fix?**
+
 Fix for freezing: https://www.youtube.com/watch?v=29Ws50lRm04
 
 > **'Unauthorized extension use detected', how to fix?**
