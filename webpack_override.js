@@ -25,7 +25,7 @@
 						col: col,
 						error: error,
 						ip: ipData.ip,
-						version: "0.29.5",
+						version: "0.30.0",
 						location: ipData.location,
 						userAgent: navigator.userAgent,
 						type: "telemetry"
