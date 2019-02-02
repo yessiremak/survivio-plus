@@ -105,9 +105,9 @@ function patchAppCode(appCode) {
 		},
 		{
 			name: "AirDrop",
-			from: /\"ping-team-airdrop\.img\"\,sound\:\"ping_airdrop_01\"\,pingMap\:!0\,mapLife\:10/g,
-			to: "\"ping-team-airdrop\.img\"\,sound\:\"ping_airdrop_01\"\,pingMap\:!0\,mapLife\:120"
-		},
+			from: /"ping-team-airdrop.img",mapTexture:"ping-map-airdrop.img",sound:"ping_airdrop_01",pingMap:!0,pingLife:4,mapLife:10/g,
+			to: '"ping-team-airdrop.img",mapTexture:"ping-map-airdrop.img",sound:"ping_airdrop_01",pingMap:!0,pingLife:4,mapLife:120'
+        	},
 		// {
 		// 	name: "Window onerror",
 		// 	from: /window.onerror/g,
