@@ -44,7 +44,7 @@ Official Download / Update Guide: https://www.youtube.com/watch?v=xRoCoMei3Nc
 Calm down jeez. The hack was updated and therefore you need to update. Go to chrome://extensions/ and click remove on the survivio+ extension. Download the new version and load that one as the hack. There you go. No issues about this please.
 > **What do I do if the cheat stops working?**
 
-This usually means the game's code was patched (meaning they updated it where variables and functionality has changed). If this happens, the most you can do is create an issue. Give it some time and the cheat will work again.
+Message silentes#4242 on discord if the game is updated.
 
 > **This feature isn't working for me! WTF?**
 
