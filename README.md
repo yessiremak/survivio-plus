@@ -2,8 +2,7 @@
 
 # Welcome to Surviv+! 😃
 
-This is a Surviv.io cheat loaded as a Chrome extension. It was originally developed by [reuke](https://github.com/reuke), but since he has been away, I've decided to take ownership of the development of the code. When you feel like being a douchebag on the Internet because your parents hate you, think again, I know that you're 12 years old. If you're not helping, shut the fuck up and go cry to your parents instead.
-
+This is a Surviv.io cheat loaded as a Chrome extension. It was originally developed by [reuke](https://github.com/reuke), but since he has been away, I've decided to take ownership of the development of the code. iBLiSSIN shows the hack in action, check it out [here](https://www.youtube.com/channel/UCLff8YzqQ-vIAFTKPTDz3RA/featured?view_as=subscriber).
 
 ### 💪 Features
 
