@@ -79,12 +79,13 @@
 		"playerInfo": "jt",
 		"activeId": "ht",
 		"objectCreator": "mt",
-		"netData": "J",
+		"netData": "x",
 		"pieTimer": "it",
 		"lootBarn": "Je",
 		"closestLoot": "Lt",
 		"lootPool": "nt",
-		"localData": "$",
+		"localData": "$", //keeps finding 'n'
+
 		// "activeTimer": "$t",
 	    "cheatVersion": "0.30.0"
 	};
