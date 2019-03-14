@@ -5,6 +5,7 @@
 This is a Surviv.io cheat loaded as a Chrome extension. It was originally developed by [reuke](https://github.com/reuke), but since he has been away, I've decided to take ownership of the development of the code. iBLiSSIN shows the hack in action, check it out [here](https://www.youtube.com/channel/UCLff8YzqQ-vIAFTKPTDz3RA/featured?view_as=subscriber).
 
 If you like this project, and want it to last, please consider supporting. This project lives on borrowed time.
+
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ZG782AX2AUVFL&currency_code=CAD&source=url)
 
 ### 💪 Features
