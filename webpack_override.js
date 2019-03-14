@@ -79,7 +79,7 @@
 		"playerInfo": "jt",
 		"activeId": "ht",
 		"objectCreator": "mt",
-		"netData": "x",
+		"netData": "J", //keeps finding 'x'
 		"pieTimer": "it",
 		"lootBarn": "Je",
 		"closestLoot": "Lt",
