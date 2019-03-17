@@ -78,7 +78,7 @@
 		"playerPool": "de",
 		"playerInfo": "jt",
 		"activeId": "ht",
-		"objectCreator": "mt",
+		"objectCreator": "mt",	
 		"netData": "J", //keeps finding 'x'
 		"pieTimer": "it",
 		"lootBarn": "Je",
