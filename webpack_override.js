@@ -85,7 +85,6 @@
 		"closestLoot": "Lt",
 		"lootPool": "nt",
 		"localData": "$", //keeps finding 'n'
-
 		// "activeTimer": "$t",
 	    "cheatVersion": "0.30.0"
 	};
