@@ -64,3 +64,7 @@ This was on the store before, but it got taken down (not sure why). I could try 
 > **Are pull requests allowed?**
 
 Your contributions are always welcome. If you see something that should be improved or a feature added, feel free to fork this repo and create a PR. 
+
+> **Is the Hack working?**
+
+Wow. I never thought I would have to add this but recently people with insignificant IQs have been asking me this. 
