@@ -53,38 +53,38 @@
 	}
 	
 	window.obfuscate = {
-			"mainModule": "Rt",
+		"mainModule": "Bt", // was Rt, was Lt confirmed
         "init": "o",
         "free": "n",
         "update": "c",
-        "render": "kt",
-        "sendMessage": "Lt",
-        "processGameUpdate": "Tt",
-        "EmoteManager": "nt",
-        "camera": "J",
-        "targetZoom": "k",
-        "activePlayer": "yt",
-        "input": "Se",
-        "keyPressed": "oe",
-        "mousePressed": "ne",
-        "mouseDown": "le",
-        "smokeBarn": "Ye",
+        "render": "_t", // was kt, was St confirmed
+        "sendMessage": "Ot", // was Lt, was Bt confirmed
+        "processGameUpdate": "zt", // was Tt, was Mt confirmed
+        "EmoteManager": "rt", // was nt, was ot confirmed?
+        "camera": "J", // was J, was Y conf
+        "targetZoom": "k", // was k
+        "activePlayer": "ut", // was yt, was gt confirmed
+        "input": "Se", // still Se, was _e
+        "keyPressed": "oe", // still oe, was re
+        "mousePressed": "ne", // still ne, was oe 
+        "mouseDown": "le", // still le, was se
+        "smokeBarn": "Ze", // was Ye, was Xe
         "smokePool": "e",
-        "map": "Le",
-        "obstaclePool": "re",
-        "buildingPool": "ct",
-        "pool": "fe",
-        "playerBarn": "Fe",
-        "playerPool": "he",
-        "playerInfo": "Nt",
-        "activeId": "gt",
-        "objectCreator": "ht",
-        "netData": "$",
-        "pieTimer": "ot",
-        "lootBarn": "$e",
-        "closestLoot": "Ft",
-        "lootPool": "lt",
-        "localData": "ee",// "activeTimer": "$t",
+        "map": "Oe", // was Le, was Be confirmed
+        "obstaclePool": "re", // was ie confirmed
+        "buildingPool": "st", // was ct, was lt
+        "pool": "fe", // still fe, was xe
+        "playerBarn": "Le", // was Fe, was Re
+        "playerPool": "he", // still he?, was de confirmed
+        "playerInfo": "Ft", // was Nt, was jt confirmed
+        "activeId": "ht", // was gt, was ut
+        "objectCreator": "mt", // was ht, was de//found is tf he
+        "netData": "$", // was J
+        "pieTimer": "ot", // was rt
+        "lootBarn": "Je", // was $e, was Qe confirmed?
+        "closestLoot": "Lt", // was Ft, was Rt confirmed
+        "lootPool": "nt", // was lt, was st
+        "localData": "ee", // still ee, was $ confirmed?            
 	    "cheatVersion": "0.30.0"
 	};
 
