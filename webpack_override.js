@@ -53,38 +53,38 @@
 	}
 	
 	window.obfuscate = {
-		"mainModule": "Bt", // was Rt, was Lt confirmed
+		"mainModule": "Lt", 
         "init": "o",
         "free": "n",
         "update": "c",
-        "render": "_t", // was kt, was St confirmed
-        "sendMessage": "Ot", // was Lt, was Bt confirmed
-        "processGameUpdate": "zt", // was Tt, was Mt confirmed
-        "EmoteManager": "rt", // was nt, was ot confirmed?
-        "camera": "J", // was J, was Y conf
-        "targetZoom": "k", // was k
-        "activePlayer": "ut", // was yt, was gt confirmed
-        "input": "Se", // still Se, was _e
-        "keyPressed": "oe", // still oe, was re
-        "mousePressed": "ne", // still ne, was oe 
-        "mouseDown": "le", // still le, was se
-        "smokeBarn": "Ze", // was Ye, was Xe
+        "render": "St", 
+        "sendMessage": "Bt", 
+        "processGameUpdate": "Mt", 
+        "EmoteManager": "ot", 
+        "camera": "J", 
+        "targetZoom": "k", 
+        "activePlayer": "gt", 
+        "input": "Se",
+        "keyPressed": "oe", 
+        "mousePressed": "ne", 
+        "mouseDown": "le",
+        "smokeBarn": "Xe",
         "smokePool": "e",
-        "map": "Oe", // was Le, was Be confirmed
-        "obstaclePool": "re", // was ie confirmed
-        "buildingPool": "st", // was ct, was lt
-        "pool": "fe", // still fe, was xe
-        "playerBarn": "Le", // was Fe, was Re
-        "playerPool": "he", // still he?, was de confirmed
-        "playerInfo": "Ft", // was Nt, was jt confirmed
-        "activeId": "ht", // was gt, was ut
-        "objectCreator": "mt", // was ht, was de//found is tf he
-        "netData": "$", // was J
-        "pieTimer": "ot", // was rt
-        "lootBarn": "Je", // was $e, was Qe confirmed?
-        "closestLoot": "Lt", // was Ft, was Rt confirmed
-        "lootPool": "nt", // was lt, was st
-        "localData": "ee", // still ee, was $ confirmed?            
+        "map": "Be", 
+        "obstaclePool": "re", 
+        "buildingPool": "lt", 
+        "pool": "fe", 
+        "playerBarn": "Re", 
+        "playerPool": "We", 
+        "playerInfo": "jt",
+        "activeId": "ut", 
+        "objectCreator": "dt", 
+        "netData": "$", 
+        "pieTimer": "nt", 
+        "lootBarn": "Qe", 
+        "closestLoot": "Rt", 
+        "lootPool": "st", 
+        "localData": "ee",           
 	    "cheatVersion": "0.30.0"
 	};
 
