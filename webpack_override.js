@@ -75,7 +75,7 @@
         "buildingPool": "lt", 
         "pool": "fe", 
         "playerBarn": "Re", 
-        "playerPool": "We", 
+        "playerPool": "he", 
         "playerInfo": "jt",
         "activeId": "ut", 
         "objectCreator": "dt", 
