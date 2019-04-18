@@ -62,13 +62,13 @@
 		"processGameUpdate": "Nt",
 		"EmoteManager": "bt",
 		"camera": "ae",
-		"targetZoom": "I",
+		"targetZoom": "k", //k  
 		"activePlayer": "It",
 		"input": "Be",
 		"keyPressed": "de",
 		"mousePressed": "he",
 		"mouseDown": "ge",
-		"smokeBarn": false,
+		"smokeBarn": "ct",
 		"smokePool": "e",
 		"map": "Xe",
 		"obstaclePool": "pe",
@@ -77,12 +77,12 @@
 		"playerBarn": "Je",
 		"playerPool": "be",
 		"playerInfo": "$t",
-		"activeId": "Tt",
+		"activeId": "Pt", //Pt
 		"objectCreator": "Mt",
 		"netData": "ie",
-		"pieTimer": "ft",
-		"lootBarn": "ht",
-		"closestLoot": "Qt",
+		"pieTimer": "_t",		
+		"lootBarn": "ht", //main "ht" 
+		"closestLoot": "Jt", //itemf
 		"lootPool": "St",
 		"localData": "re",
 	    "cheatVersion": "0.30.0"
