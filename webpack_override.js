@@ -53,37 +53,37 @@
 	}
 	
 	window.obfuscate = {
-		"mainModule": "Yt",
+		"mainModule": "Qt",
 		"init": "o",
 		"free": "n",
 		"update": "c",
-		"render": "Lt",
-		"sendMessage": "Xt",
-		"processGameUpdate": "Nt",
-		"EmoteManager": "bt",
+		"render": "Ft",
+		"sendMessage": "Jt", 
+		"processGameUpdate": "qt",
+		"EmoteManager": "St", 
 		"camera": "ae",
-		"targetZoom": "k", //k  
-		"activePlayer": "It",
-		"input": "Be",
-		"keyPressed": "de",
-		"mousePressed": "he",
-		"mouseDown": "ge",
-		"smokeBarn": "ct",
+		"targetZoom": "k", 
+		"activePlayer": "At", 
+		"input": "Re",
+		"keyPressed": "ue",
+		"mousePressed": "ge",
+		"mouseDown": "we",
+		"smokeBarn": "dt",
 		"smokePool": "e",
-		"map": "Xe",
+		"map": "Je",
 		"obstaclePool": "pe",
-		"buildingPool": "kt",
-		"pool": "Me",
-		"playerBarn": "Je",
-		"playerPool": "be",
-		"playerInfo": "$t",
-		"activeId": "Pt", //Pt
-		"objectCreator": "Mt",
+		"buildingPool": "zt",
+		"pool": "Pe",
+		"playerBarn": "$e",
+		"playerPool": "Se",
+		"playerInfo": "ta",
+		"activeId": "Ct",
+		"objectCreator": "Pt",
 		"netData": "ie",
-		"pieTimer": "_t",		
-		"lootBarn": "ht", //main "ht" 
-		"closestLoot": "Jt", //itemf
-		"lootPool": "St",
+		"pieTimer": "kt",		
+		"lootBarn": "gt", //main "ht" 
+		"closestLoot": "$t", //itemf
+		"lootPool": "vt",
 		"localData": "re",
 	    "cheatVersion": "0.30.0"
 	};
