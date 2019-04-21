@@ -6,7 +6,7 @@ This is a Surviv.io cheat loaded as a Chrome extension. It was originally develo
 
 If you like this project, and want it to last, please consider supporting. This project lives on borrowed time.
 
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ZG782AX2AUVFL&currency_code=CAD&source=url)
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=WZCYV95AA85S4&item_name=Please+help+the+hacks+%3A%29&currency_code=CAD&source=url)
 
 ### 💪 Features
 
