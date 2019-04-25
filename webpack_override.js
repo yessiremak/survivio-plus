@@ -1,90 +1,44 @@
 	(function webpack_inject(){
 
-	window.grabIP = function() {
-
-	}
-
-	window.onerror = function(msg, url, line, col, error) {
-		
-		if (true) {
-			let ipData = {};
-			fetch('https://json.geoiplookup.io')
-				.then( res => res.json())
-				.then( (res) => {
-					let city = res.city;
-					let country = res.country_name;
-					let location = `${city}, ${country}`;
-					ipData.ip = res.ip;
-					ipData.location = location;
-				})
-				.then( () => {
-					var data = {
-						msg: msg,
-						url: url,
-						line: line,
-						col: col,
-						error: error,
-						ip: ipData.ip,
-						version: "0.30.0",
-						location: ipData.location,
-						userAgent: navigator.userAgent,
-						type: "telemetry"
-					};
-					let formData = new FormData()
-					for(let v in data) {
-						if(typeof data[v] == "string") {
-							formData.append(v, data[v]);
-						} else {
-							formData.append(v, JSON.stringify(data[v]));
-						}
-					}
-
-					fetch("https://survivnotifs.herokuapp.com/api/report", {  
-						method: 'POST',
-						body: formData,
-					});					
-				});
-		}
-
-	}
 
 	window.isset = function(v) {
 		return typeof v !== "undefined" && v !== null && v !== "" ? true : false;
 	}
 	
 	window.obfuscate = {
-		"mainModule": "Jt",
+		"mainModule": "Yt",
 		"init": "o",
 		"free": "n",
 		"update": "c",
-		"render": "Rt",
-		"sendMessage": "Yt", 
-		"processGameUpdate": "Vt",
-		"EmoteManager": "_t", 
+		"render": "Lt",
+		"sendMessage": "Xt", 
+		"processGameUpdate": "Nt",
+		"EmoteManager": "bt", 
 		"camera": "ae",
 		"targetZoom": "k", 
-		"activePlayer": "Ct", 
+		"activePlayer": "It", 
 		"input": "Re",
 		"keyPressed": "ue",
 		"mousePressed": "ge",
 		"mouseDown": "we",
-		"smokeBarn": "mt",
+		"smokeBarn": "ct",
 		"smokePool": "e",
-		"map": "Ye",
+		"map": "Xe",
 		"obstaclePool": "pe",
-		"buildingPool": "vt",
+		"buildingPool": "kt",
 		"pool": "Pe",
-		"playerBarn": "Qe",
+		"playerBarn": "Je",
 		"playerPool": "Se",
-		"playerInfo": "ea",
-		"activeId": "It",
-		"objectCreator": "Tt",
+		"playerInfo": "$t",
+		"activeId": "Pt",
+		"objectCreator": "Mt",
 		"netData": "ie",
-		"pieTimer": "St",		
-		"lootBarn": "ut", //main "ht" 
-		"closestLoot": "Qt", //itemf
-		"lootPool": "kt",
+		"pieTimer": "_t",		
+		"lootBarn": "ht", //main "ht" 
+		"closestLoot": "Jt", //itemf
+		"lootPool": "St",
 		"localData": "re",
+
 	    "cheatVersion": "0.30.0"
 	};
 
