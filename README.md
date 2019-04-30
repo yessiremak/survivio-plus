@@ -67,6 +67,4 @@ Your contributions are always welcome. If you see something that should be impro
 
 > **Is the Hack working?**
 
-Wow. I never thought I would have to add this but recently people with insignificant IQs have been asking me this. 
-
 Check👏for👏yourselves👏you👏lazy👏fucks👏
