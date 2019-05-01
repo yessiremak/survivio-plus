@@ -6,41 +6,39 @@
 	}
 	
 	window.obfuscate = {
-		"mainModule": "Jt",
+		"mainModule": "$t",
 		"init": "o",
 		"free": "n",
 		"update": "c",
-		"render": "Rt",
-		"sendMessage": "Yt", 
-		"processGameUpdate": "Nt",
-		"EmoteManager": "_t", 
+		"render": "jt",
+		"sendMessage": "Qt", 
+		"processGameUpdate": "Gt",
+		"EmoteManager": "kt", 
 		"camera": "ae",
 		"targetZoom": "k", 
-		"activePlayer": "Ct", 
+		"activePlayer": "Et", 
 		"input": "Re",
 		"keyPressed": "ue",
 		"mousePressed": "ge",
 		"mouseDown": "we",
-		"smokeBarn": "mt",
+		"smokeBarn": "ht",
 		"smokePool": "e",
-		"map": "Ye",
+		"map": "Qe",
 		"obstaclePool": "pe",
-		"buildingPool": "vt",
+		"buildingPool": "Mt",
 		"pool": "Pe",
-		"playerBarn": "Qe",
+		"playerBarn": "et",
 		"playerPool": "Se",
-		"playerInfo": "ea",
-		"activeId": "It",
-		"objectCreator": "Tt",
+		"playerInfo": "aa",
+		"activeId": "At",
+		"objectCreator": "It",
 		"netData": "ie",
-		"pieTimer": "St",		
-		"lootBarn": "ut", //main "ht" 
-		"closestLoot": "Qt", //itemf
-		"lootPool": "kt",
+		"pieTimer": "vt",		
+		"lootBarn": "yt", //main "ht" 
+		"closestLoot": "ea", //itemf
+		"lootPool": "zt",
 		"localData": "re",
-
-
-	    "cheatVersion": "0.30.0"
+					"cheatVersion": "0.30.0"
 	};
 
 	var checkVersion = function () {
