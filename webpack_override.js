@@ -35,8 +35,8 @@
 		"netData": "ae",
 		// "pieTimer": "vt",		
 		"lootBarn": "gt", //main "ht" 
-		"closestLoot": "Yt", //itemf
-		"lootPool": "kt",	
+// 		"closestLoot": "Yt", //itemf
+// 		"lootPool": "kt",	
 		"localData": "ie",
 		"cheatVersion": "0.30.0"
 	};
