@@ -526,15 +526,15 @@ window.gameFunctions.gameUpdate = function(){
 		}
 	}
 
-	var autoReloadGuns = function () {
-		for (let gunName in fullAmmoGuns) {
-			if (curWeapon.id == gunName && (curWeapon.id == invWeapon1Name && curPlayer[obfuscate.localData].weapons["0"].ammo < fullAmmoGuns[gunName])) {
-				pressReload();
-			} else if (curWeapon.id == gunName && (curWeapon.id == invWeapon2Name && curPlayer[obfuscate.localData].weapons["1"].ammo < fullAmmoGuns[gunName])) {
-				pressReload();
-			}
-		}	
-	}
+// 	var autoReloadGuns = function () {
+// 		for (let gunName in fullAmmoGuns) {
+// 			if (curWeapon.id == gunName && (curWeapon.id == invWeapon1Name && curPlayer[obfuscate.localData].weapons["0"].ammo < fullAmmoGuns[gunName])) {
+// 				pressReload();
+// 			} else if (curWeapon.id == gunName && (curWeapon.id == invWeapon2Name && curPlayer[obfuscate.localData].weapons["1"].ammo < fullAmmoGuns[gunName])) {
+// 				pressReload();
+// 			}
+// 		}	
+// 	}
 
 	var weaponSwitcher = function() {
 		if (curPlayer.curWeapIdx) {
