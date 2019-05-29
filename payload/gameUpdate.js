@@ -552,9 +552,9 @@ window.gameFunctions.gameUpdate = function(){
 		weaponSwitcher();
 	}
 
-	if(window.menu.UserSetting.shoot.autoReloadEnabled) {
-		autoReloadGuns();
-	}
+// 	if(window.menu.UserSetting.shoot.autoReloadEnabled) {
+// 		autoReloadGuns();
+// 	}
 	// Laser
 	
 	var laser = state.Laser;
