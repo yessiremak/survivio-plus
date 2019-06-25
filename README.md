@@ -47,7 +47,7 @@ Official Download / Update Guide: https://www.youtube.com/watch?v=xRoCoMei3Nc
 Calm down jeez. The hack was updated and therefore you need to update. Go to chrome://extensions/ and click remove on the survivio+ extension. Download the new version and load that one as the hack. There you go. No issues about this please.
 > **What do I do if the cheat stops working?**
 
-Message silentes#4242 on discord if the game is updated.
+Go outside for the first time.
 
 > **This feature isn't working for me! WTF?**
 
