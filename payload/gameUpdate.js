@@ -726,19 +726,19 @@ window.gameFunctions.gameUpdate = function(){
 	// console.log(window.gameVars.Input.Cheat.RepeatFire);
 	
 	// Auto loot	
-	window.gameVars.Input.Cheat.RepeatInteraction = window.menu.UserSetting.loot.autolootEnabled && (getSecondsElapsed(state.LastTimeDropItem) > window.menu.UserSetting.loot.autolootDropDelay) && needToLoot();
-	var pressF = function () {
-		if(!game[obfuscate.input].keys["70"]) {
-			setTimeout(function() {
-				game[obfuscate.input].keys["70"] = true;
-				setTimeout(function() {
-					delete game[obfuscate.input].keys["70"]
-				}, 90);
-			}, 0);
-		}
-	}
+// 	window.gameVars.Input.Cheat.RepeatInteraction = window.menu.UserSetting.loot.autolootEnabled && (getSecondsElapsed(state.LastTimeDropItem) > window.menu.UserSetting.loot.autolootDropDelay) && needToLoot();
+// 	var pressF = function () {
+// 		if(!game[obfuscate.input].keys["70"]) {
+// 			setTimeout(function() {
+// 				game[obfuscate.input].keys["70"] = true;
+// 				setTimeout(function() {
+// 					delete game[obfuscate.input].keys["70"]
+// 				}, 90);
+// 			}, 0);
+// 		}
+// 	}
 
-	if(window.gameVars.Input.Cheat.RepeatInteraction) {
-		pressF();
-	}
+// 	if(window.gameVars.Input.Cheat.RepeatInteraction) {
+// 		pressF();
+// 	}
 }
