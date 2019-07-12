@@ -358,66 +358,66 @@ window.gameFunctions.gameUpdate = function(){
 		game[obfuscate.pieTimer].timerTimeout = performance.now();
 	};
 	
-	var getLootRange = function(loot) {
-		// console.log("Loot range", getDistance(loot.pos, curPlayer.pos) - items[loot.name].rad - gameData.player.radius);
-		return getDistance(loot.pos, curPlayer.pos) - items[loot.name].rad - gameData.player.radius;
-	}
+// 	var getLootRange = function(loot) {
+// 		// console.log("Loot range", getDistance(loot.pos, curPlayer.pos) - items[loot.name].rad - gameData.player.radius);
+// 		return getDistance(loot.pos, curPlayer.pos) - items[loot.name].rad - gameData.player.radius;
+// 	}
 
-	var needToLoot = function() {
+// 	var needToLoot = function() {
 					
-		var loot = game[obfuscate.lootBarn][obfuscate.closestLoot];
-		// console.log("Loot pool:", game[obfuscate.lootBarn][obfuscate.lootPool]);
-		// console.log("Closest loot:", game[obfuscate.lootBarn][obfuscate.closestLoot])
-		var gunsSafeDistance = window.menu.UserSetting.loot.autolootSafeDistance;
+// 		var loot = game[obfuscate.lootBarn][obfuscate.closestLoot];
+// 		// console.log("Loot pool:", game[obfuscate.lootBarn][obfuscate.lootPool]);
+// 		// console.log("Closest loot:", game[obfuscate.lootBarn][obfuscate.closestLoot])
+// 		var gunsSafeDistance = window.menu.UserSetting.loot.autolootSafeDistance;
 		
-		if(!loot) {			
-			return false;
-		}
+// 		if(!loot) {			
+// 			return false;
+// 		}
 			
 		
-		var needGuns = !invWeapon1 || !invWeapon2;
+// 		var needGuns = !invWeapon1 || !invWeapon2;
 		
-		var gunsNearBy = game[obfuscate.lootBarn][obfuscate.lootPool][obfuscate.pool].filter((l) => l.active && getLootRange(l) < gunsSafeDistance && gunNames.includes(l.name));
+// 		var gunsNearBy = game[obfuscate.lootBarn][obfuscate.lootPool][obfuscate.pool].filter((l) => l.active && getLootRange(l) < gunsSafeDistance && gunNames.includes(l.name));
 		
-		var isSafeToPickup = !gunNames.includes(curPlayer.weapType);
+// 		var isSafeToPickup = !gunNames.includes(curPlayer.weapType);
 		
-		var lootIsDual = 
-			(invWeapon1 && invWeapon1.dualWieldType && invWeapon1.id == loot.name) || 
-			(invWeapon2 && invWeapon2.dualWieldType && invWeapon2.id == loot.name);
+// 		var lootIsDual = 
+// 			(invWeapon1 && invWeapon1.dualWieldType && invWeapon1.id == loot.name) || 
+// 			(invWeapon2 && invWeapon2.dualWieldType && invWeapon2.id == loot.name);
 		
 		
-		var dualOnlyInRange = gunsNearBy.every((g) =>
-			(invWeapon1 && invWeapon1.dualWieldType && invWeapon1.id == g.name) || 
-			(invWeapon2 && invWeapon2.dualWieldType && invWeapon2.id == g.name));
+// 		var dualOnlyInRange = gunsNearBy.every((g) =>
+// 			(invWeapon1 && invWeapon1.dualWieldType && invWeapon1.id == g.name) || 
+// 			(invWeapon2 && invWeapon2.dualWieldType && invWeapon2.id == g.name));
 		
-		if(!isSafeToPickup && !needGuns && gunsNearBy.length > 0 && !dualOnlyInRange)
-			return;
+// 		if(!isSafeToPickup && !needGuns && gunsNearBy.length > 0 && !dualOnlyInRange)
+// 			return;
 		
-		if(loot.name.includes('pan')) return true;
-		else if(loot.name.includes('katana')) return true;
-		else if(loot.name.includes('stonehammer')) return true;
-		else if(loot.name.includes('woodaxe')) return true;
+// 		if(loot.name.includes('pan')) return true;
+// 		else if(loot.name.includes('katana')) return true;
+// 		else if(loot.name.includes('stonehammer')) return true;
+// 		else if(loot.name.includes('woodaxe')) return true;
 
-		if(gunNames.includes(loot.name)) {
-			if(needGuns || lootIsDual)
-				return true;
-		}		
+// 		if(gunNames.includes(loot.name)) {
+// 			if(needGuns || lootIsDual)
+// 				return true;
+// 		}		
 		
-		else if(loot.name.includes('backpack') && loot.name > game[obfuscate.activePlayer][obfuscate.netData].backpack) return true;
-		else if(loot.name.includes('chest') && loot.name > game[obfuscate.activePlayer][obfuscate.netData].chest) return true;
-		else if(loot.name.includes('helmet') && loot.name > game[obfuscate.activePlayer][obfuscate.netData].helmet) return true;
-		else if(game[obfuscate.activePlayer][obfuscate.localData].inventory.hasOwnProperty(loot.name)){
-			var backpackLvls = parseInt(game[obfuscate.activePlayer][obfuscate.netData].backpack.match(/\d/g).join(""));
+// 		else if(loot.name.includes('backpack') && loot.name > game[obfuscate.activePlayer][obfuscate.netData].backpack) return true;
+// 		else if(loot.name.includes('chest') && loot.name > game[obfuscate.activePlayer][obfuscate.netData].chest) return true;
+// 		else if(loot.name.includes('helmet') && loot.name > game[obfuscate.activePlayer][obfuscate.netData].helmet) return true;
+// 		else if(game[obfuscate.activePlayer][obfuscate.localData].inventory.hasOwnProperty(loot.name)){
+// 			var backpackLvls = parseInt(game[obfuscate.activePlayer][obfuscate.netData].backpack.match(/\d/g).join(""));
 				
-			var max = gameData.bagSizes[loot.name][backpackLvls];
-			var cur = game[obfuscate.activePlayer][obfuscate.localData].inventory[loot.name];
+// 			var max = gameData.bagSizes[loot.name][backpackLvls];
+// 			var cur = game[obfuscate.activePlayer][obfuscate.localData].inventory[loot.name];
 				
-			if(cur < max)
-				return true;
-		}
+// 			if(cur < max)
+// 				return true;
+// 		}
 		
-		return false;
-	};
+// 		return false;
+// 	};
 	
 	// Local variables
 	
