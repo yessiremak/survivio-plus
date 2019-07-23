@@ -21,7 +21,7 @@
 		"keyPressed": "we",
 		"mousePressed": "fe",
 		"mouseDown": "be",
-		"smokeBarn": false,
+		"smokeBarn": "ft",
 		"smokePool": "e",
 		"map": "it",
 		"obstaclePool": "ge",
@@ -33,10 +33,10 @@
 		"activeId": "Bt",
 		"objectCreator": "Dt",
 		"netData": "ne",
-		// "pieTimer": "Mt",
-		// "lootBarn": "bt",
-		// "closestLoot": "ta",
-		// "lootPool": "Pt",
+		"pieTimer": "Mt",
+		"lootBarn": "bt",
+		"closestLoot": "ta",
+		"lootPool": "Pt",
 		"localData": "se",
 		"cheatVersion": "0.30.0"
 	};
