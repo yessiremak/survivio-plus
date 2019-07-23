@@ -136,7 +136,7 @@
 			// DATA
 			window.gameVars.Game.GameData = getModule("989ad62a");
 
-			window.gameVars.Game.model = getModule("ceee80d9");
+			window.gameVars.Game.model = getModule("aca73f78");
 		
 			window.setInterval(function() { window.gameVars.Game.updateTeamTab = true; }, 1000);
         }
